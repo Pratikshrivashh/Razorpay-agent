@@ -1,0 +1,3306 @@
+{
+  "merchants": {
+    "mer_aura_jewels_001": {
+      "id": "mer_aura_jewels_001",
+      "name": "Aura Handcrafted Jewels",
+      "business_category": "Fashion & Luxury",
+      "typical_order_min": 1200.0,
+      "typical_order_max": 6500.0,
+      "business_hours_start": "09:30",
+      "business_hours_end": "21:30",
+      "vpa": "aurajewels@razorpay",
+      "settlement_bank_account": "HDFC-XXXX-8912",
+      "created_at": "2026-08-29T17:34:55.517431+00:00"
+    },
+    "mer_nexus_saas_002": {
+      "id": "mer_nexus_saas_002",
+      "name": "Nexus Cloud & SaaS",
+      "business_category": "Software & Services",
+      "typical_order_min": 2500.0,
+      "typical_order_max": 15000.0,
+      "business_hours_start": "08:00",
+      "business_hours_end": "20:00",
+      "vpa": "nexustech@razorpay",
+      "settlement_bank_account": "ICICI-XXXX-3341",
+      "created_at": "2026-08-29T17:34:55.517431+00:00"
+    },
+    "mer_greenroot_003": {
+      "id": "mer_greenroot_003",
+      "name": "GreenRoot Organic Grocers",
+      "business_category": "Grocery & Daily Needs",
+      "typical_order_min": 450.0,
+      "typical_order_max": 2200.0,
+      "business_hours_start": "07:00",
+      "business_hours_end": "23:00",
+      "vpa": "greenroot@razorpay",
+      "settlement_bank_account": "AXIS-XXXX-5520",
+      "created_at": "2026-08-29T17:34:55.517431+00:00"
+    }
+  },
+  "payments": {
+    "aa7871b4-deae-442c-ada0-a3f99518a6d8": {
+      "id": "aa7871b4-deae-442c-ada0-a3f99518a6d8",
+      "razorpay_payment_id": "pay_norm_2f440dd8dc",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 1740.0,
+      "currency": "INR",
+      "order_id": "order_ecom_de6ae874",
+      "status": "captured",
+      "created_at": "2026-08-25T16:51:23.938789+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "bf31bed9-f0df-4125-9d66-6e7ab82ae640": {
+      "id": "bf31bed9-f0df-4125-9d66-6e7ab82ae640",
+      "razorpay_payment_id": "pay_norm_44aec02ec8",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 2370.0,
+      "currency": "INR",
+      "order_id": "order_ecom_70a41f08",
+      "status": "captured",
+      "created_at": "2026-08-28T19:50:15.798247+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "614b1198-081e-46e4-82f7-2b6e28aa82cc": {
+      "id": "614b1198-081e-46e4-82f7-2b6e28aa82cc",
+      "razorpay_payment_id": "pay_norm_ee0470ce36",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "arjun.verma@okhdfcbank",
+      "amount": 2690.0,
+      "currency": "INR",
+      "order_id": "order_ecom_efd6fe5e",
+      "status": "captured",
+      "created_at": "2026-08-27T16:36:08.166558+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "bbbddc2b-172d-4da9-86d8-43b9ed88e49d": {
+      "id": "bbbddc2b-172d-4da9-86d8-43b9ed88e49d",
+      "razorpay_payment_id": "pay_norm_ac95f94c12",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 5680.0,
+      "currency": "INR",
+      "order_id": "order_ecom_80325eb3",
+      "status": "captured",
+      "created_at": "2026-08-27T18:08:22.857781+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "96a9f244-22c4-4501-8bf7-72313229822a": {
+      "id": "96a9f244-22c4-4501-8bf7-72313229822a",
+      "razorpay_payment_id": "pay_norm_b0cf37fdc8",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 6030.0,
+      "currency": "INR",
+      "order_id": "order_ecom_23a46988",
+      "status": "captured",
+      "created_at": "2026-08-26T17:37:31.853026+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "c5e4d0e0-d8b8-4bb1-b4b3-afb26ffc88db": {
+      "id": "c5e4d0e0-d8b8-4bb1-b4b3-afb26ffc88db",
+      "razorpay_payment_id": "pay_norm_1cc61e21a5",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 2670.0,
+      "currency": "INR",
+      "order_id": "order_ecom_eb68341a",
+      "status": "captured",
+      "created_at": "2026-08-24T15:08:36.869124+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "47cea75c-8bc6-4fc1-ae50-9342eeb46d9d": {
+      "id": "47cea75c-8bc6-4fc1-ae50-9342eeb46d9d",
+      "razorpay_payment_id": "pay_norm_e94203916d",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 3520.0,
+      "currency": "INR",
+      "order_id": "order_ecom_fce9a286",
+      "status": "captured",
+      "created_at": "2026-08-25T12:15:11.332966+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "79d7d163-c405-441a-91d4-59d1e7f7fe8a": {
+      "id": "79d7d163-c405-441a-91d4-59d1e7f7fe8a",
+      "razorpay_payment_id": "pay_norm_5088cad475",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 6410.0,
+      "currency": "INR",
+      "order_id": "order_ecom_5453e9af",
+      "status": "captured",
+      "created_at": "2026-08-26T18:41:04.828292+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "a4d29aad-3037-4dd6-8688-abfd2202c93c": {
+      "id": "a4d29aad-3037-4dd6-8688-abfd2202c93c",
+      "razorpay_payment_id": "pay_norm_58c06aba70",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "neha.mehta@ybl",
+      "amount": 2450.0,
+      "currency": "INR",
+      "order_id": "order_ecom_cf5bb566",
+      "status": "captured",
+      "created_at": "2026-08-26T19:33:39.462301+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "434faa31-f22a-4969-9c7d-5490627d4b2b": {
+      "id": "434faa31-f22a-4969-9c7d-5490627d4b2b",
+      "razorpay_payment_id": "pay_norm_aa08c2645c",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "neha.mehta@ybl",
+      "amount": 1490.0,
+      "currency": "INR",
+      "order_id": "order_ecom_402ff4c0",
+      "status": "captured",
+      "created_at": "2026-08-22T10:57:43.767263+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "31e2ee66-a07c-428e-b69e-1bea6ac5acfb": {
+      "id": "31e2ee66-a07c-428e-b69e-1bea6ac5acfb",
+      "razorpay_payment_id": "pay_norm_d2b57a6b53",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "sneha.patel@paytm",
+      "amount": 4250.0,
+      "currency": "INR",
+      "order_id": "order_ecom_de71d670",
+      "status": "captured",
+      "created_at": "2026-08-26T16:48:26.073525+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "1df725a8-a7ff-4f07-8614-3cbf05adc50f": {
+      "id": "1df725a8-a7ff-4f07-8614-3cbf05adc50f",
+      "razorpay_payment_id": "pay_norm_6f72ea421a",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rahul.gupta@icici",
+      "amount": 5410.0,
+      "currency": "INR",
+      "order_id": "order_ecom_4cb96663",
+      "status": "captured",
+      "created_at": "2026-08-26T16:56:52.853210+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "22c4c57e-f8e7-4f22-96bd-62c849583606": {
+      "id": "22c4c57e-f8e7-4f22-96bd-62c849583606",
+      "razorpay_payment_id": "pay_norm_326b999810",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "sneha.patel@paytm",
+      "amount": 5180.0,
+      "currency": "INR",
+      "order_id": "order_ecom_fe396316",
+      "status": "captured",
+      "created_at": "2026-08-24T10:16:48.394943+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "7e32c12e-b844-42d4-9d33-b5c592ce46fd": {
+      "id": "7e32c12e-b844-42d4-9d33-b5c592ce46fd",
+      "razorpay_payment_id": "pay_norm_4c0b477edb",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "sneha.patel@paytm",
+      "amount": 6480.0,
+      "currency": "INR",
+      "order_id": "order_ecom_92916f0e",
+      "status": "captured",
+      "created_at": "2026-08-24T19:07:04.613440+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "13b6fbcc-d313-420e-b3f6-e21d1f08c0c3": {
+      "id": "13b6fbcc-d313-420e-b3f6-e21d1f08c0c3",
+      "razorpay_payment_id": "pay_norm_ee3db0fd72",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 6420.0,
+      "currency": "INR",
+      "order_id": "order_ecom_67c873bc",
+      "status": "captured",
+      "created_at": "2026-08-25T18:30:40.267004+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "c5803229-886c-43d1-9f48-36facef05a94": {
+      "id": "c5803229-886c-43d1-9f48-36facef05a94",
+      "razorpay_payment_id": "pay_norm_a4e1b65741",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 1330.0,
+      "currency": "INR",
+      "order_id": "order_ecom_95ad79ad",
+      "status": "captured",
+      "created_at": "2026-08-28T17:15:27.475058+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "8b217fdd-09ac-49ae-a73a-510e8d3ca058": {
+      "id": "8b217fdd-09ac-49ae-a73a-510e8d3ca058",
+      "razorpay_payment_id": "pay_norm_bb6cfd0f0c",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 1810.0,
+      "currency": "INR",
+      "order_id": "order_ecom_99e2c60e",
+      "status": "captured",
+      "created_at": "2026-08-26T20:06:31.690846+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "769de3ea-bda4-41b5-9d89-a2c8777d493b": {
+      "id": "769de3ea-bda4-41b5-9d89-a2c8777d493b",
+      "razorpay_payment_id": "pay_norm_7e17136ee5",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "sneha.patel@paytm",
+      "amount": 2930.0,
+      "currency": "INR",
+      "order_id": "order_ecom_c6b7f931",
+      "status": "captured",
+      "created_at": "2026-08-25T12:38:05.222763+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "3f1ef623-43c3-45ee-b43c-805a40410ade": {
+      "id": "3f1ef623-43c3-45ee-b43c-805a40410ade",
+      "razorpay_payment_id": "pay_norm_907fe9ca3d",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "arjun.verma@okhdfcbank",
+      "amount": 2030.0,
+      "currency": "INR",
+      "order_id": "order_ecom_777d0000",
+      "status": "captured",
+      "created_at": "2026-08-23T18:37:01.443549+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "879db2a3-b843-42a7-887e-660b62c5b802": {
+      "id": "879db2a3-b843-42a7-887e-660b62c5b802",
+      "razorpay_payment_id": "pay_norm_886d59a3cf",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 2200.0,
+      "currency": "INR",
+      "order_id": "order_ecom_a0a7a7f0",
+      "status": "captured",
+      "created_at": "2026-08-27T16:31:50.596789+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "dd9ea899-c615-4a57-a8ed-937386cbecea": {
+      "id": "dd9ea899-c615-4a57-a8ed-937386cbecea",
+      "razorpay_payment_id": "pay_norm_878faf4d71",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "kavita.reddy@okaxis",
+      "amount": 4680.0,
+      "currency": "INR",
+      "order_id": "order_ecom_c8617a9a",
+      "status": "captured",
+      "created_at": "2026-08-26T16:42:14.425957+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "fd543dee-bc65-49ad-8e8d-46e908f9c088": {
+      "id": "fd543dee-bc65-49ad-8e8d-46e908f9c088",
+      "razorpay_payment_id": "pay_norm_a461a753b0",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 2190.0,
+      "currency": "INR",
+      "order_id": "order_ecom_167b34c6",
+      "status": "captured",
+      "created_at": "2026-08-22T19:50:06.383594+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "03b24bbd-24f8-4c3e-93f2-24db76309284": {
+      "id": "03b24bbd-24f8-4c3e-93f2-24db76309284",
+      "razorpay_payment_id": "pay_norm_c7ecfb33f1",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 1290.0,
+      "currency": "INR",
+      "order_id": "order_ecom_4109f06a",
+      "status": "captured",
+      "created_at": "2026-08-29T17:52:20.170311+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "cd67ab41-29d5-467f-8b31-2cbf21539894": {
+      "id": "cd67ab41-29d5-467f-8b31-2cbf21539894",
+      "razorpay_payment_id": "pay_norm_40f0bb6ff3",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 3260.0,
+      "currency": "INR",
+      "order_id": "order_ecom_3acd26c3",
+      "status": "captured",
+      "created_at": "2026-08-24T10:03:36.186405+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "eac2b7a2-b670-477e-acfc-7b0373599071": {
+      "id": "eac2b7a2-b670-477e-acfc-7b0373599071",
+      "razorpay_payment_id": "pay_norm_251d03d45f",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "kavita.reddy@okaxis",
+      "amount": 5520.0,
+      "currency": "INR",
+      "order_id": "order_ecom_f4746e08",
+      "status": "captured",
+      "created_at": "2026-08-26T20:17:49.255670+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "9a08db8f-de57-4989-ba88-93be5a41f4dd": {
+      "id": "9a08db8f-de57-4989-ba88-93be5a41f4dd",
+      "razorpay_payment_id": "pay_norm_902f33903b",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "ananya.iyer@oksbi",
+      "amount": 1630.0,
+      "currency": "INR",
+      "order_id": "order_ecom_101f2aaa",
+      "status": "captured",
+      "created_at": "2026-08-29T17:32:37.628515+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "34e798c8-36f5-4bc9-ad1c-c741f9467610": {
+      "id": "34e798c8-36f5-4bc9-ad1c-c741f9467610",
+      "razorpay_payment_id": "pay_norm_35d17d4d66",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "arjun.verma@okhdfcbank",
+      "amount": 5220.0,
+      "currency": "INR",
+      "order_id": "order_ecom_f6b6f116",
+      "status": "captured",
+      "created_at": "2026-08-26T13:55:55.952248+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "d55bcd0f-adb3-4179-8e49-28ac65cb230c": {
+      "id": "d55bcd0f-adb3-4179-8e49-28ac65cb230c",
+      "razorpay_payment_id": "pay_norm_5232389d7e",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 3930.0,
+      "currency": "INR",
+      "order_id": "order_ecom_1324e832",
+      "status": "captured",
+      "created_at": "2026-08-25T18:06:07.108978+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "aad32a38-54c0-4597-bfa9-4ab3d2596a75": {
+      "id": "aad32a38-54c0-4597-bfa9-4ab3d2596a75",
+      "razorpay_payment_id": "pay_norm_b8ea3217fc",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 5790.0,
+      "currency": "INR",
+      "order_id": "order_ecom_c916aef2",
+      "status": "captured",
+      "created_at": "2026-08-23T13:17:37.049505+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "143ed786-b34e-4d6b-b963-c369552230af": {
+      "id": "143ed786-b34e-4d6b-b963-c369552230af",
+      "razorpay_payment_id": "pay_norm_bd574e50bb",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "sneha.patel@paytm",
+      "amount": 3700.0,
+      "currency": "INR",
+      "order_id": "order_ecom_7017c2b6",
+      "status": "captured",
+      "created_at": "2026-08-26T16:42:56.878001+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "ccadc72a-5ae8-4757-8351-b6e7d064593e": {
+      "id": "ccadc72a-5ae8-4757-8351-b6e7d064593e",
+      "razorpay_payment_id": "pay_norm_c6b690fbf2",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "neha.mehta@ybl",
+      "amount": 4520.0,
+      "currency": "INR",
+      "order_id": "order_ecom_5bcfbaa7",
+      "status": "captured",
+      "created_at": "2026-08-25T13:22:52.150334+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "764d8c4c-ad5a-4d37-82af-14cf04dfdb6c": {
+      "id": "764d8c4c-ad5a-4d37-82af-14cf04dfdb6c",
+      "razorpay_payment_id": "pay_norm_0542099502",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 4420.0,
+      "currency": "INR",
+      "order_id": "order_ecom_d3f17649",
+      "status": "captured",
+      "created_at": "2026-08-26T12:01:40.781063+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "9c3d25e1-ded6-4b20-98c0-6b902cd90a78": {
+      "id": "9c3d25e1-ded6-4b20-98c0-6b902cd90a78",
+      "razorpay_payment_id": "pay_norm_f9c0a422f9",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "neha.mehta@ybl",
+      "amount": 5240.0,
+      "currency": "INR",
+      "order_id": "order_ecom_99bddf9e",
+      "status": "captured",
+      "created_at": "2026-08-24T17:51:35.211885+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "01a01b10-b099-4f58-9eb0-b867ef6ed6f0": {
+      "id": "01a01b10-b099-4f58-9eb0-b867ef6ed6f0",
+      "razorpay_payment_id": "pay_norm_91cb194756",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "suresh.kumar@oksbi",
+      "amount": 2090.0,
+      "currency": "INR",
+      "order_id": "order_ecom_cdbb2855",
+      "status": "captured",
+      "created_at": "2026-08-23T19:43:32.250050+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "992dee5b-30e5-4dbf-8aff-f1ccaef09502": {
+      "id": "992dee5b-30e5-4dbf-8aff-f1ccaef09502",
+      "razorpay_payment_id": "pay_norm_5cda8ffff6",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 1590.0,
+      "currency": "INR",
+      "order_id": "order_ecom_884c89a0",
+      "status": "captured",
+      "created_at": "2026-08-26T10:16:47.791841+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "57559fcc-ec00-48a2-aa1d-77b6140dafda": {
+      "id": "57559fcc-ec00-48a2-aa1d-77b6140dafda",
+      "razorpay_payment_id": "pay_norm_8d31f38c84",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rahul.gupta@icici",
+      "amount": 5100.0,
+      "currency": "INR",
+      "order_id": "order_ecom_9abefaca",
+      "status": "captured",
+      "created_at": "2026-08-23T16:37:33.035224+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "fa34ff39-2311-41e7-9dc3-7026eb59d5d9": {
+      "id": "fa34ff39-2311-41e7-9dc3-7026eb59d5d9",
+      "razorpay_payment_id": "pay_norm_3a4b1b1c96",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "arjun.verma@okhdfcbank",
+      "amount": 2800.0,
+      "currency": "INR",
+      "order_id": "order_ecom_a2523d28",
+      "status": "captured",
+      "created_at": "2026-08-26T13:20:49.905716+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "5cafbced-6f81-4265-b7f8-281b8b083022": {
+      "id": "5cafbced-6f81-4265-b7f8-281b8b083022",
+      "razorpay_payment_id": "pay_norm_ffb5af8d47",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 5380.0,
+      "currency": "INR",
+      "order_id": "order_ecom_3fd7807a",
+      "status": "captured",
+      "created_at": "2026-08-26T17:55:05.521550+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "764525f3-c104-48e2-a4d7-c1399d5ec451": {
+      "id": "764525f3-c104-48e2-a4d7-c1399d5ec451",
+      "razorpay_payment_id": "pay_norm_70e64ea6eb",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "suresh.kumar@oksbi",
+      "amount": 3310.0,
+      "currency": "INR",
+      "order_id": "order_ecom_af621ff0",
+      "status": "captured",
+      "created_at": "2026-08-24T12:13:19.950000+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "22b9ebbb-3c92-4d03-be9d-10816160835e": {
+      "id": "22b9ebbb-3c92-4d03-be9d-10816160835e",
+      "razorpay_payment_id": "pay_norm_c545db895b",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 1400.0,
+      "currency": "INR",
+      "order_id": "order_ecom_807abd5c",
+      "status": "captured",
+      "created_at": "2026-08-22T14:21:59.065611+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "995716d3-fa62-4fc3-9bea-ed2bc76ec40e": {
+      "id": "995716d3-fa62-4fc3-9bea-ed2bc76ec40e",
+      "razorpay_payment_id": "pay_norm_35e4419f5e",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "kavita.reddy@okaxis",
+      "amount": 5850.0,
+      "currency": "INR",
+      "order_id": "order_ecom_b9a37b38",
+      "status": "captured",
+      "created_at": "2026-08-23T11:40:56.349944+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "dc70e2a7-dfa8-4a8e-81d0-51a9dd75d5df": {
+      "id": "dc70e2a7-dfa8-4a8e-81d0-51a9dd75d5df",
+      "razorpay_payment_id": "pay_norm_bd2eee7ab9",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 6480.0,
+      "currency": "INR",
+      "order_id": "order_ecom_1937ea15",
+      "status": "captured",
+      "created_at": "2026-08-26T11:04:19.471887+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "286addf2-486d-47bf-88ba-d7e19190b0d1": {
+      "id": "286addf2-486d-47bf-88ba-d7e19190b0d1",
+      "razorpay_payment_id": "pay_norm_0a31896efb",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 4190.0,
+      "currency": "INR",
+      "order_id": "order_ecom_ad510f31",
+      "status": "captured",
+      "created_at": "2026-08-27T18:23:37.549433+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "3bd93ea3-a506-4f15-a436-74cc60045859": {
+      "id": "3bd93ea3-a506-4f15-a436-74cc60045859",
+      "razorpay_payment_id": "pay_norm_9cbe79a46d",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "sneha.patel@paytm",
+      "amount": 3680.0,
+      "currency": "INR",
+      "order_id": "order_ecom_b845d6fe",
+      "status": "captured",
+      "created_at": "2026-08-26T12:14:52.978560+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "2efd3eb4-1c79-4722-a7e9-391fc59faf89": {
+      "id": "2efd3eb4-1c79-4722-a7e9-391fc59faf89",
+      "razorpay_payment_id": "pay_norm_ada04e9a79",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "suresh.kumar@oksbi",
+      "amount": 3070.0,
+      "currency": "INR",
+      "order_id": "order_ecom_9800a54b",
+      "status": "captured",
+      "created_at": "2026-08-24T20:03:03.712136+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "9c73e10a-deb7-4cea-96b0-33adc485fb11": {
+      "id": "9c73e10a-deb7-4cea-96b0-33adc485fb11",
+      "razorpay_payment_id": "pay_norm_4ef29cea84",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 2800.0,
+      "currency": "INR",
+      "order_id": "order_ecom_6c96601d",
+      "status": "captured",
+      "created_at": "2026-08-29T19:07:18.254658+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "56650387-324a-451e-be3d-6e3b43f94772": {
+      "id": "56650387-324a-451e-be3d-6e3b43f94772",
+      "razorpay_payment_id": "pay_norm_ebe183a403",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "ananya.iyer@oksbi",
+      "amount": 6320.0,
+      "currency": "INR",
+      "order_id": "order_ecom_9cf664e2",
+      "status": "captured",
+      "created_at": "2026-08-26T11:28:25.086751+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "23dcffa9-d7d9-4218-ae58-1a95f7ee72c2": {
+      "id": "23dcffa9-d7d9-4218-ae58-1a95f7ee72c2",
+      "razorpay_payment_id": "pay_norm_a71f7f959d",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 3180.0,
+      "currency": "INR",
+      "order_id": "order_ecom_b2db9d68",
+      "status": "captured",
+      "created_at": "2026-08-28T16:09:20.332083+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "66b27846-ceaf-4901-bc69-ef83fc2ba101": {
+      "id": "66b27846-ceaf-4901-bc69-ef83fc2ba101",
+      "razorpay_payment_id": "pay_norm_2010f0cd6e",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "kavita.reddy@okaxis",
+      "amount": 5250.0,
+      "currency": "INR",
+      "order_id": "order_ecom_75ddba0a",
+      "status": "captured",
+      "created_at": "2026-08-26T10:20:48.749073+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "eb7bdf8e-410d-44d7-9393-621e9ec6e5fe": {
+      "id": "eb7bdf8e-410d-44d7-9393-621e9ec6e5fe",
+      "razorpay_payment_id": "pay_norm_50971e8a86",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 5430.0,
+      "currency": "INR",
+      "order_id": "order_ecom_99baabb2",
+      "status": "captured",
+      "created_at": "2026-08-23T14:43:00.708866+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "f19edc47-bc41-4f68-b837-a49b3bba2ee6": {
+      "id": "f19edc47-bc41-4f68-b837-a49b3bba2ee6",
+      "razorpay_payment_id": "pay_mule_265e691b17",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "adhoc_dep_382@oksbi",
+      "amount": 1200.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-29T02:29:37.894797+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "off_hours_burst",
+        "is_round_trip": false,
+        "cross_merchant_burst": false,
+        "cross_merchant_burst_count": null,
+        "pattern_description": "Nocturnal Deposit Burst (03:30 AM ad-hoc transfer)"
+      }
+    },
+    "09a729b6-5da8-49af-ad16-9ae82c4f2cff": {
+      "id": "09a729b6-5da8-49af-ad16-9ae82c4f2cff",
+      "razorpay_payment_id": "pay_mule_e8aa5562a9",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "daily_earn_user31@paytm",
+      "amount": 1200.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-29T03:06:29.078258+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "off_hours_burst",
+        "is_round_trip": false,
+        "cross_merchant_burst": false,
+        "cross_merchant_burst_count": null,
+        "pattern_description": "Nocturnal Deposit Burst (03:30 AM ad-hoc transfer)"
+      }
+    },
+    "164d346c-e534-4426-be7f-bbbdd67a3a51": {
+      "id": "164d346c-e534-4426-be7f-bbbdd67a3a51",
+      "razorpay_payment_id": "pay_mule_abd432c899",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "agent_node_552@ybl",
+      "amount": 4800.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-28T15:36:40.501532+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "pass_through_cycle",
+        "is_round_trip": true,
+        "cross_merchant_burst": true,
+        "cross_merchant_burst_count": "4 merchant VPAs in 15 mins",
+        "pattern_description": "Rapid Pass-Through Cycle (Immediate payout velocity)"
+      }
+    },
+    "a33f975a-e0ce-4f75-9058-8d78304423e9": {
+      "id": "a33f975a-e0ce-4f75-9058-8d78304423e9",
+      "razorpay_payment_id": "pay_mule_c183801626",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "daily_earn_user31@paytm",
+      "amount": 4800.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-28T12:04:42.046809+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "pass_through_cycle",
+        "is_round_trip": true,
+        "cross_merchant_burst": true,
+        "cross_merchant_burst_count": "4 merchant VPAs in 15 mins",
+        "pattern_description": "Rapid Pass-Through Cycle (Immediate payout velocity)"
+      }
+    },
+    "2efccae7-e466-417a-9cc1-97fc0ef82619": {
+      "id": "2efccae7-e466-417a-9cc1-97fc0ef82619",
+      "razorpay_payment_id": "pay_mule_27c6d5b444",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "daily_earn_user31@paytm",
+      "amount": 1200.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-29T01:40:53.524254+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "off_hours_burst",
+        "is_round_trip": false,
+        "cross_merchant_burst": false,
+        "cross_merchant_burst_count": null,
+        "pattern_description": "Nocturnal Deposit Burst (03:30 AM ad-hoc transfer)"
+      }
+    },
+    "77962696-32c1-40ad-8a8d-0d8df5667958": {
+      "id": "77962696-32c1-40ad-8a8d-0d8df5667958",
+      "razorpay_payment_id": "pay_live_ba79deef1a",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "agent_node_552@ybl",
+      "amount": 550.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-30T05:14:10.806462+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "task_app_round_deposit",
+        "is_round_trip": false,
+        "cross_merchant_burst": true,
+        "cross_merchant_burst_count": "5 merchant VPAs in 10 mins",
+        "pattern_description": "Task/Commission App Deposit (Flat \u20b9550 to public QR)"
+      }
+    },
+    "4ecf892d-b373-49c1-af81-585c0ea6c115": {
+      "id": "4ecf892d-b373-49c1-af81-585c0ea6c115",
+      "razorpay_payment_id": "pay_norm_a8a2a8ea36",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 870.0,
+      "currency": "INR",
+      "order_id": "order_ecom_f0e259e8",
+      "status": "captured",
+      "created_at": "2026-08-24T19:15:32.468109+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "b0698046-ad96-4e92-882e-c2b7f01ff394": {
+      "id": "b0698046-ad96-4e92-882e-c2b7f01ff394",
+      "razorpay_payment_id": "pay_norm_d045c3cfca",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 820.0,
+      "currency": "INR",
+      "order_id": "order_ecom_35f2bf5e",
+      "status": "captured",
+      "created_at": "2026-08-27T20:30:35.542944+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "a7fd5060-a962-47a0-8051-3f06bf9ada5b": {
+      "id": "a7fd5060-a962-47a0-8051-3f06bf9ada5b",
+      "razorpay_payment_id": "pay_norm_6710fc29c1",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 1410.0,
+      "currency": "INR",
+      "order_id": "order_ecom_c43387df",
+      "status": "captured",
+      "created_at": "2026-08-26T14:32:31.256799+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "158b608b-bd4b-427f-9d24-a84e03011656": {
+      "id": "158b608b-bd4b-427f-9d24-a84e03011656",
+      "razorpay_payment_id": "pay_norm_6bc6c06094",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 850.0,
+      "currency": "INR",
+      "order_id": "order_ecom_c3d148b0",
+      "status": "captured",
+      "created_at": "2026-08-29T11:56:18.534334+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "1a583539-d0d2-44f8-8b92-9c67ee2e7a75": {
+      "id": "1a583539-d0d2-44f8-8b92-9c67ee2e7a75",
+      "razorpay_payment_id": "pay_norm_f697f401a8",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "divya.sharma@paytm",
+      "amount": 1790.0,
+      "currency": "INR",
+      "order_id": "order_ecom_aa228b90",
+      "status": "captured",
+      "created_at": "2026-08-24T17:50:37.586829+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "85f507e7-c4f7-4dfa-8211-0e69b2b717fd": {
+      "id": "85f507e7-c4f7-4dfa-8211-0e69b2b717fd",
+      "razorpay_payment_id": "pay_norm_caa764083b",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "suresh.kumar@oksbi",
+      "amount": 940.0,
+      "currency": "INR",
+      "order_id": "order_ecom_a7fbb6a5",
+      "status": "captured",
+      "created_at": "2026-08-26T10:46:21.690894+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "2c806070-6475-4c38-ae99-26ad8e58c6c6": {
+      "id": "2c806070-6475-4c38-ae99-26ad8e58c6c6",
+      "razorpay_payment_id": "pay_norm_482f85c9c6",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 740.0,
+      "currency": "INR",
+      "order_id": "order_ecom_1a8d847b",
+      "status": "captured",
+      "created_at": "2026-08-28T12:13:02.148327+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "262f8a1e-ac17-4557-bdbb-7c9816912678": {
+      "id": "262f8a1e-ac17-4557-bdbb-7c9816912678",
+      "razorpay_payment_id": "pay_norm_038bb921c9",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "suresh.kumar@oksbi",
+      "amount": 1340.0,
+      "currency": "INR",
+      "order_id": "order_ecom_e9df06d8",
+      "status": "captured",
+      "created_at": "2026-08-23T19:41:00.181942+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "0c828e65-5381-4b38-bc70-0b66621e7824": {
+      "id": "0c828e65-5381-4b38-bc70-0b66621e7824",
+      "razorpay_payment_id": "pay_norm_a2ddf81d26",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 1860.0,
+      "currency": "INR",
+      "order_id": "order_ecom_ae1c0f61",
+      "status": "captured",
+      "created_at": "2026-08-24T17:19:20.220172+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "a890ed39-7bec-43cf-874d-a7217ee67376": {
+      "id": "a890ed39-7bec-43cf-874d-a7217ee67376",
+      "razorpay_payment_id": "pay_norm_b7d0de674a",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 1170.0,
+      "currency": "INR",
+      "order_id": "order_ecom_6ac1f17d",
+      "status": "captured",
+      "created_at": "2026-08-25T14:33:03.290650+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "99ebca70-f2cb-417d-91d5-e861bd9bf0c4": {
+      "id": "99ebca70-f2cb-417d-91d5-e861bd9bf0c4",
+      "razorpay_payment_id": "pay_norm_e260e17a21",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 1660.0,
+      "currency": "INR",
+      "order_id": "order_ecom_f1c52305",
+      "status": "captured",
+      "created_at": "2026-08-25T19:59:22.234643+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "e533f36a-9fcb-4707-954c-784afb6cd1ca": {
+      "id": "e533f36a-9fcb-4707-954c-784afb6cd1ca",
+      "razorpay_payment_id": "pay_norm_8e5b9464a7",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 1970.0,
+      "currency": "INR",
+      "order_id": "order_ecom_db1030b1",
+      "status": "captured",
+      "created_at": "2026-08-29T17:40:00.284661+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "5d019901-cdb4-4cfb-bb44-fdc4d09a642c": {
+      "id": "5d019901-cdb4-4cfb-bb44-fdc4d09a642c",
+      "razorpay_payment_id": "pay_norm_3abaabf754",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 1730.0,
+      "currency": "INR",
+      "order_id": "order_ecom_ea6f6c37",
+      "status": "captured",
+      "created_at": "2026-08-28T19:54:59.334044+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "d2241e13-c844-42f4-82d6-e6e64805e198": {
+      "id": "d2241e13-c844-42f4-82d6-e6e64805e198",
+      "razorpay_payment_id": "pay_norm_c8a1de00fc",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "kavita.reddy@okaxis",
+      "amount": 1290.0,
+      "currency": "INR",
+      "order_id": "order_ecom_2976b4cd",
+      "status": "captured",
+      "created_at": "2026-08-28T19:47:04.956711+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "6e2c3479-efbf-4830-b59e-3b3a1ea70661": {
+      "id": "6e2c3479-efbf-4830-b59e-3b3a1ea70661",
+      "razorpay_payment_id": "pay_norm_fd9033ec9d",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "vikram.singh@ybl",
+      "amount": 2150.0,
+      "currency": "INR",
+      "order_id": "order_ecom_76b04dd9",
+      "status": "captured",
+      "created_at": "2026-08-28T13:43:48.064835+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "28f6751f-0d8c-4135-849e-913df88a07af": {
+      "id": "28f6751f-0d8c-4135-849e-913df88a07af",
+      "razorpay_payment_id": "pay_norm_008a9be6a4",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 1900.0,
+      "currency": "INR",
+      "order_id": "order_ecom_49c1881e",
+      "status": "captured",
+      "created_at": "2026-08-25T13:32:36.573716+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "31633f52-4871-4fea-88c9-c524257f1c4f": {
+      "id": "31633f52-4871-4fea-88c9-c524257f1c4f",
+      "razorpay_payment_id": "pay_norm_1ae230e081",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "priya.nair@icici",
+      "amount": 680.0,
+      "currency": "INR",
+      "order_id": "order_ecom_60acf493",
+      "status": "captured",
+      "created_at": "2026-08-23T19:25:28.108737+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "004167a8-7c7b-4d9d-96bd-19d04418682b": {
+      "id": "004167a8-7c7b-4d9d-96bd-19d04418682b",
+      "razorpay_payment_id": "pay_norm_2d62ca9df2",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "neha.mehta@ybl",
+      "amount": 760.0,
+      "currency": "INR",
+      "order_id": "order_ecom_8d4f194c",
+      "status": "captured",
+      "created_at": "2026-08-27T10:17:39.901254+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "f43502d5-adc8-4914-996e-e3995790195e": {
+      "id": "f43502d5-adc8-4914-996e-e3995790195e",
+      "razorpay_payment_id": "pay_norm_2fe3a36012",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "rahul.gupta@icici",
+      "amount": 1890.0,
+      "currency": "INR",
+      "order_id": "order_ecom_b39bd633",
+      "status": "captured",
+      "created_at": "2026-08-28T17:50:31.610765+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "29e7b110-25c7-4b2d-bb36-5e637e514870": {
+      "id": "29e7b110-25c7-4b2d-bb36-5e637e514870",
+      "razorpay_payment_id": "pay_norm_0b1940d79e",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "rahul.gupta@icici",
+      "amount": 820.0,
+      "currency": "INR",
+      "order_id": "order_ecom_e4d93d21",
+      "status": "captured",
+      "created_at": "2026-08-29T12:49:50.348533+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "a3f77bef-32f6-4914-8092-ce0295ff8a51": {
+      "id": "a3f77bef-32f6-4914-8092-ce0295ff8a51",
+      "razorpay_payment_id": "pay_norm_a3319279c6",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 1490.0,
+      "currency": "INR",
+      "order_id": "order_ecom_0632e91e",
+      "status": "captured",
+      "created_at": "2026-08-28T17:00:27.867780+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "e842a964-ffb2-4ade-a0a7-aa028c775163": {
+      "id": "e842a964-ffb2-4ade-a0a7-aa028c775163",
+      "razorpay_payment_id": "pay_norm_9642014897",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "ananya.iyer@oksbi",
+      "amount": 1170.0,
+      "currency": "INR",
+      "order_id": "order_ecom_ba1c7c20",
+      "status": "captured",
+      "created_at": "2026-08-25T19:42:51.485444+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "e4120f7f-f6db-4bc0-9f05-3de4fd929e83": {
+      "id": "e4120f7f-f6db-4bc0-9f05-3de4fd929e83",
+      "razorpay_payment_id": "pay_norm_1ee02e8d61",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "sneha.patel@paytm",
+      "amount": 1670.0,
+      "currency": "INR",
+      "order_id": "order_ecom_5460cca4",
+      "status": "captured",
+      "created_at": "2026-08-29T11:08:20.604472+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "bce45353-7194-41de-a9b8-1c337a12fa28": {
+      "id": "bce45353-7194-41de-a9b8-1c337a12fa28",
+      "razorpay_payment_id": "pay_norm_30779c9e57",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 950.0,
+      "currency": "INR",
+      "order_id": "order_ecom_a27f5792",
+      "status": "captured",
+      "created_at": "2026-08-28T14:36:57.979005+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "55aa7070-4cbf-41bf-ab86-797a9744c696": {
+      "id": "55aa7070-4cbf-41bf-ab86-797a9744c696",
+      "razorpay_payment_id": "pay_norm_38572090d8",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "neha.mehta@ybl",
+      "amount": 970.0,
+      "currency": "INR",
+      "order_id": "order_ecom_70b7a99e",
+      "status": "captured",
+      "created_at": "2026-08-25T12:59:37.378550+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "76eabcac-7485-46a4-bd57-55c021d3512e": {
+      "id": "76eabcac-7485-46a4-bd57-55c021d3512e",
+      "razorpay_payment_id": "pay_norm_ab79115f37",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "suresh.kumar@oksbi",
+      "amount": 1690.0,
+      "currency": "INR",
+      "order_id": "order_ecom_68d46cbf",
+      "status": "captured",
+      "created_at": "2026-08-24T19:12:37.311389+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "6cfd2438-0b9d-4a2c-9dc2-6a9f4390719a": {
+      "id": "6cfd2438-0b9d-4a2c-9dc2-6a9f4390719a",
+      "razorpay_payment_id": "pay_norm_6b553f97ce",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "neha.mehta@ybl",
+      "amount": 800.0,
+      "currency": "INR",
+      "order_id": "order_ecom_d4fdabc0",
+      "status": "captured",
+      "created_at": "2026-08-27T17:53:27.831615+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "a9a9f5f9-4393-4fdc-914b-4ad1c2421bd8": {
+      "id": "a9a9f5f9-4393-4fdc-914b-4ad1c2421bd8",
+      "razorpay_payment_id": "pay_norm_4fd122b621",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 850.0,
+      "currency": "INR",
+      "order_id": "order_ecom_355747db",
+      "status": "captured",
+      "created_at": "2026-08-28T11:00:10.528925+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "67f94baf-f313-40e6-84e8-a83abbd78fe1": {
+      "id": "67f94baf-f313-40e6-84e8-a83abbd78fe1",
+      "razorpay_payment_id": "pay_norm_ac1c6f8967",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "arjun.verma@okhdfcbank",
+      "amount": 1930.0,
+      "currency": "INR",
+      "order_id": "order_ecom_4efdb4cc",
+      "status": "captured",
+      "created_at": "2026-08-26T19:45:48.430930+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "9f756963-181c-461a-99bd-b8276cafff95": {
+      "id": "9f756963-181c-461a-99bd-b8276cafff95",
+      "razorpay_payment_id": "pay_norm_581a64df05",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "rohit.sharma@okaxis",
+      "amount": 1490.0,
+      "currency": "INR",
+      "order_id": "order_ecom_e68d7c0a",
+      "status": "captured",
+      "created_at": "2026-08-23T10:00:23.046804+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "587ef5c5-6c95-4e80-aacf-35cdec39904f": {
+      "id": "587ef5c5-6c95-4e80-aacf-35cdec39904f",
+      "razorpay_payment_id": "pay_norm_2427b6097c",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "amitabh.b@okhdfcbank",
+      "amount": 1590.0,
+      "currency": "INR",
+      "order_id": "order_ecom_f3884eac",
+      "status": "captured",
+      "created_at": "2026-08-23T12:59:28.301702+00:00",
+      "is_synthetic_mule": false,
+      "metadata": {
+        "channel": "web_checkout"
+      }
+    },
+    "0deee723-e588-4539-bcdf-c1182ef2cb5d": {
+      "id": "0deee723-e588-4539-bcdf-c1182ef2cb5d",
+      "razorpay_payment_id": "pay_live_011b3d9c01",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "crypto_bridge_22@okaxis",
+      "amount": 1200.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-30T03:15:10.622047+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "off_hours_burst",
+        "is_round_trip": false,
+        "cross_merchant_burst": false,
+        "cross_merchant_burst_count": null,
+        "pattern_description": "Nocturnal Deposit Burst (03:30 AM ad-hoc transfer)"
+      }
+    },
+    "f5cb171e-15a6-4b6b-8255-1f7c0a2a210d": {
+      "id": "f5cb171e-15a6-4b6b-8255-1f7c0a2a210d",
+      "razorpay_payment_id": "pay_live_ed7784bfe8",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "p2p_router_991@paytm",
+      "amount": 1200.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-30T03:15:52.096757+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "off_hours_burst",
+        "is_round_trip": false,
+        "cross_merchant_burst": false,
+        "cross_merchant_burst_count": null,
+        "pattern_description": "Nocturnal Deposit Burst (03:30 AM ad-hoc transfer)"
+      }
+    },
+    "949f6391-ac10-40de-bbbe-8bda74a5d9cd": {
+      "id": "949f6391-ac10-40de-bbbe-8bda74a5d9cd",
+      "razorpay_payment_id": "pay_live_452ec95b8e",
+      "merchant_id": "mer_greenroot_003",
+      "payer_vpa": "adhoc_dep_382@oksbi",
+      "amount": 4800.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-30T10:49:15.805170+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "pass_through_cycle",
+        "is_round_trip": true,
+        "cross_merchant_burst": true,
+        "cross_merchant_burst_count": "5 merchant VPAs in 10 mins",
+        "pattern_description": "Rapid Pass-Through Cycle (Immediate payout velocity)"
+      }
+    },
+    "736b1b72-00ce-4d6b-8abf-3600d26bd730": {
+      "id": "736b1b72-00ce-4d6b-8abf-3600d26bd730",
+      "razorpay_payment_id": "pay_live_166f64cfc6",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "user@paytm",
+      "amount": 2500000000.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-08-30T11:37:56.950255+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "pass_through_cycle",
+        "is_round_trip": true,
+        "cross_merchant_burst": true,
+        "cross_merchant_burst_count": "5 merchant VPAs in 10 mins",
+        "pattern_description": "Rapid Pass-Through Cycle (Immediate payout velocity)"
+      }
+    }
+  },
+  "risk_flags": {
+    "db8f558c-2caa-4edb-9e63-e90886ff64bb": {
+      "id": "db8f558c-2caa-4edb-9e63-e90886ff64bb",
+      "payment_id": "f19edc47-bc41-4f68-b837-a49b3bba2ee6",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "adhoc_dep_382@oksbi",
+      "amount": 1200.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-29T02:29:37.894797+00:00",
+      "confidence_score": 55,
+      "confidence_level": "LOW",
+      "signals_triggered": [
+        {
+          "code": "first_time_payer",
+          "title": "First-Time Payer (No Prior History)",
+          "weight": 25,
+          "severity": "medium",
+          "description": "Payer VPA (adhoc_dep_382@oksbi) has 0 historical transactions with Aura Handcrafted Jewels.",
+          "observed_value": 0,
+          "baseline_value": "> 0 prior transactions"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "outside_business_hours",
+          "title": "Off-Hours Transaction Timing",
+          "weight": 10,
+          "severity": "low",
+          "description": "Transaction processed at 02:29 outside normal business hours (09:30 - 21:30).",
+          "observed_value": "02:29",
+          "baseline_value": "09:30 - 21:30"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "typical_ticket_size",
+          "title": "Normal Order Value Distribution",
+          "impact": "Consistent with historical catalog pricing",
+          "description": "Amount \u20b91,200.00 aligns with typical customer basket size (\u20b91,200.00\u2013\u20b96,500.00)."
+        }
+      ],
+      "ai_summary": "\u20b91,200.00 payment flagged for review \u2014 Confidence: LOW (55/100)",
+      "ai_explanation": "This transaction of \u20b91,200.00 to Aura Handcrafted Jewels was flagged because it received from an unfamiliar payer (adhoc_dep_382@oksbi) with zero prior transaction history, lacks an attached e-commerce cart/order reference, processed outside normal business hours (09:30\u201321:30). This does NOT signify fraudulent intent; rather, it indicates an atypical transaction pattern that warrants verification.",
+      "ai_mitigating_note": "Risk mitigating factors observed: Normal Order Value Distribution.",
+      "ai_recommended_action": "Standard monitoring: no immediate hold necessary, verify order linkage on next reconciliation cycle.",
+      "status": "open",
+      "created_at": "2026-08-29T17:34:59.534102+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "review_notes": null,
+      "is_synthetic_mule": true
+    },
+    "3daec05d-a58c-482d-bae2-e7fa5a462888": {
+      "id": "3daec05d-a58c-482d-bae2-e7fa5a462888",
+      "payment_id": "09a729b6-5da8-49af-ad16-9ae82c4f2cff",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "daily_earn_user31@paytm",
+      "amount": 1200.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-29T03:06:29.078258+00:00",
+      "confidence_score": 55,
+      "confidence_level": "LOW",
+      "signals_triggered": [
+        {
+          "code": "first_time_payer",
+          "title": "First-Time Payer (No Prior History)",
+          "weight": 25,
+          "severity": "medium",
+          "description": "Payer VPA (daily_earn_user31@paytm) has 0 historical transactions with Aura Handcrafted Jewels.",
+          "observed_value": 0,
+          "baseline_value": "> 0 prior transactions"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "outside_business_hours",
+          "title": "Off-Hours Transaction Timing",
+          "weight": 10,
+          "severity": "low",
+          "description": "Transaction processed at 03:06 outside normal business hours (09:30 - 21:30).",
+          "observed_value": "03:06",
+          "baseline_value": "09:30 - 21:30"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "typical_ticket_size",
+          "title": "Normal Order Value Distribution",
+          "impact": "Consistent with historical catalog pricing",
+          "description": "Amount \u20b91,200.00 aligns with typical customer basket size (\u20b91,200.00\u2013\u20b96,500.00)."
+        }
+      ],
+      "ai_summary": "\u20b91,200.00 payment flagged for review \u2014 Confidence: LOW (55/100)",
+      "ai_explanation": "This transaction of \u20b91,200.00 to Aura Handcrafted Jewels was flagged because it received from an unfamiliar payer (daily_earn_user31@paytm) with zero prior transaction history, lacks an attached e-commerce cart/order reference, processed outside normal business hours (09:30\u201321:30). This does NOT signify fraudulent intent; rather, it indicates an atypical transaction pattern that warrants verification.",
+      "ai_mitigating_note": "Risk mitigating factors observed: Normal Order Value Distribution.",
+      "ai_recommended_action": "Standard monitoring: no immediate hold necessary, verify order linkage on next reconciliation cycle.",
+      "status": "open",
+      "created_at": "2026-08-29T17:35:01.069753+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "review_notes": null,
+      "is_synthetic_mule": true
+    },
+    "f4fbe316-9449-4e56-9b2f-4d6383a93d3f": {
+      "id": "f4fbe316-9449-4e56-9b2f-4d6383a93d3f",
+      "payment_id": "164d346c-e534-4426-be7f-bbbdd67a3a51",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "agent_node_552@ybl",
+      "amount": 4800.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-28T15:36:40.501532+00:00",
+      "confidence_score": 85,
+      "confidence_level": "HIGH",
+      "signals_triggered": [
+        {
+          "code": "first_time_payer",
+          "title": "First-Time Payer (No Prior History)",
+          "weight": 25,
+          "severity": "medium",
+          "description": "Payer VPA (agent_node_552@ybl) has 0 historical transactions with Aura Handcrafted Jewels.",
+          "observed_value": 0,
+          "baseline_value": "> 0 prior transactions"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "round_trip_pass_through",
+          "title": "Rapid Pass-Through / Round-Trip Pattern",
+          "weight": 25,
+          "severity": "high",
+          "description": "Rapid inflow timing matches a corresponding recent withdrawal or payout cycle velocity.",
+          "observed_value": "Inflow matched to rapid payout cycle",
+          "baseline_value": "Standard multi-day settlement cadence"
+        },
+        {
+          "code": "cross_merchant_burst",
+          "title": "Multi-Merchant Payer Burst (Simulated)",
+          "weight": 15,
+          "severity": "medium",
+          "description": "Aggregator-level signal: Payer VPA observed depositing to multiple unrelated merchant accounts in a short window.",
+          "observed_value": "4 merchant VPAs in 15 mins",
+          "baseline_value": "1-2 merchant interactions"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "typical_ticket_size",
+          "title": "Normal Order Value Distribution",
+          "impact": "Consistent with historical catalog pricing",
+          "description": "Amount \u20b94,800.00 aligns with typical customer basket size (\u20b91,200.00\u2013\u20b96,500.00)."
+        },
+        {
+          "code": "within_business_hours",
+          "title": "Within Normal Business Hours",
+          "impact": "Aligns with expected retail peak operational hours",
+          "description": "Processed at 15:36 within operating window (09:30 - 21:30)."
+        }
+      ],
+      "ai_summary": "\u20b94,800.00 payment flagged for review \u2014 Confidence: HIGH (85/100)",
+      "ai_explanation": "This transaction of \u20b94,800.00 to Aura Handcrafted Jewels was flagged because it received from an unfamiliar payer (agent_node_552@ybl) with zero prior transaction history, lacks an attached e-commerce cart/order reference, detected in a rapid pass-through velocity cycle. This does NOT signify fraudulent intent; rather, it indicates an atypical transaction pattern that warrants verification.",
+      "ai_mitigating_note": "Risk mitigating factors observed: Normal Order Value Distribution, Within Normal Business Hours.",
+      "ai_recommended_action": "Review merchant's recent payout activity and confirm delivery or service receipt with merchant before release.",
+      "status": "open",
+      "created_at": "2026-08-29T17:35:02.597957+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "review_notes": null,
+      "is_synthetic_mule": true
+    },
+    "7af7ffae-0898-45b1-8b61-d3508e44f866": {
+      "id": "7af7ffae-0898-45b1-8b61-d3508e44f866",
+      "payment_id": "a33f975a-e0ce-4f75-9058-8d78304423e9",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "daily_earn_user31@paytm",
+      "amount": 4800.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-28T12:04:42.046809+00:00",
+      "confidence_score": 45,
+      "confidence_level": "LOW",
+      "signals_triggered": [
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "round_trip_pass_through",
+          "title": "Rapid Pass-Through / Round-Trip Pattern",
+          "weight": 25,
+          "severity": "high",
+          "description": "Rapid inflow timing matches a corresponding recent withdrawal or payout cycle velocity.",
+          "observed_value": "Inflow matched to rapid payout cycle",
+          "baseline_value": "Standard multi-day settlement cadence"
+        },
+        {
+          "code": "cross_merchant_burst",
+          "title": "Multi-Merchant Payer Burst (Simulated)",
+          "weight": 15,
+          "severity": "medium",
+          "description": "Aggregator-level signal: Payer VPA observed depositing to multiple unrelated merchant accounts in a short window.",
+          "observed_value": "4 merchant VPAs in 15 mins",
+          "baseline_value": "1-2 merchant interactions"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "repeat_customer",
+          "title": "Verified Repeat Customer",
+          "impact": "Significantly lowers stranger-payer risk",
+          "description": "Payer has completed 1 verified previous payment(s) with this merchant."
+        },
+        {
+          "code": "typical_ticket_size",
+          "title": "Normal Order Value Distribution",
+          "impact": "Consistent with historical catalog pricing",
+          "description": "Amount \u20b94,800.00 aligns with typical customer basket size (\u20b91,200.00\u2013\u20b96,500.00)."
+        },
+        {
+          "code": "within_business_hours",
+          "title": "Within Normal Business Hours",
+          "impact": "Aligns with expected retail peak operational hours",
+          "description": "Processed at 12:04 within operating window (09:30 - 21:30)."
+        }
+      ],
+      "ai_summary": "\u20b94,800.00 payment flagged for review \u2014 Confidence: LOW (45/100)",
+      "ai_explanation": "This transaction of \u20b94,800.00 to Aura Handcrafted Jewels was flagged because it lacks an attached e-commerce cart/order reference, detected in a rapid pass-through velocity cycle. This does NOT signify fraudulent intent; rather, it indicates an atypical transaction pattern that warrants verification.",
+      "ai_mitigating_note": "Risk mitigating factors observed: Verified Repeat Customer, Normal Order Value Distribution, Within Normal Business Hours.",
+      "ai_recommended_action": "Standard monitoring: no immediate hold necessary, verify order linkage on next reconciliation cycle.",
+      "status": "open",
+      "created_at": "2026-08-29T17:35:04.174685+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "review_notes": null,
+      "is_synthetic_mule": true
+    },
+    "3b62cbf0-30a8-46dc-ad9f-7800df6a53bc": {
+      "id": "3b62cbf0-30a8-46dc-ad9f-7800df6a53bc",
+      "payment_id": "77962696-32c1-40ad-8a8d-0d8df5667958",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "agent_node_552@ybl",
+      "amount": 550.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-30T05:14:10.806462+00:00",
+      "confidence_score": 50,
+      "confidence_level": "LOW",
+      "signals_triggered": [
+        {
+          "code": "amount_outside_typical_range",
+          "title": "Ticket Size Anomaly",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment amount (\u20b9550.00) is 54.2% below the typical minimum (\u20b91,200.00).",
+          "observed_value": "\u20b9550.00",
+          "baseline_value": "\u20b91,200.00 - \u20b96,500.00"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "cross_merchant_burst",
+          "title": "Multi-Merchant Payer Burst (Simulated)",
+          "weight": 15,
+          "severity": "medium",
+          "description": "Aggregator-level signal: Payer VPA observed depositing to multiple unrelated merchant accounts in a short window.",
+          "observed_value": "5 merchant VPAs in 10 mins",
+          "baseline_value": "1-2 merchant interactions"
+        },
+        {
+          "code": "outside_business_hours",
+          "title": "Off-Hours Transaction Timing",
+          "weight": 10,
+          "severity": "low",
+          "description": "Transaction processed at 05:14 outside normal business hours (09:30 - 21:30).",
+          "observed_value": "05:14",
+          "baseline_value": "09:30 - 21:30"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "repeat_customer",
+          "title": "Verified Repeat Customer",
+          "impact": "Significantly lowers stranger-payer risk",
+          "description": "Payer has completed 1 verified previous payment(s) with this merchant."
+        }
+      ],
+      "ai_summary": "\u20b9550.00 payment flagged for review \u2014 Confidence: LOW (50/100)",
+      "ai_explanation": "This transaction of \u20b9550.00 to Aura Handcrafted Jewels was flagged because it lacks an attached e-commerce cart/order reference, amount (\u20b9550.00) falls outside Aura Handcrafted Jewels's typical range (\u20b91,200.00\u2013\u20b96,500.00), processed outside normal business hours (09:30\u201321:30). This does NOT signify fraudulent intent; rather, it indicates an atypical transaction pattern that warrants verification.",
+      "ai_mitigating_note": "Risk mitigating factors observed: Verified Repeat Customer.",
+      "ai_recommended_action": "Standard monitoring: no immediate hold necessary, verify order linkage on next reconciliation cycle.",
+      "status": "reviewed_confirmed",
+      "created_at": "2026-08-30T05:14:12.363715+00:00",
+      "reviewed_at": "2026-08-30T10:45:41.349539+00:00",
+      "reviewed_by": "Razorpay Ops Analyst",
+      "review_notes": "",
+      "is_synthetic_mule": true
+    },
+    "d18fb8f3-d30b-466a-b672-f141c067490a": {
+      "id": "d18fb8f3-d30b-466a-b672-f141c067490a",
+      "payment_id": "0deee723-e588-4539-bcdf-c1182ef2cb5d",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "crypto_bridge_22@okaxis",
+      "amount": 1200.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-30T03:15:10.622047+00:00",
+      "confidence_score": 55,
+      "confidence_level": "LOW",
+      "signals_triggered": [
+        {
+          "code": "first_time_payer",
+          "title": "First-Time Payer (No Prior History)",
+          "weight": 25,
+          "severity": "medium",
+          "description": "Payer VPA (crypto_bridge_22@okaxis) has 0 historical transactions with Aura Handcrafted Jewels.",
+          "observed_value": 0,
+          "baseline_value": "> 0 prior transactions"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "outside_business_hours",
+          "title": "Off-Hours Transaction Timing",
+          "weight": 10,
+          "severity": "low",
+          "description": "Transaction processed at 03:15 outside normal business hours (09:30 - 21:30).",
+          "observed_value": "03:15",
+          "baseline_value": "09:30 - 21:30"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "typical_ticket_size",
+          "title": "Normal Order Value Distribution",
+          "impact": "Consistent with historical catalog pricing",
+          "description": "Amount \u20b91,200.00 aligns with typical customer basket size (\u20b91,200.00\u2013\u20b96,500.00)."
+        }
+      ],
+      "ai_summary": "\u20b91,200 payment received from a first-time payer without an order reference outside standard business hours.",
+      "ai_explanation": "This transaction was flagged for manual review because it was processed at 03:15 AM, which falls outside the merchant's standard operational hours of 09:30 to 21:30. Additionally, the payment was made by a first-time payer VPA (crypto_bridge_22@okaxis) and lacks a linked e-commerce order ID reference.",
+      "ai_mitigating_note": "The payment amount of \u20b91,200.00 directly aligns with the merchant's typical catalog pricing baseline of \u20b91,200.00 to \u20b96,500.00, indicating a standard basket size.",
+      "ai_recommended_action": "Confirm the order invoice or item purchase receipt with the merchant prior to releasing the settlement payout.",
+      "status": "open",
+      "created_at": "2026-08-30T05:44:36.489072+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "review_notes": null,
+      "is_synthetic_mule": true
+    },
+    "8667ab2a-c632-4d22-94c4-676e9d7ea52d": {
+      "id": "8667ab2a-c632-4d22-94c4-676e9d7ea52d",
+      "payment_id": "f5cb171e-15a6-4b6b-8255-1f7c0a2a210d",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "p2p_router_991@paytm",
+      "amount": 1200.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-30T03:15:52.096757+00:00",
+      "confidence_score": 55,
+      "confidence_level": "LOW",
+      "signals_triggered": [
+        {
+          "code": "first_time_payer",
+          "title": "First-Time Payer (No Prior History)",
+          "weight": 25,
+          "severity": "medium",
+          "description": "Payer VPA (p2p_router_991@paytm) has 0 historical transactions with Aura Handcrafted Jewels.",
+          "observed_value": 0,
+          "baseline_value": "> 0 prior transactions"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "outside_business_hours",
+          "title": "Off-Hours Transaction Timing",
+          "weight": 10,
+          "severity": "low",
+          "description": "Transaction processed at 03:15 outside normal business hours (09:30 - 21:30).",
+          "observed_value": "03:15",
+          "baseline_value": "09:30 - 21:30"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "typical_ticket_size",
+          "title": "Normal Order Value Distribution",
+          "impact": "Consistent with historical catalog pricing",
+          "description": "Amount \u20b91,200.00 aligns with typical customer basket size (\u20b91,200.00\u2013\u20b96,500.00)."
+        }
+      ],
+      "ai_summary": "\u20b91,200 payment received from a first-time payer without an order reference outside normal business hours",
+      "ai_explanation": "This transaction was flagged because it was initiated by a first-time payer (p2p_router_991@paytm) without an associated e-commerce order ID or checkout reference. Additionally, the transaction timestamp of 03:15 occurs outside the merchant's established business hours of 09:30 to 21:30. These deviations from the merchant's standard processing pattern warranted a low-confidence manual review.",
+      "ai_mitigating_note": "The payment amount of \u20b91,200.00 aligns directly with the merchant's normal order pricing baseline (\u20b91,200.00 \u2013 \u20b96,500.00), reducing overall risk.",
+      "ai_recommended_action": "Verify with the merchant whether a manual invoice or customer order corresponds to this \u20b91,200 payment before clearing the payout.",
+      "status": "open",
+      "created_at": "2026-08-30T10:48:04.788130+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "review_notes": null,
+      "is_synthetic_mule": true
+    },
+    "d1a37b6b-4094-4fae-85b2-6e09449c3f94": {
+      "id": "d1a37b6b-4094-4fae-85b2-6e09449c3f94",
+      "payment_id": "949f6391-ac10-40de-bbbe-8bda74a5d9cd",
+      "merchant_id": "mer_greenroot_003",
+      "merchant_name": "GreenRoot Organic Grocers",
+      "payer_vpa": "adhoc_dep_382@oksbi",
+      "amount": 4800.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-30T10:49:15.805170+00:00",
+      "confidence_score": 100,
+      "confidence_level": "HIGH",
+      "signals_triggered": [
+        {
+          "code": "first_time_payer",
+          "title": "First-Time Payer (No Prior History)",
+          "weight": 25,
+          "severity": "medium",
+          "description": "Payer VPA (adhoc_dep_382@oksbi) has 0 historical transactions with GreenRoot Organic Grocers.",
+          "observed_value": 0,
+          "baseline_value": "> 0 prior transactions"
+        },
+        {
+          "code": "amount_outside_typical_range",
+          "title": "Ticket Size Anomaly",
+          "weight": 20,
+          "severity": "high",
+          "description": "Payment amount (\u20b94,800.00) is 118.2% above the typical maximum (\u20b92,200.00).",
+          "observed_value": "\u20b94,800.00",
+          "baseline_value": "\u20b9450.00 - \u20b92,200.00"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "round_trip_pass_through",
+          "title": "Rapid Pass-Through / Round-Trip Pattern",
+          "weight": 25,
+          "severity": "high",
+          "description": "Rapid inflow timing matches a corresponding recent withdrawal or payout cycle velocity.",
+          "observed_value": "Inflow matched to rapid payout cycle",
+          "baseline_value": "Standard multi-day settlement cadence"
+        },
+        {
+          "code": "cross_merchant_burst",
+          "title": "Multi-Merchant Payer Burst (Simulated)",
+          "weight": 15,
+          "severity": "medium",
+          "description": "Aggregator-level signal: Payer VPA observed depositing to multiple unrelated merchant accounts in a short window.",
+          "observed_value": "5 merchant VPAs in 10 mins",
+          "baseline_value": "1-2 merchant interactions"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "within_business_hours",
+          "title": "Within Normal Business Hours",
+          "impact": "Aligns with expected retail peak operational hours",
+          "description": "Processed at 10:49 within operating window (07:00 - 23:00)."
+        }
+      ],
+      "ai_summary": "\u20b94,800 received from a first-time payer without an order reference, exceeding typical ticket size.",
+      "ai_explanation": "The transaction amount of \u20b94,800 is significantly above GreenRoot Organic Grocers' standard ticket size of \u20b9450 to \u20b92,200 and lacks an associated order or cart reference. Additionally, the payment originated from a first-time VPA that shows recent rapid activity across multiple merchant accounts. These factors represent a deviation from the merchant's typical retail pattern.",
+      "ai_mitigating_note": "The payment was initiated during regular operational hours (10:49 within the 07:00 - 23:00 window), aligning with normal daily business activity.",
+      "ai_recommended_action": "Verify the itemized invoice or order confirmation with the merchant before releasing the payout batch.",
+      "status": "reviewed_dismissed",
+      "created_at": "2026-08-30T10:49:25.375226+00:00",
+      "reviewed_at": "2026-08-30T10:50:59.453261+00:00",
+      "reviewed_by": "Razorpay Ops Analyst",
+      "review_notes": "",
+      "is_synthetic_mule": true
+    },
+    "8cc7f5ee-0c17-40e2-95e7-348570eeb9d7": {
+      "id": "8cc7f5ee-0c17-40e2-95e7-348570eeb9d7",
+      "payment_id": "736b1b72-00ce-4d6b-8abf-3600d26bd730",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "user@paytm",
+      "amount": 2500000000.0,
+      "order_id": null,
+      "payment_created_at": "2026-08-30T11:37:56.950255+00:00",
+      "confidence_score": 100,
+      "confidence_level": "HIGH",
+      "signals_triggered": [
+        {
+          "code": "first_time_payer",
+          "title": "First-Time Payer (No Prior History)",
+          "weight": 25,
+          "severity": "medium",
+          "description": "Payer VPA (user@paytm) has 0 historical transactions with Aura Handcrafted Jewels.",
+          "observed_value": 0,
+          "baseline_value": "> 0 prior transactions"
+        },
+        {
+          "code": "amount_outside_typical_range",
+          "title": "Ticket Size Anomaly",
+          "weight": 20,
+          "severity": "high",
+          "description": "Payment amount (\u20b92,500,000,000.00) is 38461438.5% above the typical maximum (\u20b96,500.00).",
+          "observed_value": "\u20b92,500,000,000.00",
+          "baseline_value": "\u20b91,200.00 - \u20b96,500.00"
+        },
+        {
+          "code": "no_order_reference",
+          "title": "Missing Order / Cart Reference",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment has no linked e-commerce order ID or checkout cart reference (typical of task-app public QR deposits).",
+          "observed_value": null,
+          "baseline_value": "Linked order_id required"
+        },
+        {
+          "code": "round_trip_pass_through",
+          "title": "Rapid Pass-Through / Round-Trip Pattern",
+          "weight": 25,
+          "severity": "high",
+          "description": "Rapid inflow timing matches a corresponding recent withdrawal or payout cycle velocity.",
+          "observed_value": "Inflow matched to rapid payout cycle",
+          "baseline_value": "Standard multi-day settlement cadence"
+        },
+        {
+          "code": "cross_merchant_burst",
+          "title": "Multi-Merchant Payer Burst (Simulated)",
+          "weight": 15,
+          "severity": "medium",
+          "description": "Aggregator-level signal: Payer VPA observed depositing to multiple unrelated merchant accounts in a short window.",
+          "observed_value": "5 merchant VPAs in 10 mins",
+          "baseline_value": "1-2 merchant interactions"
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "within_business_hours",
+          "title": "Within Normal Business Hours",
+          "impact": "Aligns with expected retail peak operational hours",
+          "description": "Processed at 11:37 within operating window (09:30 - 21:30)."
+        }
+      ],
+      "ai_summary": "\u20b92,500,000,000.00 received from a first-time payer with no linked order reference",
+      "ai_explanation": "The transaction amount of \u20b92,500,000,000.00 significantly deviates from the merchant's typical order baseline of \u20b91,200.0 to \u20b96,500.0 and lacks a linked e-commerce order ID. The payment originated from a first-time payer VPA (user@paytm) that exhibits high cross-merchant activity and timing aligned with rapid payout cycles.",
+      "ai_mitigating_note": "The payment was processed at 11:37, which falls directly within the merchant's normal operating business hours (09:30 - 21:30).",
+      "ai_recommended_action": "Request the underlying tax invoice and order verification documents from Aura Handcrafted Jewels before releasing the settlement payout.",
+      "status": "context_requested",
+      "created_at": "2026-08-30T11:38:07.794376+00:00",
+      "reviewed_at": "2026-08-30T13:07:30.777213+00:00",
+      "reviewed_by": "Razorpay Ops Analyst",
+      "review_notes": "",
+      "is_synthetic_mule": true
+    }
+  },
+  "audit_log": [
+    {
+      "id": "9a35d9c6-5cb7-49d7-a7f7-247895b1538c",
+      "entity_type": "payment",
+      "entity_id": "aa7871b4-deae-442c-ada0-a3f99518a6d8",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1740.0
+      },
+      "timestamp": "2026-08-29T17:34:55.593328+00:00"
+    },
+    {
+      "id": "4c98b36c-ce1e-411a-ac34-b84d85607170",
+      "entity_type": "payment",
+      "entity_id": "bf31bed9-f0df-4125-9d66-6e7ab82ae640",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 2370.0
+      },
+      "timestamp": "2026-08-29T17:34:55.632426+00:00"
+    },
+    {
+      "id": "ad917fa2-250f-47b6-aad1-2beea192bac7",
+      "entity_type": "payment",
+      "entity_id": "614b1198-081e-46e4-82f7-2b6e28aa82cc",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 2690.0
+      },
+      "timestamp": "2026-08-29T17:34:55.678995+00:00"
+    },
+    {
+      "id": "55b1279c-8c88-4447-b7d2-0cc4536a52b1",
+      "entity_type": "payment",
+      "entity_id": "bbbddc2b-172d-4da9-86d8-43b9ed88e49d",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 5680.0
+      },
+      "timestamp": "2026-08-29T17:34:55.729575+00:00"
+    },
+    {
+      "id": "6070d681-40ec-4bb1-9504-eaa1c989961b",
+      "entity_type": "payment",
+      "entity_id": "96a9f244-22c4-4501-8bf7-72313229822a",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 6030.0
+      },
+      "timestamp": "2026-08-29T17:34:55.779518+00:00"
+    },
+    {
+      "id": "fdb22e0b-1aea-4d34-8e9e-64abaee56e77",
+      "entity_type": "payment",
+      "entity_id": "c5e4d0e0-d8b8-4bb1-b4b3-afb26ffc88db",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2670.0
+      },
+      "timestamp": "2026-08-29T17:34:55.821508+00:00"
+    },
+    {
+      "id": "05f6c8c3-ddfb-4fdf-a094-f991f0f0df42",
+      "entity_type": "payment",
+      "entity_id": "47cea75c-8bc6-4fc1-ae50-9342eeb46d9d",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 3520.0
+      },
+      "timestamp": "2026-08-29T17:34:55.855285+00:00"
+    },
+    {
+      "id": "bfe81b49-39ed-4afd-beec-1c8e97a03661",
+      "entity_type": "payment",
+      "entity_id": "79d7d163-c405-441a-91d4-59d1e7f7fe8a",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 6410.0
+      },
+      "timestamp": "2026-08-29T17:34:55.910845+00:00"
+    },
+    {
+      "id": "a98ad8f7-84fc-419a-b685-8cfbc910272c",
+      "entity_type": "payment",
+      "entity_id": "a4d29aad-3037-4dd6-8688-abfd2202c93c",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 2450.0
+      },
+      "timestamp": "2026-08-29T17:34:55.967261+00:00"
+    },
+    {
+      "id": "a06be274-f062-4f1f-a6ba-4560e1cd5e5c",
+      "entity_type": "payment",
+      "entity_id": "434faa31-f22a-4969-9c7d-5490627d4b2b",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1490.0
+      },
+      "timestamp": "2026-08-29T17:34:56.009774+00:00"
+    },
+    {
+      "id": "4937e92d-5e3f-4c2d-9bc6-b6366ddd38ed",
+      "entity_type": "payment",
+      "entity_id": "31e2ee66-a07c-428e-b69e-1bea6ac5acfb",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 4250.0
+      },
+      "timestamp": "2026-08-29T17:34:56.054077+00:00"
+    },
+    {
+      "id": "295e1afe-148d-440e-9b3e-e98329b2f665",
+      "entity_type": "payment",
+      "entity_id": "1df725a8-a7ff-4f07-8614-3cbf05adc50f",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 5410.0
+      },
+      "timestamp": "2026-08-29T17:34:56.098981+00:00"
+    },
+    {
+      "id": "ac56ed6a-d44b-4b05-b357-47632b8d4552",
+      "entity_type": "payment",
+      "entity_id": "22c4c57e-f8e7-4f22-96bd-62c849583606",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5180.0
+      },
+      "timestamp": "2026-08-29T17:34:56.140185+00:00"
+    },
+    {
+      "id": "f37e0094-53da-43a2-bd24-e90cbac31280",
+      "entity_type": "payment",
+      "entity_id": "7e32c12e-b844-42d4-9d33-b5c592ce46fd",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 6480.0
+      },
+      "timestamp": "2026-08-29T17:34:56.184556+00:00"
+    },
+    {
+      "id": "5a81b8c8-85ba-4f2a-92c0-549e1c0e6e61",
+      "entity_type": "payment",
+      "entity_id": "13b6fbcc-d313-420e-b3f6-e21d1f08c0c3",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 6420.0
+      },
+      "timestamp": "2026-08-29T17:34:56.233965+00:00"
+    },
+    {
+      "id": "c2f39cab-3660-4d5d-8d64-85fae69d2030",
+      "entity_type": "payment",
+      "entity_id": "c5803229-886c-43d1-9f48-36facef05a94",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1330.0
+      },
+      "timestamp": "2026-08-29T17:34:56.277638+00:00"
+    },
+    {
+      "id": "87d62fce-179c-4569-bffb-3e286b361b5c",
+      "entity_type": "payment",
+      "entity_id": "8b217fdd-09ac-49ae-a73a-510e8d3ca058",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1810.0
+      },
+      "timestamp": "2026-08-29T17:34:56.321854+00:00"
+    },
+    {
+      "id": "fdb61d4e-fca8-4f9a-a002-dd17249a0868",
+      "entity_type": "payment",
+      "entity_id": "769de3ea-bda4-41b5-9d89-a2c8777d493b",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2930.0
+      },
+      "timestamp": "2026-08-29T17:34:56.362194+00:00"
+    },
+    {
+      "id": "29571011-a93d-43d0-9df8-c2d7006ff43b",
+      "entity_type": "payment",
+      "entity_id": "3f1ef623-43c3-45ee-b43c-805a40410ade",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2030.0
+      },
+      "timestamp": "2026-08-29T17:34:56.403962+00:00"
+    },
+    {
+      "id": "97f02044-0b3f-40de-b2e2-26f90eb8a620",
+      "entity_type": "payment",
+      "entity_id": "879db2a3-b843-42a7-887e-660b62c5b802",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2200.0
+      },
+      "timestamp": "2026-08-29T17:34:56.449222+00:00"
+    },
+    {
+      "id": "7664563c-5e91-4bd8-a325-3eb85fb4fe2f",
+      "entity_type": "payment",
+      "entity_id": "dd9ea899-c615-4a57-a8ed-937386cbecea",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 4680.0
+      },
+      "timestamp": "2026-08-29T17:34:56.487870+00:00"
+    },
+    {
+      "id": "9de60824-f97b-4085-bce8-8f54cf43c783",
+      "entity_type": "payment",
+      "entity_id": "fd543dee-bc65-49ad-8e8d-46e908f9c088",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2190.0
+      },
+      "timestamp": "2026-08-29T17:34:56.534575+00:00"
+    },
+    {
+      "id": "1b9a59f0-d955-4cde-b2c1-dec8fc14317a",
+      "entity_type": "payment",
+      "entity_id": "03b24bbd-24f8-4c3e-93f2-24db76309284",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1290.0
+      },
+      "timestamp": "2026-08-29T17:34:56.584213+00:00"
+    },
+    {
+      "id": "fc3715f2-179e-46d0-978e-d6489ee5a748",
+      "entity_type": "payment",
+      "entity_id": "cd67ab41-29d5-467f-8b31-2cbf21539894",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 3260.0
+      },
+      "timestamp": "2026-08-29T17:34:56.623201+00:00"
+    },
+    {
+      "id": "afb05cb1-6269-4e82-8c08-7fee88ebd55c",
+      "entity_type": "payment",
+      "entity_id": "eac2b7a2-b670-477e-acfc-7b0373599071",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5520.0
+      },
+      "timestamp": "2026-08-29T17:34:56.671657+00:00"
+    },
+    {
+      "id": "4ed2804a-33a9-4e9a-ade7-5ffb87348eb7",
+      "entity_type": "payment",
+      "entity_id": "9a08db8f-de57-4989-ba88-93be5a41f4dd",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1630.0
+      },
+      "timestamp": "2026-08-29T17:34:56.711630+00:00"
+    },
+    {
+      "id": "5028400f-a4b6-434b-90db-7eb106b35183",
+      "entity_type": "payment",
+      "entity_id": "34e798c8-36f5-4bc9-ad1c-c741f9467610",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5220.0
+      },
+      "timestamp": "2026-08-29T17:34:56.749262+00:00"
+    },
+    {
+      "id": "acb34ee6-63bc-4417-a8d6-4e2162455918",
+      "entity_type": "payment",
+      "entity_id": "d55bcd0f-adb3-4179-8e49-28ac65cb230c",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 3930.0
+      },
+      "timestamp": "2026-08-29T17:34:56.800670+00:00"
+    },
+    {
+      "id": "4be59ba1-1b2f-409c-9a53-d389fa934dbd",
+      "entity_type": "payment",
+      "entity_id": "aad32a38-54c0-4597-bfa9-4ab3d2596a75",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5790.0
+      },
+      "timestamp": "2026-08-29T17:34:56.845296+00:00"
+    },
+    {
+      "id": "b3c39c8a-06bb-45a0-a3a8-a08ba190eb7f",
+      "entity_type": "payment",
+      "entity_id": "143ed786-b34e-4d6b-b963-c369552230af",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 3700.0
+      },
+      "timestamp": "2026-08-29T17:34:56.897016+00:00"
+    },
+    {
+      "id": "e7c55eb0-9b2a-40e6-8783-3d55a7b30bf0",
+      "entity_type": "payment",
+      "entity_id": "ccadc72a-5ae8-4757-8351-b6e7d064593e",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 4520.0
+      },
+      "timestamp": "2026-08-29T17:34:56.950051+00:00"
+    },
+    {
+      "id": "62190e1b-1482-4556-b8ce-8d03fc927a0a",
+      "entity_type": "payment",
+      "entity_id": "764d8c4c-ad5a-4d37-82af-14cf04dfdb6c",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 4420.0
+      },
+      "timestamp": "2026-08-29T17:34:57.009592+00:00"
+    },
+    {
+      "id": "90cdb565-8d19-4443-9f36-9fd18930ddff",
+      "entity_type": "payment",
+      "entity_id": "9c3d25e1-ded6-4b20-98c0-6b902cd90a78",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5240.0
+      },
+      "timestamp": "2026-08-29T17:34:57.072448+00:00"
+    },
+    {
+      "id": "128e0f08-fe07-4e28-8303-1cbd579593ec",
+      "entity_type": "payment",
+      "entity_id": "01a01b10-b099-4f58-9eb0-b867ef6ed6f0",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 2090.0
+      },
+      "timestamp": "2026-08-29T17:34:57.107536+00:00"
+    },
+    {
+      "id": "f3f15447-7bd4-4b4c-bb98-c636b0843fca",
+      "entity_type": "payment",
+      "entity_id": "992dee5b-30e5-4dbf-8aff-f1ccaef09502",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1590.0
+      },
+      "timestamp": "2026-08-29T17:34:57.154849+00:00"
+    },
+    {
+      "id": "3bd9f91f-3f43-470f-aac0-f10bfd6c1600",
+      "entity_type": "payment",
+      "entity_id": "57559fcc-ec00-48a2-aa1d-77b6140dafda",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5100.0
+      },
+      "timestamp": "2026-08-29T17:34:57.214522+00:00"
+    },
+    {
+      "id": "80dab8f6-4a18-4b59-950a-de668b38220e",
+      "entity_type": "payment",
+      "entity_id": "fa34ff39-2311-41e7-9dc3-7026eb59d5d9",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2800.0
+      },
+      "timestamp": "2026-08-29T17:34:57.266871+00:00"
+    },
+    {
+      "id": "9dfeaaf9-0d62-45ac-a324-29d7b2052de1",
+      "entity_type": "payment",
+      "entity_id": "5cafbced-6f81-4265-b7f8-281b8b083022",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5380.0
+      },
+      "timestamp": "2026-08-29T17:34:57.312678+00:00"
+    },
+    {
+      "id": "1960a755-fb55-4e45-bb5c-34c042fe8189",
+      "entity_type": "payment",
+      "entity_id": "764525f3-c104-48e2-a4d7-c1399d5ec451",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 3310.0
+      },
+      "timestamp": "2026-08-29T17:34:57.378060+00:00"
+    },
+    {
+      "id": "b0494b5c-52fb-4b9b-8952-62a999ac0d1b",
+      "entity_type": "payment",
+      "entity_id": "22b9ebbb-3c92-4d03-be9d-10816160835e",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1400.0
+      },
+      "timestamp": "2026-08-29T17:34:57.425662+00:00"
+    },
+    {
+      "id": "a4fd1b8f-e1e9-4a80-b46c-0b69362eac8f",
+      "entity_type": "payment",
+      "entity_id": "995716d3-fa62-4fc3-9bea-ed2bc76ec40e",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5850.0
+      },
+      "timestamp": "2026-08-29T17:34:57.477656+00:00"
+    },
+    {
+      "id": "6310a62e-2284-414c-8221-458963d5c378",
+      "entity_type": "payment",
+      "entity_id": "dc70e2a7-dfa8-4a8e-81d0-51a9dd75d5df",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 6480.0
+      },
+      "timestamp": "2026-08-29T17:34:57.515829+00:00"
+    },
+    {
+      "id": "331e1ab4-2870-43df-937d-056baa24e2a1",
+      "entity_type": "payment",
+      "entity_id": "286addf2-486d-47bf-88ba-d7e19190b0d1",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 4190.0
+      },
+      "timestamp": "2026-08-29T17:34:57.554830+00:00"
+    },
+    {
+      "id": "a80f0a5c-73b9-4765-9709-3b31bb9724f3",
+      "entity_type": "payment",
+      "entity_id": "3bd93ea3-a506-4f15-a436-74cc60045859",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 3680.0
+      },
+      "timestamp": "2026-08-29T17:34:57.594841+00:00"
+    },
+    {
+      "id": "0ac5d0ee-dee3-4842-a347-22253f52130d",
+      "entity_type": "payment",
+      "entity_id": "2efd3eb4-1c79-4722-a7e9-391fc59faf89",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 3070.0
+      },
+      "timestamp": "2026-08-29T17:34:57.638807+00:00"
+    },
+    {
+      "id": "bf600533-308d-450e-b7f3-5771f97eb8c3",
+      "entity_type": "payment",
+      "entity_id": "9c73e10a-deb7-4cea-96b0-33adc485fb11",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2800.0
+      },
+      "timestamp": "2026-08-29T17:34:57.697772+00:00"
+    },
+    {
+      "id": "e419c838-29f6-4059-9fa0-49b75cd2dc0e",
+      "entity_type": "payment",
+      "entity_id": "56650387-324a-451e-be3d-6e3b43f94772",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 6320.0
+      },
+      "timestamp": "2026-08-29T17:34:57.753180+00:00"
+    },
+    {
+      "id": "38c0b65f-f1a6-4037-839a-65ae4bb26283",
+      "entity_type": "payment",
+      "entity_id": "23dcffa9-d7d9-4218-ae58-1a95f7ee72c2",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 3180.0
+      },
+      "timestamp": "2026-08-29T17:34:57.805872+00:00"
+    },
+    {
+      "id": "7d2b8fba-b6f0-463a-80da-e229b51853d8",
+      "entity_type": "payment",
+      "entity_id": "66b27846-ceaf-4901-bc69-ef83fc2ba101",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5250.0
+      },
+      "timestamp": "2026-08-29T17:34:57.885973+00:00"
+    },
+    {
+      "id": "1b8f31eb-fdad-41fa-87f3-73f6cb8fbdb5",
+      "entity_type": "payment",
+      "entity_id": "eb7bdf8e-410d-44d7-9393-621e9ec6e5fe",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 5430.0
+      },
+      "timestamp": "2026-08-29T17:34:57.932693+00:00"
+    },
+    {
+      "id": "6d691f48-3628-4276-9893-daf11088f790",
+      "entity_type": "risk_flag",
+      "entity_id": "db8f558c-2caa-4edb-9e63-e90886ff64bb",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 55,
+        "confidence": "LOW",
+        "signals_count": 3,
+        "mitigators_count": 1,
+        "amount": 1200.0,
+        "payer_vpa": "adhoc_dep_382@oksbi"
+      },
+      "timestamp": "2026-08-29T17:34:59.548095+00:00"
+    },
+    {
+      "id": "bdd022ab-b806-4872-8473-bb6852abdd27",
+      "entity_type": "risk_flag",
+      "entity_id": "3daec05d-a58c-482d-bae2-e7fa5a462888",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 55,
+        "confidence": "LOW",
+        "signals_count": 3,
+        "mitigators_count": 1,
+        "amount": 1200.0,
+        "payer_vpa": "daily_earn_user31@paytm"
+      },
+      "timestamp": "2026-08-29T17:35:01.082149+00:00"
+    },
+    {
+      "id": "a9ccb049-2f71-49c4-bb5f-40f8e504133f",
+      "entity_type": "risk_flag",
+      "entity_id": "f4fbe316-9449-4e56-9b2f-4d6383a93d3f",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 85,
+        "confidence": "HIGH",
+        "signals_count": 4,
+        "mitigators_count": 2,
+        "amount": 4800.0,
+        "payer_vpa": "agent_node_552@ybl"
+      },
+      "timestamp": "2026-08-29T17:35:02.606184+00:00"
+    },
+    {
+      "id": "bb622f22-0479-49c5-834e-f09d2a01f901",
+      "entity_type": "risk_flag",
+      "entity_id": "7af7ffae-0898-45b1-8b61-d3508e44f866",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 45,
+        "confidence": "LOW",
+        "signals_count": 3,
+        "mitigators_count": 3,
+        "amount": 4800.0,
+        "payer_vpa": "daily_earn_user31@paytm"
+      },
+      "timestamp": "2026-08-29T17:35:04.188025+00:00"
+    },
+    {
+      "id": "6d7ba244-a0a5-4887-bea4-839d33b158dc",
+      "entity_type": "payment",
+      "entity_id": "2efccae7-e466-417a-9cc1-97fc0ef82619",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 15,
+        "confidence": "CLEARED",
+        "amount": 1200.0
+      },
+      "timestamp": "2026-08-29T17:35:04.229003+00:00"
+    },
+    {
+      "id": "d08758aa-2a99-45e2-892c-f2032b41a22f",
+      "entity_type": "risk_flag",
+      "entity_id": "3b62cbf0-30a8-46dc-ad9f-7800df6a53bc",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 50,
+        "confidence": "LOW",
+        "signals_count": 4,
+        "mitigators_count": 1,
+        "amount": 550.0,
+        "payer_vpa": "agent_node_552@ybl"
+      },
+      "timestamp": "2026-08-30T05:14:12.378786+00:00"
+    },
+    {
+      "id": "8775f5b6-f802-407d-a67b-fd7a8d3f0a3a",
+      "entity_type": "payment",
+      "entity_id": "4ecf892d-b373-49c1-af81-585c0ea6c115",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 870.0
+      },
+      "timestamp": "2026-08-30T05:14:52.398068+00:00"
+    },
+    {
+      "id": "dbec68dd-b8cb-420d-bc6c-3883f0179096",
+      "entity_type": "payment",
+      "entity_id": "b0698046-ad96-4e92-882e-c2b7f01ff394",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 820.0
+      },
+      "timestamp": "2026-08-30T05:14:52.451584+00:00"
+    },
+    {
+      "id": "fbab5714-6b0e-4cc7-86b9-99f9a5297811",
+      "entity_type": "payment",
+      "entity_id": "a7fd5060-a962-47a0-8051-3f06bf9ada5b",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1410.0
+      },
+      "timestamp": "2026-08-30T05:14:52.510709+00:00"
+    },
+    {
+      "id": "4dad0331-db46-4565-b29b-ac6273914eca",
+      "entity_type": "payment",
+      "entity_id": "158b608b-bd4b-427f-9d24-a84e03011656",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 850.0
+      },
+      "timestamp": "2026-08-30T05:14:52.559575+00:00"
+    },
+    {
+      "id": "030be227-d411-4d16-9bab-954257e0f0dd",
+      "entity_type": "payment",
+      "entity_id": "1a583539-d0d2-44f8-8b92-9c67ee2e7a75",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1790.0
+      },
+      "timestamp": "2026-08-30T05:14:52.618821+00:00"
+    },
+    {
+      "id": "fd3e6b25-b9ad-4326-b70d-ac93cc0e1965",
+      "entity_type": "payment",
+      "entity_id": "85f507e7-c4f7-4dfa-8211-0e69b2b717fd",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 940.0
+      },
+      "timestamp": "2026-08-30T05:14:52.669919+00:00"
+    },
+    {
+      "id": "42fce03b-bb61-4480-a2f7-a1c86649af89",
+      "entity_type": "payment",
+      "entity_id": "2c806070-6475-4c38-ae99-26ad8e58c6c6",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 740.0
+      },
+      "timestamp": "2026-08-30T05:14:52.723805+00:00"
+    },
+    {
+      "id": "3c647df1-0bb8-47be-b043-58d3a86a8e11",
+      "entity_type": "payment",
+      "entity_id": "262f8a1e-ac17-4557-bdbb-7c9816912678",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1340.0
+      },
+      "timestamp": "2026-08-30T05:14:52.784319+00:00"
+    },
+    {
+      "id": "3dcd8e4a-5e75-4fa6-884a-4a998b16b071",
+      "entity_type": "payment",
+      "entity_id": "0c828e65-5381-4b38-bc70-0b66621e7824",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1860.0
+      },
+      "timestamp": "2026-08-30T05:14:52.833421+00:00"
+    },
+    {
+      "id": "c6a364e2-690f-48f5-801b-8ee4294657a0",
+      "entity_type": "payment",
+      "entity_id": "a890ed39-7bec-43cf-874d-a7217ee67376",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1170.0
+      },
+      "timestamp": "2026-08-30T05:14:52.884837+00:00"
+    },
+    {
+      "id": "d514723d-b6bc-4dfd-90f2-4c20497edbf7",
+      "entity_type": "payment",
+      "entity_id": "99ebca70-f2cb-417d-91d5-e861bd9bf0c4",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1660.0
+      },
+      "timestamp": "2026-08-30T05:14:52.934211+00:00"
+    },
+    {
+      "id": "534c9dad-13f7-41dd-8baf-e29588760a13",
+      "entity_type": "payment",
+      "entity_id": "e533f36a-9fcb-4707-954c-784afb6cd1ca",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1970.0
+      },
+      "timestamp": "2026-08-30T05:14:52.987946+00:00"
+    },
+    {
+      "id": "1b88d565-2a57-47ba-9120-04794c9bf1d5",
+      "entity_type": "payment",
+      "entity_id": "5d019901-cdb4-4cfb-bb44-fdc4d09a642c",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1730.0
+      },
+      "timestamp": "2026-08-30T05:14:53.046959+00:00"
+    },
+    {
+      "id": "cbe04afd-0e67-4e74-87d0-1673b0e80597",
+      "entity_type": "payment",
+      "entity_id": "d2241e13-c844-42f4-82d6-e6e64805e198",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1290.0
+      },
+      "timestamp": "2026-08-30T05:14:53.096565+00:00"
+    },
+    {
+      "id": "f0fdf021-8959-4869-8ae7-7db861029c07",
+      "entity_type": "payment",
+      "entity_id": "6e2c3479-efbf-4830-b59e-3b3a1ea70661",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 2150.0
+      },
+      "timestamp": "2026-08-30T05:14:53.146288+00:00"
+    },
+    {
+      "id": "3e0c07ef-d4bf-47d7-ba5c-a397855554c1",
+      "entity_type": "payment",
+      "entity_id": "28f6751f-0d8c-4135-849e-913df88a07af",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1900.0
+      },
+      "timestamp": "2026-08-30T05:14:53.201846+00:00"
+    },
+    {
+      "id": "4c761d03-68dc-48ac-98e8-780ffcd8e534",
+      "entity_type": "payment",
+      "entity_id": "31633f52-4871-4fea-88c9-c524257f1c4f",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 680.0
+      },
+      "timestamp": "2026-08-30T05:14:53.251718+00:00"
+    },
+    {
+      "id": "6e99b1d2-fc0a-4c80-a1f6-1c85dfa1ae18",
+      "entity_type": "payment",
+      "entity_id": "004167a8-7c7b-4d9d-96bd-19d04418682b",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 760.0
+      },
+      "timestamp": "2026-08-30T05:14:53.298296+00:00"
+    },
+    {
+      "id": "9728f9fe-dc9b-4fc8-b419-e2580b88093d",
+      "entity_type": "payment",
+      "entity_id": "f43502d5-adc8-4914-996e-e3995790195e",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1890.0
+      },
+      "timestamp": "2026-08-30T05:14:53.348834+00:00"
+    },
+    {
+      "id": "617bce3e-4490-4e1e-8ac4-f32066f365cd",
+      "entity_type": "payment",
+      "entity_id": "29e7b110-25c7-4b2d-bb36-5e637e514870",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 820.0
+      },
+      "timestamp": "2026-08-30T05:14:53.397801+00:00"
+    },
+    {
+      "id": "52869868-dc23-4505-82e9-e7dd6dc40a62",
+      "entity_type": "payment",
+      "entity_id": "a3f77bef-32f6-4914-8092-ce0295ff8a51",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1490.0
+      },
+      "timestamp": "2026-08-30T05:14:53.465119+00:00"
+    },
+    {
+      "id": "9ed8e2df-8bf7-4a95-b48d-5f1c3963ba53",
+      "entity_type": "payment",
+      "entity_id": "e842a964-ffb2-4ade-a0a7-aa028c775163",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1170.0
+      },
+      "timestamp": "2026-08-30T05:14:53.514277+00:00"
+    },
+    {
+      "id": "3bc6668e-ad86-4168-9208-18e23095b98d",
+      "entity_type": "payment",
+      "entity_id": "e4120f7f-f6db-4bc0-9f05-3de4fd929e83",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1670.0
+      },
+      "timestamp": "2026-08-30T05:14:53.559416+00:00"
+    },
+    {
+      "id": "a6ac76c1-cca2-4a97-906e-785b9ddd8142",
+      "entity_type": "payment",
+      "entity_id": "bce45353-7194-41de-a9b8-1c337a12fa28",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 950.0
+      },
+      "timestamp": "2026-08-30T05:14:53.622210+00:00"
+    },
+    {
+      "id": "ad1ea0f3-9a5e-43ce-9df1-b7695b4109cf",
+      "entity_type": "payment",
+      "entity_id": "76eabcac-7485-46a4-bd57-55c021d3512e",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1690.0
+      },
+      "timestamp": "2026-08-30T05:14:53.901143+00:00"
+    },
+    {
+      "id": "c6fa5c2a-4fce-4354-9113-b7f06b19f1b1",
+      "entity_type": "payment",
+      "entity_id": "6cfd2438-0b9d-4a2c-9dc2-6a9f4390719a",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 800.0
+      },
+      "timestamp": "2026-08-30T05:14:53.958353+00:00"
+    },
+    {
+      "id": "b0ef9473-bd1b-4b3e-9288-3eed08d11472",
+      "entity_type": "payment",
+      "entity_id": "a9a9f5f9-4393-4fdc-914b-4ad1c2421bd8",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 850.0
+      },
+      "timestamp": "2026-08-30T05:14:54.012554+00:00"
+    },
+    {
+      "id": "54e1cb99-49de-4ee9-87f9-2fbbe9005d9e",
+      "entity_type": "payment",
+      "entity_id": "67f94baf-f313-40e6-84e8-a83abbd78fe1",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 1930.0
+      },
+      "timestamp": "2026-08-30T05:14:54.073296+00:00"
+    },
+    {
+      "id": "ddd17f67-5a35-475b-b245-65cad657a10c",
+      "entity_type": "payment",
+      "entity_id": "9f756963-181c-461a-99bd-b8276cafff95",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 0,
+        "confidence": "CLEARED",
+        "amount": 1490.0
+      },
+      "timestamp": "2026-08-30T05:14:54.127181+00:00"
+    },
+    {
+      "id": "2506ec6b-0971-4642-a922-d80649a05e81",
+      "entity_type": "risk_flag",
+      "entity_id": "d18fb8f3-d30b-466a-b672-f141c067490a",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 55,
+        "confidence": "LOW",
+        "signals_count": 3,
+        "mitigators_count": 1,
+        "amount": 1200.0,
+        "payer_vpa": "crypto_bridge_22@okaxis"
+      },
+      "timestamp": "2026-08-30T05:44:36.502749+00:00"
+    },
+    {
+      "id": "cb570346-d57e-4123-ab2c-668e76578fef",
+      "entity_type": "risk_flag",
+      "entity_id": "3b62cbf0-30a8-46dc-ad9f-7800df6a53bc",
+      "action": "HUMAN_REVIEW_CONFIRM_RISK",
+      "actor": "Razorpay Ops Analyst",
+      "detail": {
+        "previous_status": "open",
+        "new_status": "reviewed_confirmed",
+        "score": 50,
+        "notes": "",
+        "amount": 550.0,
+        "payer_vpa": "agent_node_552@ybl"
+      },
+      "timestamp": "2026-08-30T10:45:41.370567+00:00"
+    },
+    {
+      "id": "4f330595-cf92-4389-9862-e1e79f9ca614",
+      "entity_type": "risk_flag",
+      "entity_id": "8667ab2a-c632-4d22-94c4-676e9d7ea52d",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 55,
+        "confidence": "LOW",
+        "signals_count": 3,
+        "mitigators_count": 1,
+        "amount": 1200.0,
+        "payer_vpa": "p2p_router_991@paytm"
+      },
+      "timestamp": "2026-08-30T10:48:04.829342+00:00"
+    },
+    {
+      "id": "c48a6da8-9f60-420f-b4e8-c224154c3762",
+      "entity_type": "risk_flag",
+      "entity_id": "d1a37b6b-4094-4fae-85b2-6e09449c3f94",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 100,
+        "confidence": "HIGH",
+        "signals_count": 5,
+        "mitigators_count": 1,
+        "amount": 4800.0,
+        "payer_vpa": "adhoc_dep_382@oksbi"
+      },
+      "timestamp": "2026-08-30T10:49:25.408970+00:00"
+    },
+    {
+      "id": "2d4a3499-6582-4221-b045-5e606568a4c6",
+      "entity_type": "risk_flag",
+      "entity_id": "d1a37b6b-4094-4fae-85b2-6e09449c3f94",
+      "action": "HUMAN_REVIEW_DISMISS_FALSE_POSITIVE",
+      "actor": "Razorpay Ops Analyst",
+      "detail": {
+        "previous_status": "open",
+        "new_status": "reviewed_dismissed",
+        "score": 100,
+        "notes": "",
+        "amount": 4800.0,
+        "payer_vpa": "adhoc_dep_382@oksbi"
+      },
+      "timestamp": "2026-08-30T10:49:50.544569+00:00"
+    },
+    {
+      "id": "f943af3c-48c0-4f45-90da-e057a22df3fb",
+      "entity_type": "risk_flag",
+      "entity_id": "d1a37b6b-4094-4fae-85b2-6e09449c3f94",
+      "action": "HUMAN_REVIEW_DISMISS_FALSE_POSITIVE",
+      "actor": "Razorpay Ops Analyst",
+      "detail": {
+        "previous_status": "reviewed_dismissed",
+        "new_status": "reviewed_dismissed",
+        "score": 100,
+        "notes": "",
+        "amount": 4800.0,
+        "payer_vpa": "adhoc_dep_382@oksbi"
+      },
+      "timestamp": "2026-08-30T10:50:59.479435+00:00"
+    },
+    {
+      "id": "ec16751d-328e-4c2c-90ff-45ef8389943a",
+      "entity_type": "risk_flag",
+      "entity_id": "8cc7f5ee-0c17-40e2-95e7-348570eeb9d7",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 100,
+        "confidence": "HIGH",
+        "signals_count": 5,
+        "mitigators_count": 1,
+        "amount": 2500000000.0,
+        "payer_vpa": "user@paytm"
+      },
+      "timestamp": "2026-08-30T11:38:07.810075+00:00"
+    },
+    {
+      "id": "4ab58b1e-313a-4a2c-a570-7426bbb46dc4",
+      "entity_type": "risk_flag",
+      "entity_id": "8cc7f5ee-0c17-40e2-95e7-348570eeb9d7",
+      "action": "HUMAN_REVIEW_REQUEST_CONTEXT",
+      "actor": "Razorpay Ops Analyst",
+      "detail": {
+        "previous_status": "open",
+        "new_status": "context_requested",
+        "score": 100,
+        "notes": "",
+        "amount": 2500000000.0,
+        "payer_vpa": "user@paytm"
+      },
+      "timestamp": "2026-08-30T13:07:30.803244+00:00"
+    }
+  ],
+  "system_stats": {
+    "total_inspected": 91,
+    "created_at": "2026-08-29T17:34:55.515436+00:00"
+  }
+}

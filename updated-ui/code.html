@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sentinel: Merchant Mule-Pattern Early Warning Agent</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#e1e0ff",
+                      "primary-container": "#6063ee",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#c0c1ff",
+                      "surface-container": "#efecf8",
+                      "secondary": "#006c49",
+                      "surface-bright": "#fcf8ff",
+                      "on-error": "#ffffff",
+                      "primary": "#4648d4",
+                      "inverse-surface": "#303038",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-primary-container": "#fffbff",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#4edea3",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#00714d",
+                      "tertiary": "#825100",
+                      "on-background": "#1b1b23",
+                      "surface-container-highest": "#e4e1ed",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "surface-tint": "#494bd6",
+                      "on-primary-fixed": "#07006c",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-on-surface": "#f2effb",
+                      "surface-container-low": "#f5f2fe",
+                      "on-surface-variant": "#464554",
+                      "on-tertiary-container": "#fffbff",
+                      "outline": "#767586",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "on-secondary-fixed": "#002113",
+                      "surface-dim": "#dbd8e4",
+                      "surface-container-high": "#e9e6f3",
+                      "on-surface": "#1b1b23",
+                      "outline-variant": "#c7c4d7",
+                      "surface": "#fcf8ff",
+                      "background": "#fcf8ff",
+                      "tertiary-container": "#a36700",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e4e1ed",
+                      "secondary-fixed": "#6ffbbe",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-tertiary-fixed": "#2a1700"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "element-gap": "0.75rem",
+                      "container-padding": "2rem",
+                      "section-gap": "1.5rem",
+                      "inner-padding": "1.25rem",
+                      "grid-gutter": "1rem"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "metric-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "metric-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #F8FAFC;
+        }
+        .card-border {
+            border: 1px solid #E2E8F0;
+        }
+        .card-border-hover:hover {
+            border-color: #CBD5E1;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Gauge Animations */
+        @keyframes sweep1 {
+            0% { stroke-dashoffset: 283; }
+            50% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 244; } /* 283 - (283 * 0.136) */
+        }
+        @keyframes sweep2 {
+            0% { stroke-dashoffset: 283; }
+            50% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 45; } /* 283 - (283 * 0.84) */
+        }
+        .gauge-ring-1 {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 244;
+            animation: sweep1 2s ease-in-out forwards;
+        }
+        .gauge-ring-2 {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 45;
+            animation: sweep2 2s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="bg-surface-container-low border-r border-outline-variant h-full w-20 hover:w-64 transition-all duration-300 fixed left-0 top-0 flex flex-col py-6 z-40 group">
+<div class="px-6 mb-8 flex items-center gap-4 whitespace-nowrap overflow-hidden">
+<div class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center font-bold flex-shrink-0">
+                S
+            </div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="font-headline-md text-headline-md font-black text-primary">Sentinel AI</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Early Warning System</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<!-- Active Tab: Overview -->
+<a class="bg-primary-container text-on-primary-container rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 transition-all duration-150 active:scale-95 whitespace-nowrap overflow-hidden" href="#" title="Overview">
+<span class="material-symbols-outlined flex-shrink-0" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Overview</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-all whitespace-nowrap overflow-hidden" href="#" title="Mule Alerts">
+<span class="material-symbols-outlined flex-shrink-0">security</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mule Alerts</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-all whitespace-nowrap overflow-hidden" href="#" title="Network Map">
+<span class="material-symbols-outlined flex-shrink-0">hub</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Network Map</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-all whitespace-nowrap overflow-hidden" href="#" title="Timeline">
+<span class="material-symbols-outlined flex-shrink-0">history</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Timeline</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-all whitespace-nowrap overflow-hidden" href="#" title="Reports">
+<span class="material-symbols-outlined flex-shrink-0">bar_chart</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Reports</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-all whitespace-nowrap overflow-hidden" href="#" title="Settings">
+<span class="material-symbols-outlined flex-shrink-0">settings</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Settings</span>
+</a>
+</div>
+<div class="flex flex-col gap-2 mt-auto">
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-all whitespace-nowrap overflow-hidden" href="#" title="Support">
+<span class="material-symbols-outlined flex-shrink-0">help</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Support</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-4 hover:bg-surface-container-high transition-all whitespace-nowrap overflow-hidden" href="#" title="Log Out">
+<span class="material-symbols-outlined flex-shrink-0">logout</span>
+<span class="font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Log Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-20 flex-1 flex flex-col h-full overflow-y-auto">
+<!-- TopAppBar (Shared Component modified for this layout) -->
+<header class="bg-surface flex justify-between items-center w-full px-container py-4 max-w-full sticky top-0 z-30 card-border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="font-headline-md text-headline-md font-medium text-on-surface flex items-center gap-2">
+                    Overview <span class="text-outline">/</span>
+<span class="font-label-md text-label-md px-3 py-1 rounded-full border card-border bg-surface-container-lowest text-primary">Dashboard</span>
+<a class="font-label-md text-label-md px-3 py-1 text-on-surface-variant hover:text-primary transition-colors" href="#">Project Hub</a>
+<a class="font-label-md text-label-md px-3 py-1 text-on-surface-variant hover:text-primary transition-colors" href="#">Activity</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="relative hidden md:block w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline-variant text-sm">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest card-border rounded-full font-body-md text-body-md placeholder:text-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors relative">
+<span class="material-symbols-outlined text-lg">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-lg">settings</span>
+</button>
+<img alt="Analyst Profile" class="w-8 h-8 rounded-full border border-outline-variant cursor-pointer" data-alt="Analyst Profile Image Placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6VkzL6gylftvqMeGEo0yO3043Vrd6IH2Mg-I4Ec8g9g7RR1bYzBXQetifbSs6nIuWDUJ5wLFc9e8ZlLXz0aZA9th_TC4wRQ4kyfYrKvohfSvWI3MtGkNWfOT8BTku9YISjglpzrmbXHZPEWgiiB3d77heexW6xqVbQdU-bnqPZUIErCWfp1dkm8GG6opHQgTI7bxAqfgp8q13BFTNwtRj0e9DQapJ2P_jiQ_WhSTfT3HiASpJwwjZ"/>
+</div>
+</div>
+</header>
+<div class="p-container max-w-7xl mx-auto w-full flex-grow flex flex-col gap-section-gap">
+<!-- New Hero Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
+<!-- Merchant Details Card -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-xl p-inner-padding card-border shadow-sm flex flex-col justify-between" style="border-radius: 12px; border: 1px solid #E2E8F0;">
+<div class="flex gap-6 items-center flex-grow">
+<div class="w-24 h-24 rounded-lg bg-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant">storefront</span>
+</div>
+<div class="flex-grow flex flex-col gap-3">
+<div class="flex justify-between items-center border-b border-surface-variant pb-2">
+<span class="font-body-md text-on-surface-variant">Merchant ID</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-sm text-on-surface">PF5L1TA0</span>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-surface-variant pb-2">
+<span class="font-body-md text-on-surface-variant">Gateway Status</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline-md text-sm text-on-surface">ACTIVE</span>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<div class="flex justify-between items-center border-b border-surface-variant pb-2">
+<span class="font-body-md text-on-surface-variant">API Version</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-sm text-on-surface">v2.4.12</span>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Category</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-sm text-on-surface">Enterprise Fintech</span>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-end mt-4 pt-4 border-t border-surface-variant">
+<button class="font-label-md text-primary flex items-center gap-2 hover:opacity-80 transition-opacity">Copy all <span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<!-- Anomalous Payment Exposure Gauge -->
+<div class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-inner-padding card-border shadow-sm flex flex-col items-center justify-center text-center relative" style="border-radius: 12px; border: 1px solid #E2E8F0;">
+<button class="absolute top-3 right-3 text-outline hover:text-on-surface"><span class="material-symbols-outlined text-sm">more_horiz</span></button>
+<div class="relative w-32 h-32 mb-4">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant stroke-current" cx="50" cy="50" fill="transparent" r="45" stroke-width="8"></circle>
+<circle class="text-error stroke-current gauge-ring-1" cx="50" cy="50" fill="transparent" r="45" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-error mb-1">warning</span>
+<span class="font-headline-lg text-on-surface">13.6%</span>
+</div>
+</div>
+<h3 class="font-headline-md text-sm text-on-surface mb-1">Anomalous Exposure</h3>
+<p class="font-label-md text-[10px] text-on-surface-variant">Real-time monitoring active</p>
+</div>
+<!-- Payments Received Gauge -->
+<div class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-inner-padding card-border shadow-sm flex flex-col items-center justify-center text-center relative" style="border-radius: 12px; border: 1px solid #E2E8F0;">
+<button class="absolute top-3 right-3 text-outline hover:text-on-surface"><span class="material-symbols-outlined text-sm">more_horiz</span></button>
+<div class="relative w-32 h-32 mb-4">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant stroke-current" cx="50" cy="50" fill="transparent" r="45" stroke-width="8"></circle>
+<circle class="text-secondary stroke-current gauge-ring-2" cx="50" cy="50" fill="transparent" r="45" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-secondary mb-1">verified_user</span>
+<span class="font-headline-lg text-on-surface">84%</span>
+</div>
+</div>
+<h3 class="font-headline-md text-sm text-on-surface mb-1">Settlement Volume</h3>
+<p class="font-label-md text-[10px] text-on-surface-variant text-primary">Daily target: 90%</p>
+</div>
+</div>
+<!-- Middle Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
+<!-- Left Card: Main Focus -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-inner-padding card-border shadow-sm flex flex-col gap-6">
+<div class="flex flex-col gap-4 flex-grow">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Flagged Transactions:</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full border card-border text-on-surface-variant font-label-md text-label-md flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span> In Progress 04</span>
+<span class="px-3 py-1 rounded-full border card-border text-on-surface-variant font-label-md text-label-md flex items-center gap-1">Today <span class="material-symbols-outlined text-sm">arrow_drop_down</span></span>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-2 scrollbar-hide">
+<!-- Flagged Transaction Card 1 -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-lg p-4 card-border card-border-hover transition-colors flex flex-col justify-between cursor-pointer">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-surface text-base">₹550 Unknown Payer</h4>
+<span class="w-3 h-3 rounded-full border-2 border-surface-container-lowest bg-tertiary"></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">VPA Mismatch. Suspicious pattern detected based on recent volume.</p>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center font-label-md text-label-md text-[10px]">UP</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Confidence: 62/100</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-variant text-on-surface font-label-md text-label-md">Medium Risk</span>
+</div>
+</div>
+<!-- Flagged Transaction Card 2 -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-lg p-4 card-border card-border-hover transition-colors flex flex-col justify-between cursor-pointer border-l-4 border-l-error">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-surface text-base">₹1,200 Off-Hours Bulk</h4>
+<span class="w-3 h-3 rounded-full border-2 border-surface-container-lowest bg-error"></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Off-Hours Bulk Deposit. Multiple small transactions from new VPAs.</p>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center font-label-md text-label-md text-[10px]">OB</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Confidence: 89/100</span>
+</div>
+<span class="px-2 py-1 rounded bg-error text-on-error font-label-md text-label-md">High Risk</span>
+</div>
+</div>
+<!-- Placeholder for more -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-lg p-4 card-border border-dashed flex items-center justify-center text-on-surface-variant hover:text-primary cursor-pointer transition-colors">
+<span class="font-label-md text-label-md flex items-center gap-2"><span class="material-symbols-outlined text-sm">add</span> View All Pending</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Card: Activity & Timeline -->
+<div class="lg:col-span-4 flex flex-col gap-grid-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-inner-padding card-border shadow-sm flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Latest on Your Payments &amp; Mule Signals</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 text-sm">Everything moving across your processing, at a glance.</p>
+<div class="grid grid-cols-4 gap-2 mb-6 border-b border-surface-variant pb-6">
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface">02</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px]">Flagged</span>
+</div>
+<div class="flex flex-col border-l border-surface-variant pl-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">04</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px]">Cleared</span>
+</div>
+<div class="flex flex-col border-l border-surface-variant pl-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">06</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px]">In-Progress</span>
+</div>
+<div class="flex flex-col border-l border-surface-variant pl-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">00</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px]">Frozen</span>
+</div>
+</div>
+<div class="mb-4 flex items-center justify-between">
+<span class="px-3 py-1 rounded border card-border text-on-surface-variant font-label-md text-label-md flex items-center gap-1">August 2026 <span class="material-symbols-outlined text-sm">arrow_drop_down</span></span>
+<div class="flex gap-1">
+<button class="w-6 h-6 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-highest"><span class="material-symbols-outlined text-[14px]">chevron_left</span></button>
+<button class="w-6 h-6 flex items-center justify-center rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-highest"><span class="material-symbols-outlined text-[14px]">chevron_right</span></button>
+<button class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md text-[10px] ml-2">Today</button>
+</div>
+</div>
+<!-- Mini Calendar Header -->
+<div class="flex justify-between text-on-surface-variant font-label-md text-label-md text-[10px] mb-2 px-2">
+<div class="text-center w-8">MON<br/><span class="text-on-surface text-sm font-medium">17</span></div>
+<div class="text-center w-8">TUE<br/><span class="text-on-surface text-sm font-medium">18</span></div>
+<div class="text-center w-8">WED<br/><span class="text-on-surface text-sm font-medium">19</span></div>
+<div class="text-center w-8">THU<br/><span class="text-on-surface text-sm font-medium">20</span></div>
+<div class="text-center w-8 text-primary font-bold">FRI<br/><span class="bg-primary text-on-primary rounded-full w-5 h-5 flex items-center justify-center mx-auto mt-0.5">21</span></div>
+<div class="text-center w-8">SAT<br/><span class="text-on-surface text-sm font-medium">22</span></div>
+<div class="text-center w-8">SUN<br/><span class="text-on-surface text-sm font-medium">23</span></div>
+</div>
+<div class="flex-grow flex flex-col gap-4 mt-4">
+<!-- Timeline Item -->
+<div class="bg-surface rounded-lg p-3 card-border">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase">Transaction Monitoring</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-secondary font-label-md text-label-md text-[10px] flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> On Track</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-sm mb-1">Daily Volume Check</h4>
+<div class="w-full bg-surface-variant rounded-full h-1.5 mb-2 overflow-hidden flex">
+<div class="bg-secondary h-1.5 w-[75%]"></div>
+</div>
+</div>
+<!-- Timeline Item -->
+<div class="bg-surface rounded-lg p-3 card-border border-l-2 border-l-error">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase">Alert Triage</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/50 text-error font-label-md text-label-md text-[10px] flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> Action Needed</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-sm mb-1">Review High-Risk Mules</h4>
+<div class="w-full bg-surface-variant rounded-full h-1.5 mb-2 overflow-hidden flex">
+<div class="bg-error h-1.5 w-[20%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter pb-8">
+<!-- System Health Card -->
+<div class="bg-surface-container-lowest rounded-xl p-inner-padding card-border shadow-sm flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">This Week Glance:</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-4">Aug 12 - 17</p>
+<div class="space-y-3">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-sm">System Health:</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check</span> All monitoring systems nominal.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Issues Card -->
+<div class="bg-surface-container-lowest rounded-xl p-inner-padding card-border shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Issues / Anomaly Evidence:</h3>
+<button class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:opacity-90 transition-opacity text-[10px]">View All</button>
+</div>
+<div class="space-y-3">
+<div class="p-3 rounded-lg border card-border bg-surface flex flex-col gap-1">
+<span class="font-headline-md text-headline-md text-on-surface text-sm">Payer VPA zero prior history</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px]">12 Days ago - Alert ID #892</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
