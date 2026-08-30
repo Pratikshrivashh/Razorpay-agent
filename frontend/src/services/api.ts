@@ -53,6 +53,28 @@ export async function reviewRiskFlag(
   return res.json();
 }
 
+export async function authorizeTransaction(
+  flagId: string,
+  reviewerName = 'Razorpay Ops Analyst',
+  notes?: string
+): Promise<RiskFlag> {
+  const res = await fetch(`${API_BASE}/flags/authorize`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      flag_id: flagId,
+      status: 'authorized',
+      reviewer_name: reviewerName,
+      notes: notes || 'Authorized & Cleared by Ops Analyst'
+    })
+  });
+  if (!res.ok) {
+    const errData = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(errData.detail || `Server error (${res.status})`);
+  }
+  return res.json();
+}
+
 export async function generateDemoTraffic(
   merchantId?: string,
   normalCount = 45,

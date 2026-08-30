@@ -15,7 +15,7 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
-import { reviewRiskFlag } from '../services/api';
+import { reviewRiskFlag, authorizeTransaction } from '../services/api';
 
 interface EvidenceModalProps {
   flag: RiskFlag | null;
@@ -34,6 +34,21 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
   const [reviewNotes, setReviewNotes] = useState(flag.review_notes || '');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
+
+  const handleAuthorizeAction = async () => {
+    try {
+      setIsSubmitting(true);
+      const updated = await authorizeTransaction(flag.id, reviewerName, reviewNotes);
+      setActionSuccess('Transaction Authorized: Removed from flagged queue and added to Clean Payments List.');
+      setTimeout(() => {
+        onReviewed(updated);
+      }, 800);
+    } catch (e: any) {
+      alert(`Authorization failed: ${e.message}`);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleReviewAction = async (action: 'confirm_risk' | 'dismiss_false_positive' | 'request_context') => {
     try {
@@ -428,6 +443,16 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
               >
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Dismiss as False Positive</span>
+              </button>
+
+              {/* Action 4: Authorize & Clear Payment */}
+              <button
+                onClick={handleAuthorizeAction}
+                disabled={isSubmitting}
+                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-xs transition-all disabled:opacity-50"
+              >
+                <ShieldCheck className="w-4 h-4" />
+                <span>Authorize & Clear Payment</span>
               </button>
             </div>
 

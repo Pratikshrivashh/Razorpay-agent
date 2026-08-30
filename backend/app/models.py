@@ -105,6 +105,13 @@ class ReviewActionRequest(BaseModel):
     reviewed_by: str = "Razorpay Ops Analyst"
     notes: Optional[str] = ""
 
+class AuthorizeRequest(BaseModel):
+    flag_id: Optional[str] = None
+    transaction_id: Optional[str] = None
+    status: str = "authorized"  # "authorized" | "cleared"
+    reviewer_name: str = "Razorpay Ops Analyst"
+    notes: Optional[str] = "Authorized & Cleared by Ops Analyst"
+
 class DashboardSummary(BaseModel):
     total_transactions: int = 0
     total_flagged: int = 0
