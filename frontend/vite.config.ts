@@ -8,11 +8,11 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'https://razorpay-agent-rw82.onrender.com',
         changeOrigin: true,
       },
       '/webhooks': {
-        target: 'http://localhost:8000',
+        target: 'https://razorpay-agent-rw82.onrender.com',
         changeOrigin: true,
       }
     }

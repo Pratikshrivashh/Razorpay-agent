@@ -1,6 +1,7 @@
 import { Merchant, RiskFlag, DashboardSummary, AuditLog, CopilotMessage } from '../types';
 
-const API_BASE = '/api';
+const RENDER_BACKEND_URL = 'https://razorpay-agent-rw82.onrender.com';
+const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || `${RENDER_BACKEND_URL}/api`;
 
 export async function fetchMerchants(): Promise<Merchant[]> {
   const res = await fetch(`${API_BASE}/merchants`);
