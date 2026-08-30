@@ -29,6 +29,17 @@ def score_payment(
     mitigators: List[MitigatingFactorDetail] = []
 
     amount = float(payment.amount)
+    metadata = payment.metadata or {}
+    payment_dt = datetime.fromisoformat(payment.created_at.replace("Z", "+00:00"))
+    payment_time = payment_dt.time()
+
+    start_time = parse_time_str(merchant.business_hours_start)
+    end_time = parse_time_str(merchant.business_hours_end)
+    if start_time <= end_time:
+        is_in_hours = start_time <= payment_time <= end_time
+    else:
+        is_in_hours = payment_time >= start_time or payment_time <= end_time
+
     # Check if payment is explicitly legitimate / safe payment scenario
     if metadata.get("is_legitimate") or metadata.get("pattern_type") == "legitimate_safe_payment":
         mitigators.append(MitigatingFactorDetail(
