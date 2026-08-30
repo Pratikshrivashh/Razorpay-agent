@@ -153,13 +153,19 @@ class Database:
 
     def get_risk_flag(self, flag_id: str) -> Optional[RiskFlag]:
         data = self._read_data()
-        f_dict = data.get("risk_flags", {}).get(flag_id)
-        return RiskFlag(**f_dict) if f_dict else None
+        flags = data.get("risk_flags", {})
+        if flag_id in flags:
+            return RiskFlag(**flags[flag_id])
+        # Fallback search by payment_id or razorpay_payment_id
+        for f in flags.values():
+            if f.get("payment_id") == flag_id or f.get("id") == flag_id or f.get("razorpay_payment_id") == flag_id:
+                return RiskFlag(**f)
+        return None
 
     def get_risk_flag_by_payment_id(self, payment_id: str) -> Optional[RiskFlag]:
         data = self._read_data()
         for f in data.get("risk_flags", {}).values():
-            if f.get("payment_id") == payment_id:
+            if f.get("payment_id") == payment_id or f.get("id") == payment_id:
                 return RiskFlag(**f)
         return None
 
@@ -176,11 +182,18 @@ class Database:
 
     def update_risk_flag(self, flag_id: str, updates: Dict[str, Any]) -> Optional[RiskFlag]:
         data = self._read_data()
-        if flag_id not in data.get("risk_flags", {}):
+        flags = data.get("risk_flags", {})
+        target_id = flag_id
+        if target_id not in flags:
+            for fid, f in flags.items():
+                if f.get("payment_id") == flag_id or f.get("id") == flag_id:
+                    target_id = fid
+                    break
+        if target_id not in flags:
             return None
-        data["risk_flags"][flag_id].update(updates)
+        flags[target_id].update(updates)
         self._write_data(data)
-        return RiskFlag(**data["risk_flags"][flag_id])
+        return RiskFlag(**flags[target_id])
 
     # ---------------- Audit Log Methods ----------------
     def add_audit_log(self, log_entry: AuditLog) -> AuditLog:

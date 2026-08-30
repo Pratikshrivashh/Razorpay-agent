@@ -34,17 +34,22 @@ async def review_flag(flag_id: str, req: ReviewActionRequest):
     - 'dismiss_false_positive': Flag cleared as normal customer behavior
     - 'request_context': Merchant context requested before payout release
     """
-    flag = db.get_risk_flag(flag_id)
+    flag = db.get_risk_flag(flag_id) or db.get_risk_flag_by_payment_id(flag_id)
     if not flag:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Risk flag not found.")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Risk flag '{flag_id}' not found.")
 
     action_map = {
         "confirm_risk": RiskFlagStatus.CONFIRMED_RISK,
+        "reviewed_confirmed": RiskFlagStatus.CONFIRMED_RISK,
         "dismiss_false_positive": RiskFlagStatus.DISMISSED_FP,
-        "request_context": RiskFlagStatus.CONTEXT_REQUESTED
+        "dismissed": RiskFlagStatus.DISMISSED_FP,
+        "dismiss_fp": RiskFlagStatus.DISMISSED_FP,
+        "reviewed_dismissed": RiskFlagStatus.DISMISSED_FP,
+        "request_context": RiskFlagStatus.CONTEXT_REQUESTED,
+        "context_requested": RiskFlagStatus.CONTEXT_REQUESTED
     }
 
-    new_status = action_map.get(req.action)
+    new_status = action_map.get(req.action.lower() if req.action else "")
     if not new_status:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -52,17 +57,24 @@ async def review_flag(flag_id: str, req: ReviewActionRequest):
         )
 
     now_iso = datetime.now(timezone.utc).isoformat()
-    updated = db.update_risk_flag(flag_id, {
+    updated = db.update_risk_flag(flag.id, {
         "status": new_status.value,
         "reviewed_at": now_iso,
         "reviewed_by": req.reviewed_by,
         "review_notes": req.notes
     })
 
+    if not updated:
+        flag.status = new_status
+        flag.reviewed_at = now_iso
+        flag.reviewed_by = req.reviewed_by
+        flag.review_notes = req.notes
+        updated = flag
+
     # Log immutable audit event
     db.add_audit_log(AuditLog(
         entity_type="risk_flag",
-        entity_id=flag_id,
+        entity_id=flag.id,
         action=f"HUMAN_REVIEW_{req.action.upper()}",
         actor=req.reviewed_by,
         detail={

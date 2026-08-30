@@ -46,7 +46,10 @@ export async function reviewRiskFlag(
       notes: notes || ''
     })
   });
-  if (!res.ok) throw new Error('Failed to submit review');
+  if (!res.ok) {
+    const errData = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(errData.detail || `Server error (${res.status})`);
+  }
   return res.json();
 }
 
