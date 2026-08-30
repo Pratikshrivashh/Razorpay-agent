@@ -79,6 +79,15 @@ MULE_PATTERN_TYPES = {
         "fractional_pattern": True,
         "fresh_mule_shell": True,
         "zero_refund_anomaly": True
+    },
+    "legitimate_safe_payment": {
+        "amount": 2500.00,
+        "description": "Legitimate / Safe Payment (₹2,500.00 standard order)",
+        "off_hours": False,
+        "has_order": True,
+        "is_round_trip": False,
+        "cross_burst": False,
+        "is_legitimate": True
     }
 }
 
@@ -190,19 +199,24 @@ async def inject_single_mule(
     custom_amount: float = None,
     custom_vpa: str = None
 ) -> Tuple[Payment, RiskFlag]:
-    """Injects a single live mule transaction into the payment stream."""
+    """Injects a single live mule or legitimate payment transaction into Sentinel's stream."""
     merchant = db.get_merchant(merchant_id) or db.list_merchants()[0]
     pattern = MULE_PATTERN_TYPES.get(pattern_type, MULE_PATTERN_TYPES["fractional_task_scam"])
 
+    is_legit = pattern.get("is_legitimate", False) or pattern_type == "legitimate_safe_payment"
     amount = custom_amount if custom_amount is not None else pattern["amount"]
-    payer_vpa = custom_vpa if custom_vpa is not None else random.choice(MULE_PAYER_VPAS)
+    payer_vpa = custom_vpa if custom_vpa is not None else ("customer_safe@upi" if is_legit else random.choice(MULE_PAYER_VPAS))
+    order_id = f"order_safe_{uuid.uuid4().hex[:8]}" if is_legit or pattern.get("has_order") else None
 
     now = datetime.now(timezone.utc)
-    if pattern["off_hours"]:
+    if pattern.get("off_hours", False):
         now = now.replace(hour=3, minute=15)
+    else:
+        now = now.replace(hour=14, minute=30)
 
     metadata_dict = {
         "pattern_type": pattern_type,
+        "is_legitimate": is_legit,
         "is_round_trip": pattern.get("is_round_trip", False),
         "cross_merchant_burst": pattern.get("cross_burst", False),
         "cross_merchant_burst_count": "5 merchant VPAs in 10 mins" if pattern.get("cross_burst") else None,
@@ -213,17 +227,17 @@ async def inject_single_mule(
             metadata_dict[k] = v
 
     payment_data = {
-        "razorpay_payment_id": f"pay_live_{uuid.uuid4().hex[:10]}",
+        "razorpay_payment_id": f"pay_safe_{uuid.uuid4().hex[:10]}" if is_legit else f"pay_live_{uuid.uuid4().hex[:10]}",
         "amount": amount,
         "payer_vpa": payer_vpa,
-        "order_id": None,
+        "order_id": order_id,
         "currency": "INR",
         "status": "captured",
         "created_at": now.isoformat(),
         "metadata": metadata_dict
     }
 
-    return await process_incoming_payment(payment_data, merchant.id, is_synthetic=True)
+    return await process_incoming_payment(payment_data, merchant.id, is_synthetic=not is_legit)
 
 def calculate_evaluation_metrics(merchant_id: str = None) -> Dict[str, Any]:
     """Computes Ground Truth precision, recall, and specificity based on labeled synthetic dataset."""

@@ -1,6 +1,6 @@
 export type ConfidenceLevel = 'LOW' | 'MEDIUM' | 'HIGH' | 'CLEARED';
 
-export type RiskFlagStatus = 'open' | 'reviewed_confirmed' | 'reviewed_dismissed' | 'context_requested';
+export type RiskFlagStatus = 'open' | 'reviewed_confirmed' | 'reviewed_dismissed' | 'context_requested' | 'confirmed_risk' | 'dismissed';
 
 export interface Merchant {
   id: string;

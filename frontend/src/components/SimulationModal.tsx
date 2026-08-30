@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Zap, Play, Moon, AlertTriangle, RefreshCw, Send, ShieldAlert, DollarSign } from 'lucide-react';
+import { X, Zap, Play, Moon, AlertTriangle, RefreshCw, Send, ShieldAlert, DollarSign, CheckCircle2 } from 'lucide-react';
 import { injectMulePattern, injectCustomMulePattern, generateDemoTraffic } from '../services/api';
 
 interface SimulationModalProps {
@@ -214,6 +214,33 @@ export const SimulationModal: React.FC<SimulationModalProps> = ({
                   </button>
                 )}
               </div>
+
+              {/* Pattern 5: Legitimate / Safe Payment */}
+              <div
+                onClick={() => handleInject('legitimate_safe_payment', 'Legitimate / Safe Payment')}
+                className="p-3.5 bg-emerald-50/50 hover:bg-emerald-100/50 border border-emerald-200 hover:border-emerald-300 rounded-xl transition-colors cursor-pointer flex items-center justify-between group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold flex-shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-bold text-slate-900 text-xs flex items-center gap-2">
+                      <span>Legitimate / Safe Payment</span>
+                      <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-mono font-bold">₹2,500.00</span>
+                    </div>
+                    <div className="text-[11px] text-slate-500 mt-0.5">Clean e-commerce order within business hours & catalog range</div>
+                  </div>
+                </div>
+
+                {loadingAction === 'legitimate_safe_payment' ? (
+                  <RefreshCw className="w-4 h-4 animate-spin text-emerald-600" />
+                ) : (
+                  <button className="bg-emerald-600 text-white hover:bg-emerald-700 rounded-lg text-xs font-semibold px-3 py-1.5 transition-colors shadow-2xs">
+                    Inject Clean
+                  </button>
+                )}
+              </div>
             </div>
           </div>
 
@@ -263,6 +290,7 @@ export const SimulationModal: React.FC<SimulationModalProps> = ({
                 onChange={(e) => setCustomPattern(e.target.value)}
                 className="px-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 focus:outline-none cursor-pointer"
               >
+                <option value="legitimate_safe_payment">Legitimate / Safe Payment (Clean Order)</option>
                 <option value="fractional_task_scam">Fractional .99 Task Scam</option>
                 <option value="usdt_p2p_offramp">USDT P2P Crypto Off-Ramp</option>
                 <option value="smurfing_structuring">Structuring / Smurfing</option>

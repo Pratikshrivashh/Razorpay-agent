@@ -545,11 +545,67 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               {/* View All Pending Card */}
               <div
                 onClick={onNavigateToAlerts}
-                className="min-w-[240px] bg-white rounded-xl p-4 border border-dashed border-[#c7c4d7] flex flex-col items-center justify-center text-[#464554] hover:text-[#4648d4] hover:border-[#4648d4] cursor-pointer transition-colors"
+                className="min-w-[240px] bg-white rounded-xl p-4 border border-dashed border-[#c7c4d7] flex flex-col items-center justify-center text-[#464554] hover:text-blue-600 hover:border-blue-600 cursor-pointer transition-colors"
               >
                 <Plus className="w-5 h-5 mb-1" />
                 <span className="text-xs font-bold">View All Pending</span>
               </div>
+            </div>
+
+            {/* Authorized / Clean / Good Payments List Queue */}
+            <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2.5">
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                    Authorized / Clean Payments List ({flags.filter(f => f.status === 'dismissed' || f.status === 'reviewed_dismissed').length})
+                  </h4>
+                </div>
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Auto-Verified & Dismissed
+                </span>
+              </div>
+
+              {flags.filter(f => f.status === 'dismissed' || f.status === 'reviewed_dismissed').length > 0 ? (
+                <div className="divide-y divide-slate-100 rounded-xl border border-slate-200 bg-slate-50/50 overflow-hidden">
+                  {flags
+                    .filter(f => f.status === 'dismissed' || f.status === 'reviewed_dismissed')
+                    .slice(0, 5)
+                    .map((f) => (
+                      <div key={f.id} className="p-3 flex items-center justify-between text-xs bg-white hover:bg-emerald-50/40 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">
+                            ✓
+                          </div>
+                          <div>
+                            <div className="font-bold text-slate-900 flex items-center gap-2">
+                              <span>₹{f.amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
+                              {f.order_id && (
+                                <span className="text-[10px] bg-slate-100 text-slate-700 px-1.5 py-0.2 rounded font-mono">
+                                  {f.order_id}
+                                </span>
+                              )}
+                            </div>
+                            <div className="text-[10px] text-slate-500 font-mono">{f.payer_vpa}</div>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Authorized / Cleared
+                          </span>
+                          <span className="text-[10px] text-slate-400 font-mono">
+                            {new Date(f.payment_created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <div className="p-3 text-center text-xs text-slate-500 bg-slate-50 rounded-xl border border-slate-200">
+                  No dismissed false positive payments in queue yet. Click "Dismiss as False Positive" on any alert to route it here immediately.
+                </div>
+              )}
             </div>
           </div>
         </div>

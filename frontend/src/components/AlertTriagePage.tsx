@@ -33,16 +33,16 @@ export const AlertTriagePage: React.FC<AlertTriagePageProps> = ({
     needs_review: flags.filter((f) => f.status === 'open' || f.status === 'context_requested').length,
     high: flags.filter((f) => f.confidence_level === 'HIGH').length,
     medium: flags.filter((f) => f.confidence_level === 'MEDIUM').length,
-    confirmed: flags.filter((f) => f.status === 'reviewed_confirmed').length,
-    cleared: flags.filter((f) => f.status === 'reviewed_dismissed').length,
+    confirmed: flags.filter((f) => f.status === 'confirmed_risk' || f.status === 'reviewed_confirmed').length,
+    cleared: flags.filter((f) => f.status === 'dismissed' || f.status === 'reviewed_dismissed').length,
   };
 
   const filteredFlags = flags.filter((f) => {
     if (filterTab === 'needs_review' && f.status !== 'open' && f.status !== 'context_requested') return false;
     if (filterTab === 'high' && f.confidence_level !== 'HIGH') return false;
     if (filterTab === 'medium' && f.confidence_level !== 'MEDIUM') return false;
-    if (filterTab === 'confirmed' && f.status !== 'reviewed_confirmed') return false;
-    if (filterTab === 'cleared' && f.status !== 'reviewed_dismissed') return false;
+    if (filterTab === 'confirmed' && f.status !== 'confirmed_risk' && f.status !== 'reviewed_confirmed') return false;
+    if (filterTab === 'cleared' && f.status !== 'dismissed' && f.status !== 'reviewed_dismissed') return false;
 
     if (searchQuery.trim() !== '') {
       const q = searchQuery.toLowerCase();
