@@ -216,49 +216,6 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
-          {/* Status Pills */}
-          <div className="flex items-center gap-2 mr-2">
-            <span className="px-3 py-1.5 rounded-lg bg-[#6cf8bb]/30 text-[#00714d] text-xs font-semibold flex items-center gap-1.5 border border-emerald-200">
-              <span className="w-2 h-2 rounded-full bg-[#006c49] animate-pulse"></span>
-              Active Protection Enabled
-            </span>
-            <span className="px-3 py-1.5 rounded-lg bg-[#ffdad6] text-[#93000a] text-xs font-semibold flex items-center gap-1 border border-red-200">
-              Total Flagged: {String(flaggedCount).padStart(2, '0')}
-            </span>
-            <button
-              onClick={onNavigateToAlerts}
-              className="px-3 py-1.5 rounded-lg border border-[#E2E8F0] text-[#464554] text-xs font-semibold hover:bg-slate-100 transition-colors"
-            >
-              Clear Filters
-            </button>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={onNavigateToAlerts}
-              className="px-3.5 py-2 rounded-xl bg-white text-blue-700 text-xs font-semibold flex items-center gap-1.5 hover:bg-blue-50/50 transition-colors border border-slate-200 shadow-2xs"
-            >
-              <Eye className="w-3.5 h-3.5" />
-              <span>View Alerts</span>
-            </button>
-            <button
-              onClick={onNavigateToSettings}
-              className="px-3.5 py-2 rounded-xl bg-white text-blue-700 text-xs font-semibold flex items-center gap-1.5 hover:bg-blue-50/50 transition-colors border border-slate-200 shadow-2xs"
-            >
-              <SlidersHorizontal className="w-3.5 h-3.5" />
-              <span>Filter Rules</span>
-            </button>
-            <button
-              onClick={onNavigateToAlerts}
-              className="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-blue-700 transition-opacity shadow-sm"
-            >
-              <Gavel className="w-3.5 h-3.5" />
-              <span>Request Manual Review</span>
-            </button>
-          </div>
-        </div>
       </div>
 
       {/* Copy Toast Feedback */}
