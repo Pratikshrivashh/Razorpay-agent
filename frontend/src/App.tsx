@@ -81,34 +81,34 @@ export function App() {
   ).length;
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#1b1b23] flex font-sans antialiased">
-      {/* 1. Left Sidebar Navigation (4 Pages) */}
-      <Sidebar
+    <div className="min-h-screen bg-[#F8FAFC] text-[#1b1b23] flex flex-col font-sans antialiased">
+      {/* 1. Full-Width Top App Bar Header */}
+      <Header
         activeTab={activeTab}
         onSelectTab={setActiveTab}
+        merchants={merchants}
+        selectedMerchant={selectedMerchant}
+        onSelectMerchant={(m) => setSelectedMerchant(m)}
         unreviewedCount={unreviewedCount}
-        onResetData={handleResetData}
+        onOpenSimulation={() => setSimulationOpen(true)}
+        onToggleCopilot={() => setCopilotOpen(!copilotOpen)}
+        copilotOpen={copilotOpen}
+        onRefresh={() => loadData(selectedMerchant?.id)}
+        isLoading={isLoading}
       />
 
-      {/* 2. Main Content View Area */}
-      <div className="flex-1 ml-20 flex flex-col min-h-screen">
-        {/* Top App Bar Header */}
-        <Header
+      {/* 2. Main View Body: Left Sidebar + Page View */}
+      <div className="flex flex-1 relative">
+        {/* Left Sidebar Navigation */}
+        <Sidebar
           activeTab={activeTab}
           onSelectTab={setActiveTab}
-          merchants={merchants}
-          selectedMerchant={selectedMerchant}
-          onSelectMerchant={(m) => setSelectedMerchant(m)}
           unreviewedCount={unreviewedCount}
-          onOpenSimulation={() => setSimulationOpen(true)}
-          onToggleCopilot={() => setCopilotOpen(!copilotOpen)}
-          copilotOpen={copilotOpen}
-          onRefresh={() => loadData(selectedMerchant?.id)}
-          isLoading={isLoading}
+          onResetData={handleResetData}
         />
 
         {/* Main Content Pages Container */}
-        <main className="flex-grow p-8 max-w-7xl w-full mx-auto">
+        <main className="flex-grow pl-24 pr-8 py-8 max-w-7xl w-full mx-auto">
           {activeTab === 'overview' && (
             <DashboardOverview
               merchant={selectedMerchant}

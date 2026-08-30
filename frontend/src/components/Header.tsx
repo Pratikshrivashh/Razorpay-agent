@@ -7,13 +7,13 @@ import {
   RefreshCw,
   Store,
   Check,
-  Home,
-  CreditCard,
-  ExternalLink,
-  ChevronDown,
-  Activity,
+  LayoutDashboard,
+  Shield,
+  Network,
+  Sliders,
+  Bot,
   User,
-  Sliders
+  ShieldCheck
 } from 'lucide-react';
 import { Merchant } from '../types';
 
@@ -85,87 +85,99 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <div className="relative w-full z-40">
-      {/* 1. Black Razorpay Enterprise Header Bar */}
-      <header className="bg-black text-white w-full px-6 h-14 flex items-center justify-between sticky top-0 border-b border-neutral-800 shadow-md">
-        {/* Left Section: Razorpay Logo & Product Navigation */}
+    <div className="w-full sticky top-0 z-40 bg-[#0f1115] border-b border-neutral-800 shadow-md">
+      {/* 1. Main Black Top Header Bar */}
+      <header className="w-full px-6 h-14 flex items-center justify-between text-white">
+        {/* Left Section: Sentinel AI Brand & Navigation CTAs */}
         <div className="flex items-center gap-6">
-          {/* Razorpay Brand Logo */}
+          {/* Custom Sentinel AI Logo */}
           <div
             onClick={() => onSelectTab('overview')}
-            className="flex items-center gap-1 cursor-pointer select-none group"
-            title="Razorpay Sentinel Dashboard"
+            className="flex items-center gap-2.5 cursor-pointer select-none group"
+            title="Sentinel AI — Mule Risk Intelligence Engine"
           >
-            <div className="w-5 h-5 bg-blue-600 rounded flex items-center justify-center font-black italic text-white text-xs shadow-[0_0_10px_rgba(37,99,235,0.8)]">
-              R
+            <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm shadow-[0_0_12px_rgba(37,99,235,0.8)] border border-blue-400/40 group-hover:scale-105 transition-transform">
+              <ShieldCheck className="w-4 h-4 text-white" />
             </div>
-            <span className="font-extrabold italic text-lg tracking-tight text-white group-hover:text-blue-400 transition-colors">
-              Razorpay
-            </span>
+            <div>
+              <div className="font-extrabold text-sm tracking-tight text-white flex items-center gap-1.5">
+                <span>Sentinel AI</span>
+                <span className="text-[9px] bg-blue-950 text-blue-400 border border-blue-800 px-1.5 py-0.2 rounded font-mono uppercase">
+                  Mule Engine
+                </span>
+              </div>
+              <div className="text-[10px] text-neutral-400 font-medium">Razorpay Risk Shield</div>
+            </div>
           </div>
 
-          {/* Nav Tabs */}
+          {/* Custom Navigation CTAs (Relevant to our Mule Detection Engine) */}
           <nav className="hidden lg:flex items-center gap-1 text-xs">
             <button
               onClick={() => onSelectTab('overview')}
-              className={`px-3 py-1.5 rounded-t-md font-medium flex items-center gap-1.5 transition-all ${
+              className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all ${
                 activeTab === 'overview'
-                  ? 'bg-gradient-to-b from-blue-900/40 to-transparent border-b-2 border-blue-500 text-white font-bold shadow-[0_4px_12px_rgba(59,130,246,0.5)]'
-                  : 'text-neutral-400 hover:text-white hover:bg-neutral-900/60'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-neutral-300 hover:text-white hover:bg-neutral-800/60'
               }`}
             >
-              <Home className="w-3.5 h-3.5" />
-              <span>Razorpay Home</span>
+              <LayoutDashboard className="w-3.5 h-3.5" />
+              <span>Dashboard</span>
             </button>
 
             <button
               onClick={() => onSelectTab('alerts')}
-              className={`px-3 py-1.5 rounded-t-md font-medium flex items-center gap-1.5 transition-all ${
+              className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all relative ${
                 activeTab === 'alerts'
-                  ? 'bg-gradient-to-b from-blue-900/40 to-transparent border-b-2 border-blue-500 text-white font-bold shadow-[0_4px_12px_rgba(59,130,246,0.5)]'
-                  : 'text-neutral-400 hover:text-white hover:bg-neutral-900/60'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-neutral-300 hover:text-white hover:bg-neutral-800/60'
               }`}
             >
-              <CreditCard className="w-3.5 h-3.5 text-blue-400" />
-              <span>Payments</span>
+              <Shield className="w-3.5 h-3.5 text-blue-400" />
+              <span>Mule Triage</span>
+              {unreviewedCount > 0 && (
+                <span className="px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-red-600 text-white">
+                  {unreviewedCount}
+                </span>
+              )}
             </button>
 
             <button
               onClick={() => onSelectTab('analytics')}
-              className={`px-3 py-1.5 rounded-t-md font-medium flex items-center gap-1.5 transition-all ${
+              className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all ${
                 activeTab === 'analytics'
-                  ? 'bg-gradient-to-b from-blue-900/40 to-transparent border-b-2 border-blue-500 text-white font-bold shadow-[0_4px_12px_rgba(59,130,246,0.5)]'
-                  : 'text-neutral-400 hover:text-white hover:bg-neutral-900/60'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-neutral-300 hover:text-white hover:bg-neutral-800/60'
               }`}
             >
-              <span>Banking+</span>
-            </button>
-
-            <button
-              onClick={() => onSelectTab('analytics')}
-              className="px-3 py-1.5 rounded-t-md text-neutral-400 hover:text-white hover:bg-neutral-900/60 font-medium flex items-center gap-1 transition-all"
-            >
-              <span>Payroll</span>
-              <ExternalLink className="w-3 h-3 text-neutral-500" />
+              <Network className="w-3.5 h-3.5 text-blue-400" />
+              <span>Risk Topology</span>
             </button>
 
             <button
               onClick={() => onSelectTab('settings')}
-              className={`px-3 py-1.5 rounded-t-md font-medium flex items-center gap-1 transition-all ${
+              className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all ${
                 activeTab === 'settings'
-                  ? 'bg-gradient-to-b from-blue-900/40 to-transparent border-b-2 border-blue-500 text-white font-bold'
-                  : 'text-neutral-400 hover:text-white hover:bg-neutral-900/60'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-neutral-300 hover:text-white hover:bg-neutral-800/60'
               }`}
             >
-              <span>More</span>
-              <ChevronDown className="w-3 h-3 text-neutral-500" />
+              <Sliders className="w-3.5 h-3.5 text-neutral-400" />
+              <span>Rules & Engine</span>
+            </button>
+
+            <button
+              onClick={onToggleCopilot}
+              className="px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 text-blue-400 hover:text-white hover:bg-blue-950/60 transition-all border border-blue-800/50"
+            >
+              <Bot className="w-3.5 h-3.5 text-blue-400" />
+              <span>Copilot AI</span>
             </button>
           </nav>
         </div>
 
-        {/* Right Section: Merchant Selector, Interactive Dark Search & User Controls */}
+        {/* Right Section: Merchant Selector, Interactive Dark Search & Actions */}
         <div className="flex items-center gap-3">
-          {/* Merchant Dropdown Selector */}
+          {/* Merchant Selector Dropdown */}
           <select
             value={selectedMerchant?.id || ''}
             onChange={(e) => {
@@ -189,8 +201,8 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </select>
 
-          {/* Interactive Dark Search Bar */}
-          <div ref={searchContainerRef} className="relative hidden md:block w-64 lg:w-80">
+          {/* Interactive Search Bar */}
+          <div ref={searchContainerRef} className="relative hidden md:block w-60 lg:w-72">
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500 z-10" />
             <input
               type="text"
@@ -201,7 +213,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               onFocus={() => setIsSearchOpen(true)}
               onKeyDown={handleKeyDown}
-              placeholder="Search payment products, settings, and more"
+              placeholder="Search Merchant ID or Name..."
               className="w-full pl-8 pr-3 py-1.5 bg-[#18191c] border border-neutral-800 rounded-lg text-xs text-white placeholder:text-neutral-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
             />
 
@@ -262,13 +274,13 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </div>
 
-          {/* Quick Action Icons: Analytics, Alerts, Profile Avatar */}
+          {/* Quick Controls */}
           <button
-            onClick={() => onSelectTab('analytics')}
+            onClick={onRefresh}
             className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#18191c] hover:bg-neutral-800 text-neutral-400 hover:text-white border border-neutral-800 transition-colors"
-            title="System Analytics & Network Map"
+            title="Refresh State"
           >
-            <Activity className="w-3.5 h-3.5" />
+            <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin text-blue-400' : ''}`} />
           </button>
 
           <button
@@ -292,49 +304,37 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </header>
 
-      {/* 2. Curved Razorpay Control Notch (Centering over Page Canvas) */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-14 bg-black border-x border-b border-neutral-800 rounded-b-2xl px-5 py-1 flex items-center gap-3.5 shadow-2xl z-50 text-xs text-neutral-300 font-mono">
-        {/* TEST Mode Toggle */}
-        <div className="flex items-center gap-1.5 bg-neutral-900/90 px-2.5 py-0.5 rounded-full border border-neutral-800">
-          <div
-            onClick={() => setTestMode(!testMode)}
-            className={`w-7 h-4 rounded-full flex items-center px-0.5 cursor-pointer transition-colors ${
-              testMode ? 'bg-emerald-500 justify-end' : 'bg-neutral-600 justify-start'
-            }`}
-          >
-            <div className="w-3 h-3 rounded-full bg-white shadow-xs"></div>
+      {/* 2. Integrated Compact Notch Bar (Placed inline in header to prevent overlap with content!) */}
+      <div className="bg-[#14161b] border-t border-neutral-800 px-6 py-1.5 flex items-center justify-between text-xs text-neutral-300 font-mono">
+        <div className="flex items-center gap-3">
+          {/* Test Mode Toggle */}
+          <div className="flex items-center gap-1.5 bg-neutral-900 px-2.5 py-0.5 rounded-full border border-neutral-800">
+            <div
+              onClick={() => setTestMode(!testMode)}
+              className={`w-7 h-4 rounded-full flex items-center px-0.5 cursor-pointer transition-colors ${
+                testMode ? 'bg-emerald-500 justify-end' : 'bg-neutral-600 justify-start'
+              }`}
+            >
+              <div className="w-3 h-3 rounded-full bg-white shadow-xs"></div>
+            </div>
+            <span className="text-[10px] font-extrabold tracking-widest text-emerald-400 uppercase">TEST MODE</span>
           </div>
-          <span className="text-[10px] font-extrabold tracking-widest text-emerald-400 uppercase">T E S T</span>
+
+          <span className="text-neutral-700">|</span>
+
+          <span className="text-[11px] text-neutral-400 font-sans font-medium">
+            Active Protection: <strong className="text-emerald-400 font-semibold">12-Signal Engine Active</strong>
+          </span>
         </div>
 
-        <span className="text-neutral-700 font-sans">|</span>
-
-        {/* Notch Tool: Simulate Mules Trigger */}
+        {/* Live Attack Simulator Trigger */}
         <button
           onClick={onOpenSimulation}
-          className="flex items-center gap-1.5 text-[11px] font-sans font-semibold text-blue-400 hover:text-blue-300 bg-blue-950/60 hover:bg-blue-900/80 px-2.5 py-0.5 rounded-md border border-blue-800/60 transition-all shadow-xs"
+          className="flex items-center gap-1.5 text-xs font-sans font-bold text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-md transition-all shadow-xs"
           title="Inject Live Mule Attack Scenario"
         >
-          <Zap className="w-3 h-3 text-blue-400 animate-pulse" />
-          <span>Simulate Mules</span>
-        </button>
-
-        {/* Notch Tool: Refresh */}
-        <button
-          onClick={onRefresh}
-          className="text-neutral-400 hover:text-white transition-colors p-0.5"
-          title="Refresh Data"
-        >
-          <RefreshCw className={`w-3 h-3 ${isLoading ? 'animate-spin text-blue-400' : ''}`} />
-        </button>
-
-        {/* Notch Tool: Settings */}
-        <button
-          onClick={() => onSelectTab('settings')}
-          className="text-neutral-400 hover:text-white transition-colors p-0.5"
-          title="Rules & Settings"
-        >
-          <Sliders className="w-3 h-3" />
+          <Zap className="w-3.5 h-3.5 text-white animate-pulse" />
+          <span>Simulate Mule Attacks</span>
         </button>
       </div>
     </div>

@@ -32,7 +32,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   ];
 
   return (
-    <nav className="bg-[#F8FAFC] border-r border-[#E2E8F0] h-screen w-20 hover:w-64 transition-all duration-300 fixed left-0 top-0 flex flex-col py-6 z-40 group shadow-2xs">
+    <nav className="bg-[#ffffff] border-r border-[#E2E8F0] h-[calc(100vh-5rem)] w-20 hover:w-64 transition-all duration-300 fixed left-0 top-20 flex flex-col py-6 z-30 group shadow-2xs">
       {/* Brand Icon & Name */}
       <div className="px-6 mb-8 flex items-center gap-4 whitespace-nowrap overflow-hidden">
         <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm flex-shrink-0 shadow-xs">
