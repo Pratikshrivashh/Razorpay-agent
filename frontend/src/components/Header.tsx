@@ -100,20 +100,17 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Brand Logo & Demo Sample Heading */}
           <div
             onClick={() => onSelectTab('overview')}
-            className="flex items-center gap-2.5 cursor-pointer select-none group"
-            title="Razorpay Risk Shield — Mule Risk Intelligence Engine (Demo Sample)"
+            className="flex items-center gap-2.5 cursor-pointer select-none group flex-shrink-0"
+            title="Razorpay Risk Shield (Demo Sample)"
           >
-            <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm shadow-[0_0_12px_rgba(37,99,235,0.8)] border border-blue-400/40 group-hover:scale-105 transition-transform">
+            <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm shadow-[0_0_12px_rgba(37,99,235,0.8)] border border-blue-400/40 group-hover:scale-105 transition-transform flex-shrink-0">
               <ShieldCheck className="w-4 h-4 text-white" />
             </div>
-            <div>
-              <div className="font-extrabold text-sm tracking-tight text-white flex items-center gap-1.5">
-                <span>Razorpay Risk Shield</span>
-                <span className="text-[9px] bg-blue-950 text-blue-400 border border-blue-800 px-1.5 py-0.2 rounded font-mono uppercase font-bold">
-                  Mule Engine
-                </span>
+            <div className="whitespace-nowrap">
+              <div className="font-extrabold text-sm tracking-tight text-white whitespace-nowrap leading-tight">
+                Razorpay Risk Shield
               </div>
-              <div className="text-[10px] text-emerald-400 font-bold tracking-wide flex items-center gap-1">
+              <div className="text-[10px] text-emerald-400 font-bold tracking-wide flex items-center gap-1 leading-tight">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span>Demo Sample</span>
               </div>
@@ -173,14 +170,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Sliders className="w-3.5 h-3.5 text-neutral-400" />
               <span>Rules & Engine</span>
-            </button>
-
-            <button
-              onClick={onToggleCopilot}
-              className="px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 text-blue-400 hover:text-white hover:bg-blue-950/60 transition-all border border-blue-800/50"
-            >
-              <Bot className="w-3.5 h-3.5 text-blue-400" />
-              <span>Copilot AI</span>
             </button>
           </nav>
         </div>
