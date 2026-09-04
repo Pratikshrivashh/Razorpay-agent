@@ -320,8 +320,8 @@ export const Header: React.FC<HeaderProps> = ({
 
           <span className="text-neutral-700">|</span>
 
-          <span className="text-[11px] text-neutral-400 font-sans font-medium">
-            Active Protection: <strong className="text-emerald-400 font-semibold">12-Signal Engine Active</strong>
+          <span className="text-[11px] text-neutral-400 font-sans font-medium flex items-center gap-1.5">
+            Active Protection: <strong className="text-emerald-400 font-semibold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/80 flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Auto-Freeze Shield Active (Score ≥ 80)</strong>
           </span>
         </div>
 

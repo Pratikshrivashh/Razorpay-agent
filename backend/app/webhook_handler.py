@@ -2,7 +2,7 @@ import hmac
 import hashlib
 import json
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, Tuple, Optional
 from .config import settings
 from .db import db
@@ -111,6 +111,31 @@ async def process_incoming_payment(
             mitigators=mitigators
         )
 
+        # Check Auto-Freeze Shield Policy
+        auto_freeze_policy = db.get_auto_freeze_policy()
+        auto_frozen = False
+        settlement_hold_until = None
+
+        if auto_freeze_policy.enabled and score >= auto_freeze_policy.min_score_threshold:
+            auto_frozen = True
+            hold_dt = datetime.now(timezone.utc) + timedelta(hours=auto_freeze_policy.freeze_duration_hours)
+            settlement_hold_until = hold_dt.isoformat()
+
+            db.add_audit_log(AuditLog(
+                entity_type="payment",
+                entity_id=payment.id,
+                action="AUTO_FREEZE_SHIELD_TRIGGERED",
+                actor="auto_freeze_engine",
+                detail={
+                    "score": score,
+                    "threshold": auto_freeze_policy.min_score_threshold,
+                    "freeze_hours": auto_freeze_policy.freeze_duration_hours,
+                    "hold_until": settlement_hold_until,
+                    "payer_vpa": payment.payer_vpa,
+                    "amount": payment.amount
+                }
+            ))
+
         risk_flag = RiskFlag(
             payment_id=payment.id,
             merchant_id=merchant.id,
@@ -128,7 +153,9 @@ async def process_incoming_payment(
             ai_mitigating_note=ai_resp.mitigating_note,
             ai_recommended_action=ai_resp.recommended_action,
             status=RiskFlagStatus.OPEN,
-            is_synthetic_mule=is_synthetic
+            is_synthetic_mule=is_synthetic,
+            auto_frozen=auto_frozen,
+            settlement_hold_until=settlement_hold_until
         )
         db.add_risk_flag(risk_flag)
 

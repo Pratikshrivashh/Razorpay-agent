@@ -73,6 +73,17 @@ export interface RiskFlag {
   reviewed_by?: string | null;
   review_notes?: string | null;
   is_synthetic_mule: boolean;
+  auto_frozen?: boolean;
+  settlement_hold_until?: string | null;
+}
+
+export interface AutoFreezePolicy {
+  enabled: boolean;
+  min_score_threshold: number;
+  freeze_duration_hours: number;
+  action_type: 'hold_settlement' | 'auto_freeze';
+  notify_ops: boolean;
+  updated_at?: string;
 }
 
 export interface DashboardSummary {

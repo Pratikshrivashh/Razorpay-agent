@@ -1,4 +1,4 @@
-import { Merchant, RiskFlag, DashboardSummary, AuditLog, CopilotMessage } from '../types';
+import { Merchant, RiskFlag, DashboardSummary, AuditLog, CopilotMessage, AutoFreezePolicy } from '../types';
 
 const RENDER_BACKEND_URL = 'https://razorpay-agent-rw82.onrender.com';
 const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || `${RENDER_BACKEND_URL}/api`;
@@ -164,5 +164,21 @@ export async function sendCopilotChat(
     })
   });
   if (!res.ok) throw new Error('Failed to get copilot reply');
+  return res.json();
+}
+
+export async function fetchAutoFreezePolicy(): Promise<AutoFreezePolicy> {
+  const res = await fetch(`${API_BASE}/settings/auto-freeze`);
+  if (!res.ok) throw new Error('Failed to fetch auto-freeze policy');
+  return res.json();
+}
+
+export async function updateAutoFreezePolicy(policy: AutoFreezePolicy): Promise<AutoFreezePolicy> {
+  const res = await fetch(`${API_BASE}/settings/auto-freeze`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(policy)
+  });
+  if (!res.ok) throw new Error('Failed to update auto-freeze policy');
   return res.json();
 }

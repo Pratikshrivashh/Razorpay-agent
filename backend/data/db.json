@@ -1587,6 +1587,41 @@
       "created_at": "2026-08-30T15:54:45.239731+00:00",
       "is_synthetic_mule": true,
       "metadata": {}
+    },
+    "c9536b40-f67e-4007-9bfb-085a27a6db77": {
+      "id": "c9536b40-f67e-4007-9bfb-085a27a6db77",
+      "razorpay_payment_id": "pay_live_3bc8679c5f",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "test_mule_hacker@upi",
+      "amount": 550.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-09-04T14:30:54.983976+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {
+        "pattern_type": "task_app_round_deposit",
+        "is_legitimate": false,
+        "is_round_trip": false,
+        "cross_merchant_burst": true,
+        "cross_merchant_burst_count": "5 merchant VPAs in 10 mins",
+        "pattern_description": "Fractional .99 Task Scam Deposit (\u20b9199.99 VIP recharge)",
+        "fractional_pattern": true,
+        "micro_deposit_burst": true
+      }
+    },
+    "d4846a1f-958d-4771-89c3-221f70095387": {
+      "id": "d4846a1f-958d-4771-89c3-221f70095387",
+      "razorpay_payment_id": "pay_syn_20260904154803",
+      "merchant_id": "mer_aura_jewels_001",
+      "payer_vpa": "newbie@okaxis",
+      "amount": 550.0,
+      "currency": "INR",
+      "order_id": null,
+      "status": "captured",
+      "created_at": "2026-09-04T15:48:03.412140+00:00",
+      "is_synthetic_mule": true,
+      "metadata": {}
     }
   },
   "risk_flags": {
@@ -2398,6 +2433,111 @@
       "reviewed_by": "Senior Fraud Ops Analyst",
       "review_notes": "Verified stranger VPA without order reference matching known task-app scam.",
       "is_synthetic_mule": true
+    },
+    "cb4db6e8-372a-4aac-a08e-5193e715ba35": {
+      "id": "cb4db6e8-372a-4aac-a08e-5193e715ba35",
+      "payment_id": "c9536b40-f67e-4007-9bfb-085a27a6db77",
+      "merchant_id": "mer_aura_jewels_001",
+      "merchant_name": "Aura Handcrafted Jewels",
+      "payer_vpa": "test_mule_hacker@upi",
+      "amount": 550.0,
+      "order_id": null,
+      "payment_created_at": "2026-09-04T14:30:54.983976+00:00",
+      "confidence_score": 75,
+      "confidence_level": "MEDIUM",
+      "signals_triggered": [
+        {
+          "code": "amount_outside_typical_range",
+          "title": "Ticket Size Anomaly",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment amount (\u20b9550.00) is 54.2% below typical minimum (\u20b91,200.00).",
+          "observed_value": "\u20b9550.00",
+          "baseline_value": "\u20b91,200.00 - \u20b96,500.00",
+          "category_type": "base_mule",
+          "disclaimer": null,
+          "is_simulated_external": false,
+          "is_unverified_heuristic": false
+        },
+        {
+          "code": "orphaned_vpa",
+          "title": "Payer-to-Order Disconnect (Orphaned VPA)",
+          "weight": 20,
+          "severity": "medium",
+          "description": "Payment from VPA (test_mule_hacker@upi) has no linked e-commerce order ID or checkout cart reference.",
+          "observed_value": "test_mule_hacker@upi",
+          "baseline_value": "Linked checkout order_id",
+          "category_type": "base_mule",
+          "disclaimer": null,
+          "is_simulated_external": false,
+          "is_unverified_heuristic": false
+        },
+        {
+          "code": "micro_deposit_burst",
+          "title": "Micro-Deposit High-Velocity Burst",
+          "weight": 15,
+          "severity": "medium",
+          "description": "Rapid influx of small amounts (\u20b9550.00) arriving in short time windows from unrelated individual VPAs.",
+          "observed_value": "\u20b9550.00",
+          "baseline_value": "> \u20b9500 standard order basket",
+          "category_type": "base_mule",
+          "disclaimer": null,
+          "is_simulated_external": false,
+          "is_unverified_heuristic": false
+        },
+        {
+          "code": "fragmented_identity",
+          "title": "Fragmented Multi-Instrument Identity",
+          "weight": 25,
+          "severity": "high",
+          "description": "Same payer or merchant entity operating through multiple UPI IDs / VPAs / wallets in a short window, apparently to split a single flow of funds.",
+          "observed_value": "5 merchant VPAs in 10 mins",
+          "baseline_value": "Single verified VPA per payer entity",
+          "category_type": "fraud_ring",
+          "disclaimer": null,
+          "is_simulated_external": false,
+          "is_unverified_heuristic": false
+        },
+        {
+          "code": "round_number_minus_one_heuristic",
+          "title": "Round-Number-Minus-One Pricing Heuristic",
+          "weight": 10,
+          "severity": "low",
+          "description": "Incoming amounts clustering suspiciously around a 'X99.99' or 'X99' pattern (e.g. \u20b9199.99, \u20b9299.99, \u20b9599.99) across multiple unrelated first-time payers.",
+          "observed_value": "\u20b9550.00",
+          "baseline_value": "Standard catalog non-fractional pricing",
+          "category_type": "fraud_ring",
+          "disclaimer": "Heuristic signal \u2014 pattern observed in synthetic test data, not yet validated against real fraud datasets.",
+          "is_simulated_external": false,
+          "is_unverified_heuristic": true
+        }
+      ],
+      "signals_mitigating": [
+        {
+          "code": "repeat_customer",
+          "title": "Verified Repeat Customer",
+          "impact": "Significantly lowers stranger-payer risk",
+          "description": "Payer has completed 3 verified previous payment(s) with this merchant."
+        },
+        {
+          "code": "within_business_hours",
+          "title": "Within Normal Business Hours",
+          "impact": "Aligns with expected retail peak operational hours",
+          "description": "Processed at 14:30 within operating window (09:30 - 21:30)."
+        }
+      ],
+      "ai_summary": "\u20b9550.00 payment flagged for review \u2014 Confidence: MEDIUM (75/100)",
+      "ai_explanation": "This transaction of \u20b9550.00 to Aura Handcrafted Jewels was flagged because it amount (\u20b9550.00) falls outside Aura Handcrafted Jewels's typical range (\u20b91,200.00\u2013\u20b96,500.00). This does NOT signify fraudulent intent; rather, it indicates an atypical transaction pattern that warrants verification.",
+      "ai_mitigating_note": "Risk mitigating factors observed: Verified Repeat Customer, Within Normal Business Hours.",
+      "ai_recommended_action": "Verify if transaction corresponds to an ad-hoc invoice or manual customer collect.",
+      "status": "reviewed_confirmed",
+      "created_at": "2026-09-04T15:48:03.297207+00:00",
+      "reviewed_at": "2026-09-04T15:48:03.355137+00:00",
+      "reviewed_by": "Senior Fraud Ops Analyst",
+      "review_notes": "Verified stranger VPA without order reference matching known task-app scam.",
+      "is_synthetic_mule": true,
+      "auto_frozen": false,
+      "settlement_hold_until": null
     }
   },
   "audit_log": [
@@ -3751,10 +3891,63 @@
         "amount": 550.0
       },
       "timestamp": "2026-08-30T15:54:45.274202+00:00"
+    },
+    {
+      "id": "7a9d53c7-a8d0-47af-96ef-f0c57c5e6723",
+      "entity_type": "risk_flag",
+      "entity_id": "cb4db6e8-372a-4aac-a08e-5193e715ba35",
+      "action": "SCORED_AND_FLAGGED",
+      "actor": "system",
+      "detail": {
+        "score": 75,
+        "confidence": "MEDIUM",
+        "signals_count": 5,
+        "mitigators_count": 2,
+        "amount": 550.0,
+        "payer_vpa": "test_mule_hacker@upi"
+      },
+      "timestamp": "2026-09-04T15:48:03.313294+00:00"
+    },
+    {
+      "id": "b17ce210-9932-4e08-9078-3b219438f5c8",
+      "entity_type": "risk_flag",
+      "entity_id": "cb4db6e8-372a-4aac-a08e-5193e715ba35",
+      "action": "HUMAN_REVIEW_CONFIRM_RISK",
+      "actor": "Senior Fraud Ops Analyst",
+      "detail": {
+        "previous_status": "open",
+        "new_status": "reviewed_confirmed",
+        "score": 75,
+        "notes": "Verified stranger VPA without order reference matching known task-app scam.",
+        "amount": 550.0,
+        "payer_vpa": "test_mule_hacker@upi"
+      },
+      "timestamp": "2026-09-04T15:48:03.361386+00:00"
+    },
+    {
+      "id": "0edc3a12-d72f-41af-bed8-39e96847aada",
+      "entity_type": "payment",
+      "entity_id": "d4846a1f-958d-4771-89c3-221f70095387",
+      "action": "SCORED_CLEARED",
+      "actor": "system",
+      "detail": {
+        "score": 25,
+        "confidence": "CLEARED",
+        "amount": 550.0
+      },
+      "timestamp": "2026-09-04T15:48:03.426497+00:00"
     }
   ],
   "system_stats": {
-    "total_inspected": 99,
+    "total_inspected": 101,
     "created_at": "2026-08-29T17:34:55.515436+00:00"
+  },
+  "auto_freeze_policy": {
+    "enabled": true,
+    "min_score_threshold": 80,
+    "freeze_duration_hours": 24,
+    "action_type": "hold_settlement",
+    "notify_ops": true,
+    "updated_at": "2026-09-04T15:48:03.292012+00:00"
   }
 }

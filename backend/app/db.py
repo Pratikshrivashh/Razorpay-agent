@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Dict, Any, List, Optional
 from datetime import datetime, timezone
 from .config import settings
-from .models import Merchant, Payment, RiskFlag, AuditLog, RiskFlagStatus
+from .models import Merchant, Payment, RiskFlag, AuditLog, RiskFlagStatus, AutoFreezePolicy
 
 class Database:
     def __init__(self, db_path: Optional[Path] = None):
@@ -207,6 +207,23 @@ class Database:
         logs = list(data.get("audit_log", []))
         logs.sort(key=lambda x: x.get("timestamp", ""), reverse=True)
         return [AuditLog(**entry) for entry in logs[:limit]]
+
+    # ---------------- Auto-Freeze Policy Methods ----------------
+    def get_auto_freeze_policy(self) -> AutoFreezePolicy:
+        data = self._read_data()
+        policy_dict = data.get("auto_freeze_policy")
+        if not policy_dict:
+            policy = AutoFreezePolicy()
+            data["auto_freeze_policy"] = policy.model_dump()
+            self._write_data(data)
+            return policy
+        return AutoFreezePolicy(**policy_dict)
+
+    def update_auto_freeze_policy(self, policy: AutoFreezePolicy) -> AutoFreezePolicy:
+        data = self._read_data()
+        data["auto_freeze_policy"] = policy.model_dump()
+        self._write_data(data)
+        return policy
 
     # ---------------- Reset & Stats ----------------
     def reset_dataset(self):

@@ -90,6 +90,16 @@ class RiskFlag(BaseModel):
     reviewed_by: Optional[str] = None
     review_notes: Optional[str] = None
     is_synthetic_mule: bool = False
+    auto_frozen: bool = False
+    settlement_hold_until: Optional[str] = None
+
+class AutoFreezePolicy(BaseModel):
+    enabled: bool = True
+    min_score_threshold: int = 80
+    freeze_duration_hours: int = 24
+    action_type: str = "hold_settlement"  # "hold_settlement" | "auto_freeze"
+    notify_ops: bool = True
+    updated_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 class AuditLog(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))

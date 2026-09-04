@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Sliders, ShieldAlert, Key, Database, RefreshCw, CheckCircle2, RotateCcw } from 'lucide-react';
-import { resetDemoDataset } from '../services/api';
+import React, { useState, useEffect } from 'react';
+import { Sliders, ShieldAlert, Key, Database, RefreshCw, CheckCircle2, RotateCcw, ShieldCheck, Zap, Lock, Bell } from 'lucide-react';
+import { resetDemoDataset, fetchAutoFreezePolicy, updateAutoFreezePolicy } from '../services/api';
+import { AutoFreezePolicy } from '../types';
 
 interface SettingsPageProps {
   onResetComplete: () => void;
@@ -13,9 +14,34 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
   const [savedSuccess, setSavedSuccess] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
 
-  const handleSave = () => {
-    setSavedSuccess(true);
-    setTimeout(() => setSavedSuccess(false), 3000);
+  // Auto-Freeze Policy State
+  const [policy, setPolicy] = useState<AutoFreezePolicy>({
+    enabled: true,
+    min_score_threshold: 80,
+    freeze_duration_hours: 24,
+    action_type: 'hold_settlement',
+    notify_ops: true
+  });
+  const [policySaving, setPolicySaving] = useState(false);
+
+  useEffect(() => {
+    fetchAutoFreezePolicy()
+      .then((data) => setPolicy(data))
+      .catch((err) => console.error('Failed to load auto freeze policy:', err));
+  }, []);
+
+  const handleSavePolicy = async () => {
+    try {
+      setPolicySaving(true);
+      const updated = await updateAutoFreezePolicy(policy);
+      setPolicy(updated);
+      setSavedSuccess(true);
+      setTimeout(() => setSavedSuccess(false), 3000);
+    } catch (e: any) {
+      alert(`Failed to save policy: ${e.message}`);
+    } finally {
+      setPolicySaving(false);
+    }
   };
 
   const handleReset = async () => {
@@ -38,37 +64,151 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E2E8F0] pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <Sliders className="w-6 h-6 text-[#4648d4]" />
+            <Sliders className="w-6 h-6 text-blue-600" />
             <h1 className="text-2xl font-extrabold text-[#1b1b23]">
               Rules & System Settings
             </h1>
           </div>
           <p className="text-xs text-[#464554] mt-1">
-            Configure deterministic anomaly scoring thresholds, Razorpay webhook keys, and local persistence.
+            Configure autonomous Auto-Freeze Shield policies, deterministic anomaly thresholds, and local persistence.
           </p>
         </div>
 
         <button
-          onClick={handleSave}
-          className="px-4 py-2 bg-[#4648d4] text-white rounded-xl text-xs font-bold hover:bg-[#3739B0] shadow-xs flex items-center gap-1.5"
+          onClick={handleSavePolicy}
+          disabled={policySaving}
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-xs flex items-center gap-1.5 transition-all disabled:opacity-50"
         >
           <CheckCircle2 className="w-4 h-4" />
-          <span>Save Rule Configuration</span>
+          <span>{policySaving ? 'Saving...' : 'Save Rule Configuration'}</span>
         </button>
       </div>
 
       {savedSuccess && (
-        <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-bold">
-          ✓ Rule configuration updated successfully.
+        <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-bold flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+          <span>Auto-Freeze Shield Policy configuration updated successfully!</span>
         </div>
       )}
+
+      {/* 1. Featured Top Card: Autonomous Smart Auto-Freeze Shield Editor */}
+      <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white rounded-2xl p-6 border border-slate-800 shadow-xl space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-6 h-6 text-blue-400" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-base font-extrabold text-white">
+                  Autonomous "Smart Auto-Freeze Shield" Policy Rule Editor
+                </h2>
+                <span className="text-[10px] bg-blue-950 text-blue-400 border border-blue-800 px-2 py-0.5 rounded font-mono font-bold uppercase">
+                  Autonomous Defense
+                </span>
+              </div>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Automatically hold settlement payouts and lock high-risk mule accounts when score thresholds are breached.
+              </p>
+            </div>
+          </div>
+
+          {/* Toggle Switch */}
+          <div className="flex items-center gap-3 bg-slate-900 px-3.5 py-1.5 rounded-xl border border-slate-800">
+            <span className="text-xs font-bold text-slate-300">Auto-Freeze Status:</span>
+            <div
+              onClick={() => setPolicy({ ...policy, enabled: !policy.enabled })}
+              className={`w-11 h-6 rounded-full p-1 cursor-pointer transition-colors ${
+                policy.enabled ? 'bg-emerald-500 justify-end' : 'bg-slate-700 justify-start'
+              } flex items-center`}
+            >
+              <div className="w-4 h-4 rounded-full bg-white shadow-md"></div>
+            </div>
+            <span className={`text-xs font-mono font-bold ${policy.enabled ? 'text-emerald-400' : 'text-slate-500'}`}>
+              {policy.enabled ? 'ACTIVE' : 'DISABLED'}
+            </span>
+          </div>
+        </div>
+
+        {/* Policy Editor Fields */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Field 1: Minimum Score Threshold */}
+          <div className="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-3">
+            <div className="flex justify-between items-center text-xs">
+              <label className="font-bold text-slate-200">Auto-Freeze Score Threshold</label>
+              <span className="text-xs font-mono font-bold text-blue-400 bg-blue-950 px-2 py-0.5 rounded border border-blue-800">
+                Score ≥ {policy.min_score_threshold}
+              </span>
+            </div>
+            <input
+              type="range"
+              min={50}
+              max={95}
+              step={5}
+              value={policy.min_score_threshold}
+              onChange={(e) => setPolicy({ ...policy, min_score_threshold: Number(e.target.value) })}
+              className="w-full accent-blue-500 cursor-pointer"
+            />
+            <p className="text-[11px] text-slate-400">
+              Transactions scoring at or above <strong className="text-white">{policy.min_score_threshold} pts</strong> trigger an instant automated settlement hold.
+            </p>
+          </div>
+
+          {/* Field 2: Freeze Duration Hours */}
+          <div className="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-3">
+            <label className="block text-xs font-bold text-slate-200">Settlement Hold Duration (Hours)</label>
+            <div className="flex items-center gap-2">
+              {[12, 24, 48, 72].map((hours) => (
+                <button
+                  key={hours}
+                  type="button"
+                  onClick={() => setPolicy({ ...policy, freeze_duration_hours: hours })}
+                  className={`flex-1 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                    policy.freeze_duration_hours === hours
+                      ? 'bg-blue-600 text-white border-blue-500 shadow-xs'
+                      : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'
+                  }`}
+                >
+                  {hours}h
+                </button>
+              ))}
+            </div>
+            <p className="text-[11px] text-slate-400">
+              Payouts are locked for <strong className="text-white">{policy.freeze_duration_hours} hours</strong> to give Risk Ops time to complete Section 106 CrPC verification.
+            </p>
+          </div>
+
+          {/* Field 3: Action Type & Notifications */}
+          <div className="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-3">
+            <label className="block text-xs font-bold text-slate-200">Action Execution Mode</label>
+            <select
+              value={policy.action_type}
+              onChange={(e) => setPolicy({ ...policy, action_type: e.target.value as any })}
+              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-xs font-semibold text-white outline-none cursor-pointer focus:border-blue-500"
+            >
+              <option value="hold_settlement">Hold Settlement Payout (Recommended)</option>
+              <option value="auto_freeze">Freeze Merchant Account & Lock VPA</option>
+            </select>
+
+            <div className="flex items-center justify-between pt-1 text-xs">
+              <span className="text-slate-300 font-medium">Alert Risk Ops Team</span>
+              <input
+                type="checkbox"
+                checked={policy.notify_ops}
+                onChange={(e) => setPolicy({ ...policy, notify_ops: e.target.checked })}
+                className="w-4 h-4 accent-blue-500 cursor-pointer"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* 2-Column Settings Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Card 1: Anomaly Scoring Thresholds */}
         <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-2xs space-y-4">
           <div className="flex items-center gap-2 text-sm font-bold text-[#1b1b23] border-b border-slate-100 pb-3">
-            <ShieldAlert className="w-5 h-5 text-[#4648d4]" />
+            <ShieldAlert className="w-5 h-5 text-blue-600" />
             <span>Deterministic Scoring Thresholds (0-100)</span>
           </div>
 
@@ -76,7 +216,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
             <div>
               <div className="flex justify-between font-semibold text-slate-700 mb-1">
                 <span>Low Risk Trigger Threshold</span>
-                <span className="text-[#4648d4] font-bold">Score ≥ {lowThreshold}</span>
+                <span className="text-blue-600 font-bold">Score ≥ {lowThreshold}</span>
               </div>
               <input
                 type="range"
@@ -84,7 +224,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
                 max={50}
                 value={lowThreshold}
                 onChange={(e) => setLowThreshold(Number(e.target.value))}
-                className="w-full accent-[#4648d4]"
+                className="w-full accent-blue-600"
               />
               <p className="text-[11px] text-slate-500 mt-1">
                 Scores below this threshold are automatically marked as Cleared / Normal.
@@ -94,7 +234,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
             <div>
               <div className="flex justify-between font-semibold text-slate-700 mb-1">
                 <span>Medium Risk Threshold</span>
-                <span className="text-[#d97706] font-bold">Score ≥ {medThreshold}</span>
+                <span className="text-amber-600 font-bold">Score ≥ {medThreshold}</span>
               </div>
               <input
                 type="range"
@@ -102,14 +242,14 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
                 max={75}
                 value={medThreshold}
                 onChange={(e) => setMedThreshold(Number(e.target.value))}
-                className="w-full accent-[#d97706]"
+                className="w-full accent-amber-600"
               />
             </div>
 
             <div>
               <div className="flex justify-between font-semibold text-slate-700 mb-1">
                 <span>High Risk Anomaly Threshold</span>
-                <span className="text-[#ba1a1a] font-bold">Score ≥ {highThreshold}</span>
+                <span className="text-red-600 font-bold">Score ≥ {highThreshold}</span>
               </div>
               <input
                 type="range"
@@ -117,7 +257,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
                 max={95}
                 value={highThreshold}
                 onChange={(e) => setHighThreshold(Number(e.target.value))}
-                className="w-full accent-[#ba1a1a]"
+                className="w-full accent-red-600"
               />
             </div>
           </div>
@@ -126,85 +266,55 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ onResetComplete }) =
         {/* Card 2: Signal Weights */}
         <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-2xs space-y-4">
           <div className="flex items-center gap-2 text-sm font-bold text-[#1b1b23] border-b border-slate-100 pb-3">
-            <Sliders className="w-5 h-5 text-[#4648d4]" />
+            <Sliders className="w-5 h-5 text-blue-600" />
             <span>Signal Weights & False-Positive Guard</span>
           </div>
 
           <div className="space-y-2.5 text-xs text-slate-700">
             <div className="flex justify-between p-2 bg-slate-50 rounded-lg border border-slate-100">
               <span>First-Time Payer (Zero Prior VPA History)</span>
-              <strong className="text-[#4648d4]">+25 pts</strong>
+              <strong className="text-blue-600">+20 pts</strong>
             </div>
             <div className="flex justify-between p-2 bg-slate-50 rounded-lg border border-slate-100">
               <span>Ticket Size Distribution Anomaly</span>
-              <strong className="text-[#4648d4]">+20 pts</strong>
+              <strong className="text-blue-600">+20 pts</strong>
             </div>
             <div className="flex justify-between p-2 bg-slate-50 rounded-lg border border-slate-100">
-              <span>Missing Order / Cart Linkage</span>
-              <strong className="text-[#4648d4]">+20 pts</strong>
+              <span>Missing Order / Cart Linkage (Orphaned VPA)</span>
+              <strong className="text-blue-600">+20 pts</strong>
             </div>
             <div className="flex justify-between p-2 bg-slate-50 rounded-lg border border-slate-100">
-              <span>Rapid Pass-Through / Payout Velocity</span>
-              <strong className="text-[#4648d4]">+25 pts</strong>
+              <span>Rapid Pass-Through Velocity</span>
+              <strong className="text-blue-600">+25 pts</strong>
             </div>
             <div className="flex justify-between p-2 bg-slate-50 rounded-lg border border-slate-100">
-              <span>Nocturnal / Off-Hours Processing</span>
-              <strong className="text-[#4648d4]">+10 pts</strong>
-            </div>
-            <div className="flex justify-between p-2 bg-emerald-50 text-emerald-800 rounded-lg border border-emerald-200">
-              <span>Verified Repeat Customer (FP Guard Damping)</span>
-              <strong className="text-emerald-700">-25 pts</strong>
+              <span>Fractional .99 / .98 Price-Point Heuristic</span>
+              <strong className="text-blue-600">+10 pts</strong>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Card 3: Webhook & API Connection */}
-        <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-2xs space-y-4">
-          <div className="flex items-center gap-2 text-sm font-bold text-[#1b1b23] border-b border-slate-100 pb-3">
-            <Key className="w-5 h-5 text-[#4648d4]" />
-            <span>Razorpay Webhook & AI Configuration</span>
+      {/* Persistence Reset Section */}
+      <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-2xs flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0">
+            <Database className="w-5 h-5" />
           </div>
-
-          <div className="space-y-3 text-xs">
-            <div>
-              <label className="block font-semibold text-slate-700 mb-1">Webhook Ingestion URL</label>
-              <input
-                type="text"
-                readOnly
-                value="http://localhost:8000/webhooks/razorpay"
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg font-mono text-slate-700"
-              />
-            </div>
-            <div>
-              <label className="block font-semibold text-slate-700 mb-1">AI Engine Provider</label>
-              <div className="px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-800 font-semibold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <span>Google Gemini 3.6 Flash Active (GEMINI_API_KEY)</span>
-              </div>
-            </div>
+          <div>
+            <h3 className="text-sm font-bold text-[#1b1b23]">Local Persistence (db.json)</h3>
+            <p className="text-xs text-[#464554]">Reset local file-backed state to initial clean seed data.</p>
           </div>
         </div>
 
-        {/* Card 4: Database & State Reset */}
-        <div className="bg-white rounded-2xl p-6 border border-[#E2E8F0] shadow-2xs space-y-4">
-          <div className="flex items-center gap-2 text-sm font-bold text-[#1b1b23] border-b border-slate-100 pb-3">
-            <Database className="w-5 h-5 text-[#4648d4]" />
-            <span>Local Database Store (db.json)</span>
-          </div>
-
-          <p className="text-xs text-slate-500 leading-relaxed">
-            All merchant profiles, transactions, risk flags, and immutable audit logs are stored locally in <code>backend/data/db.json</code> (zero Docker/Postgres dependency).
-          </p>
-
-          <button
-            onClick={handleReset}
-            disabled={isResetting}
-            className="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors"
-          >
-            <RotateCcw className="w-4 h-4" />
-            <span>{isResetting ? 'Resetting...' : 'Reset Database to Demo Baseline'}</span>
-          </button>
-        </div>
+        <button
+          onClick={handleReset}
+          disabled={isResetting}
+          className="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 rounded-xl text-xs font-bold flex items-center gap-2 transition-all disabled:opacity-50"
+        >
+          <RotateCcw className={`w-4 h-4 ${isResetting ? 'animate-spin' : ''}`} />
+          <span>Reset Demo Dataset</span>
+        </button>
       </div>
     </div>
   );

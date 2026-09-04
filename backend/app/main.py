@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
 from .db import db
 from .synthetic_generator import generate_dataset
-from .routes import webhooks, merchants, flags, dashboard, demo, copilot
+from .routes import webhooks, merchants, flags, dashboard, demo, copilot, settings as settings_routes
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("sentinel")
@@ -50,6 +50,7 @@ app.include_router(flags.router)
 app.include_router(dashboard.router)
 app.include_router(demo.router)
 app.include_router(copilot.router)
+app.include_router(settings_routes.router)
 
 from fastapi import APIRouter
 from .models import CustomSimulationInjectRequest

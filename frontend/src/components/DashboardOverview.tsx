@@ -206,16 +206,21 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
   return (
     <div className="flex flex-col gap-6 max-w-7xl mx-auto w-full">
       {/* 1. Header Greeting & Quick Actions */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-[#1b1b23] mb-1">
-            Hi, {merchant?.name || 'Aura Handcrafted Jewels'}
-          </h1>
-          <p className="text-sm text-[#464554]">
-            Here is the latest live payment monitoring activity.
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-2xl font-extrabold text-[#1b1b23]">
+              Hi, {merchant?.name || 'Aura Handcrafted Jewels'}
+            </h1>
+            <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold flex items-center gap-1.5 shadow-2xs">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 animate-pulse" />
+              <span>Auto-Freeze Shield Active (Score ≥ 80)</span>
+            </span>
+          </div>
+          <p className="text-sm text-[#464554] mt-1">
+            Here is the latest live payment monitoring & autonomous defense activity.
           </p>
         </div>
-
       </div>
 
       {/* Copy Toast Feedback */}
