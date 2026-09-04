@@ -36,11 +36,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* Brand Icon & Name */}
       <div className="px-6 mb-8 flex items-center gap-4 whitespace-nowrap overflow-hidden">
         <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm flex-shrink-0 shadow-xs">
-          S
+          R
         </div>
         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="text-base font-extrabold text-[#1b1b23] leading-tight">Sentinel AI</div>
-          <div className="text-xs text-slate-500 font-medium">Early Warning System</div>
+          <div className="text-sm font-extrabold text-[#1b1b23] leading-tight">Razorpay Risk Shield</div>
+          <div className="text-xs text-slate-500 font-medium">Demo Sample</div>
         </div>
       </div>
 

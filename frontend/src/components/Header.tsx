@@ -13,7 +13,9 @@ import {
   Sliders,
   Bot,
   User,
-  ShieldCheck
+  ShieldCheck,
+  AlertTriangle,
+  X
 } from 'lucide-react';
 import { Merchant } from '../types';
 
@@ -47,7 +49,8 @@ export const Header: React.FC<HeaderProps> = ({
   // Search Bar Autocomplete State
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [testMode, setTestMode] = useState(true);
+  const [testMode] = useState(true);
+  const [showRealModeModal, setShowRealModeModal] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown on click outside
@@ -84,33 +87,40 @@ export const Header: React.FC<HeaderProps> = ({
     }
   };
 
+  const handleToggleTestMode = () => {
+    setShowRealModeModal(true);
+  };
+
   return (
     <div className="w-full sticky top-0 z-40 bg-[#0f1115] border-b border-neutral-800 shadow-md">
       {/* 1. Main Black Top Header Bar */}
       <header className="w-full px-6 h-14 flex items-center justify-between text-white">
-        {/* Left Section: Sentinel AI Brand & Navigation CTAs */}
+        {/* Left Section: Razorpay Risk Shield Brand & Navigation CTAs */}
         <div className="flex items-center gap-6">
-          {/* Custom Sentinel AI Logo */}
+          {/* Brand Logo & Demo Sample Heading */}
           <div
             onClick={() => onSelectTab('overview')}
             className="flex items-center gap-2.5 cursor-pointer select-none group"
-            title="Sentinel AI — Mule Risk Intelligence Engine"
+            title="Razorpay Risk Shield — Mule Risk Intelligence Engine (Demo Sample)"
           >
             <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm shadow-[0_0_12px_rgba(37,99,235,0.8)] border border-blue-400/40 group-hover:scale-105 transition-transform">
               <ShieldCheck className="w-4 h-4 text-white" />
             </div>
             <div>
               <div className="font-extrabold text-sm tracking-tight text-white flex items-center gap-1.5">
-                <span>Sentinel AI</span>
-                <span className="text-[9px] bg-blue-950 text-blue-400 border border-blue-800 px-1.5 py-0.2 rounded font-mono uppercase">
+                <span>Razorpay Risk Shield</span>
+                <span className="text-[9px] bg-blue-950 text-blue-400 border border-blue-800 px-1.5 py-0.2 rounded font-mono uppercase font-bold">
                   Mule Engine
                 </span>
               </div>
-              <div className="text-[10px] text-neutral-400 font-medium">Razorpay Risk Shield</div>
+              <div className="text-[10px] text-emerald-400 font-bold tracking-wide flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Demo Sample</span>
+              </div>
             </div>
           </div>
 
-          {/* Custom Navigation CTAs (Relevant to our Mule Detection Engine) */}
+          {/* Custom Navigation CTAs */}
           <nav className="hidden lg:flex items-center gap-1 text-xs">
             <button
               onClick={() => onSelectTab('overview')}
@@ -304,17 +314,16 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </header>
 
-      {/* 2. Integrated Compact Notch Bar (Placed inline in header to prevent overlap with content!) */}
+      {/* 2. Integrated Compact Notch Bar */}
       <div className="bg-[#14161b] border-t border-neutral-800 px-6 py-1.5 flex items-center justify-between text-xs text-neutral-300 font-mono">
         <div className="flex items-center gap-3">
-          {/* Test Mode Toggle */}
-          <div className="flex items-center gap-1.5 bg-neutral-900 px-2.5 py-0.5 rounded-full border border-neutral-800">
-            <div
-              onClick={() => setTestMode(!testMode)}
-              className={`w-7 h-4 rounded-full flex items-center px-0.5 cursor-pointer transition-colors ${
-                testMode ? 'bg-emerald-500 justify-end' : 'bg-neutral-600 justify-start'
-              }`}
-            >
+          {/* Test Mode Toggle Button */}
+          <div
+            onClick={handleToggleTestMode}
+            className="flex items-center gap-1.5 bg-neutral-900 px-2.5 py-0.5 rounded-full border border-neutral-800 cursor-pointer hover:border-neutral-700 transition-colors group"
+            title="Click to toggle Test / Real Mode"
+          >
+            <div className="w-7 h-4 rounded-full flex items-center px-0.5 bg-emerald-500 justify-end transition-colors">
               <div className="w-3 h-3 rounded-full bg-white shadow-xs"></div>
             </div>
             <span className="text-[10px] font-extrabold tracking-widest text-emerald-400 uppercase">TEST MODE</span>
@@ -337,6 +346,48 @@ export const Header: React.FC<HeaderProps> = ({
           <span>Simulate Mule Attacks</span>
         </button>
       </div>
+
+      {/* 3. Real Mode Not Available Alert Modal */}
+      {showRealModeModal && (
+        <div className="fixed inset-0 bg-black/75 backdrop-blur-xs flex items-center justify-center z-50 p-4 animate-in fade-in duration-150">
+          <div className="bg-[#18191c] border border-neutral-800 rounded-2xl p-6 max-w-md w-full shadow-2xl text-white space-y-4 relative">
+            <button
+              onClick={() => setShowRealModeModal(false)}
+              className="absolute top-4 right-4 text-neutral-400 hover:text-white transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
+                <AlertTriangle className="w-5 h-5 text-amber-400" />
+              </div>
+              <div>
+                <h3 className="text-sm font-extrabold text-white">Not Available in Real Mode</h3>
+                <p className="text-xs text-neutral-400 font-medium">Demo Sample Environment Notice</p>
+              </div>
+            </div>
+
+            <div className="bg-neutral-900/90 p-4 rounded-xl border border-neutral-800 text-xs text-neutral-300 space-y-2 font-sans">
+              <p className="leading-relaxed">
+                Switching to live production / Real Mode is restricted in this <strong className="text-amber-400 font-semibold">Demo Sample</strong> environment.
+              </p>
+              <p className="text-neutral-400 leading-relaxed text-[11px]">
+                All 12-signal mule vector detections, synthetic fraud injections, and score mitigations operate safely under <strong>Test Mode</strong>.
+              </p>
+            </div>
+
+            <div className="flex justify-end pt-1">
+              <button
+                onClick={() => setShowRealModeModal(false)}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition-all shadow-md"
+              >
+                Got It (Continue in Test Mode)
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
