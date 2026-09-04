@@ -12,7 +12,8 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronDown,
-  Plus
+  Plus,
+  Lock
 } from 'lucide-react';
 import { Merchant, DashboardSummary, RiskFlag } from '../types';
 
@@ -194,6 +195,9 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
     }
     return true;
   });
+
+  const frozenFlags = flags.filter((f) => f.auto_frozen || f.confidence_score >= 80);
+  const totalFrozenAmount = frozenFlags.reduce((sum, f) => sum + f.amount, 0);
 
   const flaggedCount = summary?.total_flagged || flags.length || 4;
   const underReviewCount = summary?.under_review || 2;
@@ -512,6 +516,64 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 <Plus className="w-5 h-5 mb-1" />
                 <span className="text-xs font-bold">View All Pending</span>
               </div>
+            </div>
+
+            {/* 🧊 Auto-Frozen Payouts & Settlement Holds Queue */}
+            <div className="mt-4 pt-4 border-t border-rose-100 flex flex-col gap-2.5">
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <Lock className="w-4 h-4 text-rose-600" />
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                    Auto-Frozen Payouts & Settlement Holds ({frozenFlags.length})
+                  </h4>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-bold text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded border border-rose-200 flex items-center gap-1.5 shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-ping"></span> Total Locked: ₹{totalFrozenAmount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
+                  </span>
+                </div>
+              </div>
+
+              {frozenFlags.length > 0 ? (
+                <div className="divide-y divide-rose-100 rounded-xl border border-rose-200 bg-rose-50/30 overflow-hidden">
+                  {frozenFlags.slice(0, 5).map((f) => (
+                    <div key={f.id} className="p-3 flex items-center justify-between text-xs bg-white hover:bg-rose-50/50 transition-colors">
+                      <div className="flex items-center gap-3">
+                        <div className="w-7 h-7 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs shadow-2xs">
+                          🧊
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-900 flex items-center gap-2">
+                            <span>₹{f.amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
+                            {f.order_id && (
+                              <span className="text-[10px] bg-slate-100 text-slate-700 px-1.5 py-0.2 rounded font-mono">
+                                {f.order_id}
+                              </span>
+                            )}
+                            <span className="text-[10px] font-bold text-rose-700 bg-rose-100 px-1.5 py-0.2 rounded font-mono">
+                              {f.confidence_score}/100 HIGH Risk
+                            </span>
+                          </div>
+                          <div className="text-[10px] text-slate-500 font-mono">Payer VPA: {f.payer_vpa} • Hold status: Settlement Lock (24h)</div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => onSelectFlag(f)}
+                          className="px-2.5 py-1 rounded bg-rose-600 text-white font-bold text-[11px] hover:bg-rose-700 transition-colors shadow-2xs flex items-center gap-1 cursor-pointer"
+                        >
+                          <Eye className="w-3 h-3" /> Inspect Hold
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="p-3 text-center text-xs text-slate-500 bg-slate-50 rounded-xl border border-slate-200">
+                  No payouts currently auto-frozen. Autonomous Smart Shield will lock settlement payouts automatically for risk scores ≥ 80.
+                </div>
+              )}
             </div>
 
             {/* Authorized / Clean / Good Payments List Queue */}

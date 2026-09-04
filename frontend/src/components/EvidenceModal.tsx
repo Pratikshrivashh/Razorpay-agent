@@ -115,6 +115,39 @@ export const EvidenceModal: React.FC<EvidenceModalProps> = ({
 
         {/* Scrollable Body */}
         <div className="p-6 overflow-y-auto space-y-6 flex-grow">
+          {/* Auto-Frozen / Settlement Hold Status Banner */}
+          {(flag.auto_frozen || flag.confidence_score >= 80 || flag.settlement_hold_until) && (
+            <div className="p-4 bg-gradient-to-r from-slate-950 via-cyan-950 to-slate-950 text-white rounded-xl border border-cyan-500/40 shadow-md flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-400/40 flex items-center justify-center font-black text-lg flex-shrink-0">
+                  🧊
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xs font-extrabold uppercase tracking-wider text-cyan-300">
+                      Settlement Payout Frozen (Smart Auto-Freeze Shield)
+                    </h3>
+                    <span className="text-[9px] bg-cyan-400/20 text-cyan-200 border border-cyan-400/40 px-2 py-0.2 rounded font-mono font-bold">
+                      Score {flag.confidence_score}/100
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 mt-0.5">
+                    Automated Policy Triggered: High anomaly score breach (≥80 pts). Settlement payout is locked for 24 hours to prevent mule drainage.
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-right flex-shrink-0 hidden sm:block">
+                <span className="text-[10px] font-bold text-cyan-300 bg-cyan-900/60 px-2.5 py-1 rounded-md border border-cyan-700 block">
+                  24h Payout Lock Active
+                </span>
+                <span className="text-[9px] text-slate-400 font-mono block mt-1">
+                  Ops Sign-Off Required
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* Key Transaction Metadata Card */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-surface-subtle rounded-xl card-border">
             <div>

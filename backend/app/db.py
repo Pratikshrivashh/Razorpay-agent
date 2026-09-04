@@ -169,6 +169,14 @@ class Database:
                 return RiskFlag(**f)
         return None
 
+    def _normalize_flag(self, f_dict: Dict[str, Any]) -> RiskFlag:
+        score = f_dict.get("confidence_score", 0)
+        if score >= 80 or f_dict.get("auto_frozen"):
+            f_dict["auto_frozen"] = True
+            if not f_dict.get("settlement_hold_until"):
+                f_dict["settlement_hold_until"] = "24 Hours (Active Lock)"
+        return RiskFlag(**f_dict)
+
     def list_risk_flags(self, merchant_id: Optional[str] = None, status: Optional[str] = None) -> List[RiskFlag]:
         data = self._read_data()
         flags = list(data.get("risk_flags", {}).values())
@@ -178,7 +186,7 @@ class Database:
             flags = [f for f in flags if f.get("status") == status]
         # sort by created_at descending
         flags.sort(key=lambda x: x.get("created_at", ""), reverse=True)
-        return [RiskFlag(**f) for f in flags]
+        return [self._normalize_flag(f) for f in flags]
 
     def update_risk_flag(self, flag_id: str, updates: Dict[str, Any]) -> Optional[RiskFlag]:
         data = self._read_data()
