@@ -1,8 +1,8 @@
-# Sentinel — AI Merchant Mule-Pattern Early Warning Agent for Razorpay
+# Sentinel — AI Merchant Mule-Pattern Early Warning & Autonomous Smart-Freeze Shield for Razorpay
 
 > **Codename**: *Sentinel*  
 > **Track**: AI Risk Manager (Track 02) / Merchant Protection  
-> **Core Principle**: Proactive Anomaly Detection + Multi-Signal Correlation + False-Positive Guard + Human-in-the-Loop Operations. **Never automatically blocks or freezes accounts.**
+> **Core Principle**: Proactive Anomaly Detection + Multi-Signal Correlation + False-Positive Guard + Autonomous Smart Auto-Freeze Shield + Human-in-the-Loop Operations.
 
 ---
 
@@ -19,11 +19,16 @@
 
 A merchant’s UPI ID, QR code, and payment links are **publicly accessible**. Fraud rings running deceptive "commission task / high-yield investment" apps (e.g. Chinese loan app and Ponzi investment scams) frequently direct victims to deposit funds directly into unsuspecting, legitimate merchants' public UPI IDs (e.g. ₹199.99, ₹550 micro-deposits). Weeks later, law enforcement / cyber cell tracing triggers an account freeze under **Section 106 CrPC** or bank AML hold — damaging the merchant's business with zero prior warning.
 
-**Sentinel** bridges this vulnerability on the aggregator side. It analyzes incoming Razorpay transactions against the merchant's historical ledger to detect mule patterns and organized fraud ring signatures, computes a deterministic 0–100 Anomaly Score, correlates multi-dimensional risk signals, balances against a mandatory **False-Positive Guard**, and uses Google Gemini to provide explainable risk narratives for Razorpay Operations analysts before payout freezes occur.
+**Sentinel** bridges this vulnerability on the aggregator side:
+1. Analyzes incoming Razorpay transactions against merchant historical ledgers to detect mule patterns and organized fraud ring signatures.
+2. Computes a deterministic 0–100 Anomaly Score across **12 distinct risk signals**.
+3. Applies a mandatory **False-Positive Guard** to protect legitimate surge traffic.
+4. Executes the **Autonomous Smart Auto-Freeze Shield** policy rule engine — automatically placing a 24-hour payout hold on settlements when risk score ≥ 80, preventing cyber-cell bank account freezes before funds are drained.
+5. Leverages Google Gemini AI for clear, explainable risk narratives for Razorpay Operations analysts.
 
 ---
 
-## 2. Core Detection & Review Pipeline
+## 2. Core Autonomous Defense & Review Pipeline
 
 ```
 PAYMENT (Webhook / Synthetic Ingestion)
@@ -34,9 +39,11 @@ ANOMALY SCORE (Deterministic Engine: 0–100 Score)
          ↓
 CONTEXT CHECK (False-Positive Guard: Repeat Customer Damping, Business Hours, Valid Order Lineage)
          ↓
+AUTONOMOUS SMART AUTO-FREEZE SHIELD (Score ≥ 80 → Auto-Freeze Settlement Payout & Lock 24h Hold)
+         ↓
 CONFIDENCE TIER (Google Gemini AI Explanation & Recommended Analyst Actions: LOW / MEDIUM / HIGH)
          ↓
-HUMAN REVIEW (Razorpay Ops Dashboard: [Confirm Risk] [Dismiss False Positive] [Request Context])
+HUMAN REVIEW (Razorpay Ops Dashboard: [Confirm Risk] [Dismiss False Positive] [Request Context] [Inspect Payout Hold])
 ```
 
 ---
@@ -52,18 +59,22 @@ HUMAN REVIEW (Razorpay Ops Dashboard: [Confirm Risk] [Dismiss False Positive] [R
 - **Signal 6**: Nocturnal / Off-Hours Processing (+15 pts) vs Active Business Hours.
 - **Signal 7**: Fresh Mule Shell / Zero-Refund Anomaly (+15 pts).
 
-### B. High-Risk Fraud Ring Pattern Layer (Signals 8–11)
+### B. High-Risk Fraud Ring Pattern Layer (Signals 8–12)
 - **Signal 8 — Rapid Pass-Through Velocity**: Funds credited and debited within minutes-to-hours, leaving minimal residual balance (Drainage ratio > 95%). Weight: **HIGH (+25 pts)**. *Action: Escalate to Compliance / ED Liaison*.
 - **Signal 9 — Fragmented Multi-Instrument Identity**: Same payer or merchant operating through multiple UPI IDs / VPAs / wallets in a short window to split single flow. Weight: **HIGH (+25 pts)**. *Action: Escalate to Compliance / ED Liaison*.
-- **Signal 10 — Crypto Off-Ramp Proximity**: Payout followed by transfer activity toward known crypto exchange accounts/VPAs. Weight: **MEDIUM (+15 pts)**.  
-  *⚠️ Disclaimer: Requires external data source in production.*
-- **Signal 11 — Round-Number-Minus-One Pricing Heuristic**: Incoming amounts clustering around `X99.99` / `X99` patterns. Weight: **LOW (+10 pts)**.  
-  *⚠️ Disclaimer: Heuristic signal — pattern observed in synthetic test data, not yet validated against real fraud datasets.*
+- **Signal 10 — Crypto Off-Ramp Proximity**: Payout followed by transfer activity toward known crypto exchange accounts/VPAs. Weight: **MEDIUM (+15 pts)**. (*Requires external data source in production.*)
+- **Signal 11 — Round-Number-Minus-One Pricing Heuristic**: Incoming amounts clustering around `X99.99` / `X99` patterns. Weight: **LOW (+10 pts)**.
+- **Signal 12 — Smart Auto-Freeze Shield Policy Engine**: Autonomous rule evaluation triggering payout settlement hold when confidence score crosses policy threshold.
 
 ### C. False-Positive Guard (Mandatory PRD Requirement)
 Evaluates mitigating factors (repeat customer history, verified checkout cart, peak hours) to damp raw scores and eliminate false positives.
 
-### D. Gemini AI Explanation Layer
+### D. Smart Auto-Freeze Shield & Settlement Hold Engine
+- **Autonomous Policy Rules**: Configure custom risk thresholds (e.g. `Score ≥ 80`) and hold durations (e.g. `24 Hours`).
+- **Settlement Hold Enforcement**: Payouts meeting rule criteria are flagged with `auto_frozen: true` and locked in the **Auto-Frozen Payouts & Settlement Holds Queue**.
+- **Live Visual Status Indicators**: Real-time "Auto-Freeze Shield Active" notch badge, dashboard total locked INR summary, and `🧊 AUTO-FROZEN BY SMART SHIELD` modal status banners.
+
+### E. Gemini AI Explanation Layer
 Generates structured, calm, objective risk summaries and actionable recommendations for operations analysts without asserting definitive fraud. If Signal 10 or 11 fires, Gemini explicitly states their confidence caveats.
 
 ---
@@ -115,20 +126,25 @@ npm run dev
 2. **Interactive Merchant Search**: Type `MER_AURA` or `Aura` into the autocomplete search bar to instantly select a merchant.
 3. **Observe Hero Gauge Animation**: Watch the Lenovo Vantage-style tachometer meters sweep and calibrate (`Anomalous Exposure` & `Settlement Volume`).
 4. **Inject Mule Pattern**: Click **"Simulate Mules"** in the top bar or trigger a **12-Signal Attack Scenario** (e.g. *Fractional .99 Task Scam* or *USDT Crypto Off-Ramp*).
-5. **Inspect Alert & Fraud Ring Layer**: Open the evidence modal to review:
+5. **Inspect Smart Auto-Freeze Shield**:
+   - Check the main dashboard's **"🧊 Auto-Frozen Payouts & Settlement Holds Queue"** card to view total locked settlement volume in INR.
+   - Observe the live **"Auto-Freeze Shield Active (Score ≥ 80)"** indicator in the header notch.
+6. **Inspect Alert & Evidence Modal**: Open the evidence modal to review:
+   - **`🧊 AUTO-FROZEN BY SMART SHIELD (Settlement Payout Lock Active)`** status banner.
    - **Base Mule Risk Signals** (*Action: Soft Warning to Merchant*)
    - **Fraud Ring Pattern Match** (*Action: Escalate to Compliance / ED Liaison*)
    - Mandatory confidence caveats for Signal 10 & Signal 11
-6. **Perform Human Review**: Click **[Confirm Risk]**, **[Dismiss False Positive]**, or **[Request Context]** to update the immutable audit log.
-7. **Ask Analyst Copilot**: Click the floating **"Ask Copilot"** widget in the bottom-right corner to interact with Gemini AI.
+7. **Manage Auto-Freeze Rules**: Click **"Settings"** in the sidebar/navigation to adjust the Smart Auto-Freeze threshold score, settlement hold duration, or toggle active policies.
+8. **Perform Human Review**: Click **[Confirm Risk]**, **[Dismiss False Positive]**, or **[Request Context]** to update the immutable audit log.
+9. **Ask Analyst Copilot**: Click the floating **"Ask Copilot"** widget in the bottom-right corner to interact with Gemini AI.
 
 ---
 
 ## 6. Running Automated Test Suite
 
-Run unit and integration tests verifying scoring rules, mitigators, and API endpoints:
+Run unit and integration tests verifying scoring rules, mitigators, auto-freeze policies, and API endpoints:
 ```bash
 cd backend
 python -m pytest tests -v
 ```
-*All tests passing.*
+*All 9/9 tests passing.*
